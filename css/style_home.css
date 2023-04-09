@@ -14,7 +14,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin: 0 100px;
-  border-bottom: 1px solid;
+  
 }
 .header_logo .logo {
   width: 170px;
@@ -31,7 +31,8 @@ body {
   line-height: 100px;
   position: relative;
 }
-.menu_categories_link,.menu_product_link{
+.menu_categories_link,
+.menu_product_link {
   position: relative;
 }
 .header_menu:hover > a {
@@ -40,14 +41,13 @@ body {
 .header_menu a {
   text-decoration: none;
   color: #000;
-  font-size: 16px;
+  font-size: 18px;
 }
 .header_right {
   display: flex;
   width: 13%;
-  align-content: center;
   justify-content: space-between;
- margin-top: 30px;
+  align-items: center;
 }
 .header_right i {
   font-size: 18px;
@@ -136,7 +136,7 @@ transition: 0.3s;
   transition: 0.3s;
 }
 .pages_children li a,
-.brand_childer_a  a {
+.brand_childer_a a {
   font-size: 15px;
   opacity: 0.9;
 }
@@ -149,7 +149,7 @@ transition: 0.3s;
 .header_menu_pages:hover .pages_children,
 .header_menu_brand:hover .brand_childer {
   border-top: 3px solid#6c0000;
- box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
   height: 243px;
 }
 .header_menu a:hover {
@@ -157,17 +157,17 @@ transition: 0.3s;
 }
 /* product */
 
-.product_childents_childent{
+.product_childents_childent {
   margin-left: 30px;
   margin-bottom: 30px;
   display: flex;
 }
-.childent_big .big_img{
+.childent_big .big_img {
   height: 84px;
   width: 67px;
 }
 
-.childent_big{
+.childent_big {
   display: flex;
   justify-content: space-between;
   width: 270px;
@@ -175,37 +175,143 @@ transition: 0.3s;
   box-sizing: border-box;
 }
 
-
-.bi-star{
+.bi-star {
   font-size: 14px;
   color: #feca7b;
 }
-.ben{
+.ben {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   line-height: 100%;
   justify-content: space-between;
-  flex:1;
-  margin-left:7px ;
+  flex: 1;
+  margin-left: 7px;
 }
-.header_menu_product .product_childents{
-  
+.header_menu_product .product_childents {
   width: 0;
   height: 0;
   position: absolute;
-  top:75px ;
-  left:0;
+  top: 75px;
+  left: 0;
   box-sizing: border-box;
 
   overflow: hidden;
   transition: 0.5s;
 }
-.header_menu_product:hover .product_childents{
- box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
+.header_menu_product:hover .product_childents {
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
   width: 805px;
-   height: 440px;
+  height: 440px;
   cursor: pointer;
   display: block;
   background-color: whitesmoke;
-  border-top:3px solid #6c0000 ;
+  border-top: 3px solid #6c0000;
 }
+
+/* categories */
+.categories_content {
+  position: absolute;
+  top: 85px;
+
+  width: 0px;
+  height: 0px;
+  box-sizing: border-box;
+  padding-bottom: 25px;
+  background-color: whitesmoke;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.header_menu_categories:hover .categories_content {
+  border-top: 3px solid #6c0000;
+  display: flex;
+  justify-content: space-around;
+  width: 900px;
+  height: 400px;
+  box-shadow: 0 0 10px 0;
+}
+.categories_content_left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.mid_content a,
+.right_content a,
+.shop_content li a {
+  font-size: 14px;
+}
+.mid_content {
+  margin-bottom: 20px;
+  line-height: 30px;
+  box-sizing: border-box;
+  height: 140px;
+}
+.right_content {
+  line-height: 30px;
+}
+/* shop */
+.shop_content {
+  position: absolute;
+  top:80px;
+  width: 920px;
+  height: 0;
+  background-color: whitesmoke;
+  
+  overflow: hidden;
+  transition: 0.3s;
+
+
+}
+.shop_content_link {
+  line-height: 20px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-left: 10px;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+.shop_content li {
+  margin-left: 20px;
+  padding: 8px 0;
+}
+.shop_img{
+  width: 95%;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+.header_menu_shop:hover .shop_content{
+  display: block;
+  height: 480px;
+  border-top: 3px solid #6c0000;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
+}
+/* ****search */
+/* .search{
+  position: absolute;
+  top:80px;
+  display: flex;
+  height: 40px;
+  width: 200px;
+  background-color: whitesmoke;
+  align-items: center;
+  display: none;
+}
+.header_right .icon:hover .search{
+  display: block;
+  
+}
+.search_input{
+  outline: whitesmoke;
+  border: none;
+  font-size: 18px;
+  width: 160px;
+  background-color: whitesmoke;
+}
+.click_search{
+   line-height: 40px;
+   width: 40px;
+   background-color: #6c0000;
+   color: whitesmoke;
+   text-align: center;
+} */
