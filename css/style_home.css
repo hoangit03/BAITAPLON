@@ -10,8 +10,8 @@ html {
 #header {
   height: 100px;
   display: flex;
-  justify-content: space-between;
-  margin: 0 100px;
+  justify-content: space-around;
+  margin: 0 150px;
 }
 .header_logo .logo {
   width: 170px;
@@ -24,7 +24,7 @@ html {
 .header_menu {
   display: flex;
   justify-content: space-evenly;
-  width: 55%;
+  width: 45%;
   line-height: 100px;
   position: relative;
 }
@@ -46,7 +46,7 @@ html {
 }
 .header_right {
   display: flex;
-  width: 13%;
+  width: 10%;
   justify-content: space-between;
   align-items: center;
 }
@@ -499,13 +499,20 @@ html {
   justify-content: center;
 }
 .btn-group {
-  width: 50%;
+  width: 30%;
   display: flex;
   justify-content: space-between;
 }
+.btn-primary:hover{
+  background-color: #6c0000;
+  border-color: #fff;
+}
 .btn-primary {
-  background-color: #fff;
+  background-color: #efefef;
   color: #000;
+  font-weight: 500;
+  border-radius: 0%;
+  border-color: white;
 }
 .slider_button,.slider_button:hover {
   color: #000;
@@ -513,13 +520,22 @@ html {
   border-color: white;
   cursor: auto;
 }
+.btn{
+  width: 150px;
+  height: 50px;
+  border-radius: none;
+}
 .btn-primary:active,
 .btn-primary:visited {
   background-color: #6c0000 !important;
 }
 /* content_product */
 .content_product {
+  
   margin: 30px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .content_product_colum_number {
   width: 215px;
@@ -599,7 +615,7 @@ html {
   background-color: #6c0000;
 }
 .content_product_colum {
-  width: 100%;
+  width: 80%;
   display: flex;
   justify-content: space-between;
 }
