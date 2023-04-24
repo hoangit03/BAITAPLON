@@ -40,6 +40,7 @@
 .product-right .product-title{
     font-size: 20px;
     font-weight: 600;
+    margin-bottom: 10px;
 }
 
 .product-right .rating{
@@ -63,7 +64,31 @@
 }
 .product-comment::before{
     content: "";
-    border: 0.1em solid #202020;
+    border: .3px solid rgb(147,147,147);
     margin: 0 15px 0 0;
     height: 10px;
+}
+
+.product-right .list-dics{
+    padding: 0;
+}
+
+
+
+
+.product-right .list-dics li{
+    list-style: none;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.product-right .list-dics .dics{
+    font-weight: 600;
+    display: inline-block;
+    min-width: 125px;
+    margin-right: 5px;
+}
+.product-right .list-dics .dics1{
+    text-decoration: none;
+    color: rgb(147,147,147);
 }
