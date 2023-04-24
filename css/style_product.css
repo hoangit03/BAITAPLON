@@ -95,3 +95,89 @@
 .product-right .product-price h2{
     font-size: 22px;
 }
+.product-right .quantity-addcart{
+    display: flex;
+    align-items: center;
+}
+
+.product-right .quantity-addcart .pro-quantity label{
+    margin-right: 10px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+.product-right .quantity-addcart .pro-quantity{
+    display: flex;
+    margin-right: 20px;
+}
+.product-right .quantity-addcart .pro-quantity .btn-quantity{
+    background-color: #efefef;
+}
+.product-right .quantity-addcart .pro-quantity .btn-quantity input{
+    border: none;
+    outline: none !important;
+    width: 70px;
+    height: 40px;
+    text-align: center;
+    padding: 10px;
+    background: #efefef;
+}
+.product-right .quantity-addcart .pro-quantity .btn-quantity button{
+    border: none;
+    background-color: #d9d9d9;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+}
+.product-right .quantity-addcart .pro-quantity .btn-quantity button:hover{
+    background: #6c0000;
+    color: white;
+}
+
+.product-right .quantity-addcart .pro-addcart{
+    height: 40px;
+}
+.product-right .quantity-addcart .pro-addcart button{
+    width: 160px;
+    height: 100%;
+    border: none;
+    background-color: #6c0000;
+    color: white;
+    transition: 1s;
+}
+.product-right .quantity-addcart .pro-addcart button i{
+    margin-right: 8px;
+}
+.product-right .quantity-addcart .pro-addcart button:hover{
+    background-color: #202020;
+    transition: 1s;
+}
+
+.product-right .post-cart{
+    margin-top: 20px;
+    height: 40px;
+}
+
+.product-right .post-cart button{
+    height: 100%;
+    border: none;
+    background: none;
+    margin: 0 10px 0 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+.product-right .post-cart button:hover{
+    color: #6c0000;
+}
+.product-right .post-cart button:hover i{
+    background-color: #202020;
+}
+.product-right .post-cart button i{
+    margin-right: 8px;
+    height: 30px;
+    width: 30px;
+    background-color: #6c0000;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+}
