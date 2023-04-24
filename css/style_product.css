@@ -69,14 +69,14 @@
     height: 10px;
 }
 
-.product-right .list-dics{
+.product-right ul{
     padding: 0;
 }
 
 
 
 
-.product-right .list-dics li{
+.product-right li{
     list-style: none;
     font-size: 14px;
     margin-bottom: 8px;
@@ -91,4 +91,7 @@
 .product-right .list-dics .dics1{
     text-decoration: none;
     color: rgb(147,147,147);
+}
+.product-right .product-price h2{
+    font-size: 22px;
 }
