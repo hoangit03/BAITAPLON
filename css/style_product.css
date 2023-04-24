@@ -181,3 +181,23 @@
     line-height: 30px;
     color: white;
 }
+
+.description-reviews .navdes-rev{
+    height: 60px;
+    background-color: #6c0000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.description-reviews .navdes-rev .desc,.rvw{
+    height: 40px;
+    width: 150px;
+    text-align: center;
+    line-height: 40px;
+    background: white;
+    margin: 10px;
+}
+.description-reviews .navdes-rev .active{
+    background-color: #202020;
+    color: white;
+}
