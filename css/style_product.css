@@ -228,6 +228,7 @@
 .description-reviews .pro-cnt .tab-rvw .write-review{
     padding: 30px;
     background-color: #efefef;
+    margin-bottom: 50px;
 }
 .description-reviews .pro-cnt .tab-rvw .write-review #review-title{
     font-size: 18px;
