@@ -3,6 +3,11 @@
 #content{
     margin: 0;
 }
+@media (min-width: 1550px){
+.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1500px;
+}
+}
 .list-item-img{
    display: flex; 
    flex-wrap: wrap;
@@ -197,7 +202,27 @@
     background: white;
     margin: 10px;
 }
-.description-reviews .navdes-rev .active{
+.description-reviews .navdes-rev .active,.desc:hover,.rvw:hover{
     background-color: #202020;
     color: white;
 }
+.description-reviews .pro-cnt{
+    margin-top: 30px;
+    text-align: none;
+}
+.description-reviews .pro-cnt p{
+    text-align: left;
+    font-size: 14px;
+    color: #939393;
+}
+.description-reviews .pro-cnt strong{
+    font-weight: 600;
+}
+.description-reviews .pro-cnt .show{
+    display: block;
+}
+.description-reviews .pro-cnt .tab-desc,.tab-rvw{
+    display: none;
+}
+
+
