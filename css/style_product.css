@@ -209,8 +209,9 @@
 .description-reviews .pro-cnt{
     margin-top: 30px;
     text-align: none;
+    
 }
-.description-reviews .pro-cnt p{
+.description-reviews .pro-cnt .tab-desc p{
     text-align: left;
     font-size: 14px;
     color: #939393;
@@ -224,5 +225,116 @@
 .description-reviews .pro-cnt .tab-desc,.tab-rvw{
     display: none;
 }
+.description-reviews .pro-cnt .tab-rvw .write-review{
+    padding: 30px;
+    background-color: #efefef;
+}
+.description-reviews .pro-cnt .tab-rvw .write-review #review-title{
+    font-size: 18px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+}
 
+.description-reviews .pro-cnt .tab-rvw .write-review .input-name-rvw,.input-text-rvw{
+   margin-bottom: 20px;
+   display: flex;
+   flex-direction: column;
+}
+.description-reviews 
+.pro-cnt 
+.tab-rvw 
+.write-review 
+.form-label{
+    font-size: 14px;
+    font-weight: 500;
+}
+.description-reviews 
+.pro-cnt 
+.tab-rvw 
+.write-review 
+.form-label::before{
+    content: "*";
+    color: #e61010;
+    margin-right: 5px;
+}
+
+.description-reviews 
+.pro-cnt 
+.tab-rvw 
+.write-review 
+input,textarea
+{
+    height: 40px;
+    outline: none !important;
+    border: 1px solid #ddd;
+    padding: 5px 15px;
+}
+
+.description-reviews 
+.pro-cnt 
+.tab-rvw 
+.write-review 
+.input-text-rvw
+textarea{
+    height: 150px;
+}
+.description-reviews 
+.pro-cnt 
+.tab-rvw 
+.write-review 
+.rvw-rating 
+.input-rating{
+    display: flex;
+    align-items: center;
+}
+.description-reviews 
+.pro-cnt 
+.tab-rvw 
+.write-review 
+.rvw-rating 
+#input-rating {
+    display: flex;
+    justify-items: center;
+    justify-content: space-between;
+    align-items: center;
+    width: 220px;
+}
+
+.description-reviews 
+.pro-cnt 
+.tab-rvw 
+.write-review 
+.rvw-rating 
+#input-rating 
+.check-rating{
+    background-image: none;
+}
+.description-reviews 
+.pro-cnt 
+.tab-rvw 
+.write-review 
+.submit-form{
+    display: flex;
+    justify-content: end;
+}
+.description-reviews 
+.pro-cnt 
+.tab-rvw 
+.write-review 
+.submit-form button{
+    border: none;
+    background-color: #6c0000;
+    color: white;
+    font-weight: 500;
+    padding: 8px 25px;
+    transition: 1s;
+}
+.description-reviews 
+.pro-cnt 
+.tab-rvw 
+.write-review 
+.submit-form button:hover{
+    background-color: #202020;
+    transition: 1s;
+}
 
