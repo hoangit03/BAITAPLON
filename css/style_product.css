@@ -338,4 +338,9 @@ textarea{
     background-color: #202020;
     transition: 1s;
 }
-
+.pro-listpro .content_product_colum{
+    width: 99%;
+}
+.pro-related{
+    margin-bottom: 80px;
+}
