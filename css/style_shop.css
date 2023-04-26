@@ -1,0 +1,62 @@
+/* Shop */
+
+@media (min-width: 1551px){
+.container {
+    max-width: 1500px;
+}}
+
+.col-3{
+    width: 20%;
+}
+main{
+    margin-top: 50px;
+}
+.list-categories .select-cate{
+    padding: 20px;
+    line-height: 30px;
+    background-color: #efefef;
+}
+.list-categories h3{
+    background-color: #6c0000;
+    font-size: 20px;
+    font-weight: 500;
+    height: 50px;
+    padding: 15px 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+.list-categories .select-cate li{
+    list-style: none;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.list-categories 
+.select-cate 
+.more-cate 
+.catemain 
+span{
+    float: right;
+}
+
+.list-categories 
+.select-cate 
+a {
+    text-decoration: none;
+    color: #212529;
+}
+
+.list-categories 
+.select-cate 
+a:hover{
+    color: #6c0000;
+}
+
+.list-categories 
+.select-cate 
+.more-cate 
+.list-cate-group{
+    display: none;
+}
