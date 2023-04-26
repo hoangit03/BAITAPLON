@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-family: "Poppins", sans-serif;
+}
+#content_login{
+  margin-bottom: 100px ;
+}
+#content_login .nav-item  .nav-link{
+  color: #000;
+  box-sizing: border-box;
+  padding-left: 30px;
+  
+}
+#content_login ul {
+  background-color: whitesmoke;
+}
+#content_login .account{
+  background-color: #6c0000;
+  padding: 20px 0 10px 30px;
+  color: white;
+
+  border-top:1px solid #6c0000 ;
+}
+.content_form_login{
+  padding: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 500px;
+}
+.content_form_login h2{
+  text-align: center;
+}
+.content_form_login .next_page{
+  margin-left: 0;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.content_form_login .next_page a{
+  font-size: 18px;
+}
+.content_form_login .next_page a:hover{
+  font-size: 20px;
+  color: #6c0000;
+}
+.control_button_login{
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+.control_button_login button:hover{
+  font-size: 20px;
+  
+}
+.form-group label{
+padding: 10px 0;
+
+}
+.modal{
+  display: none;
+}
+.modal.show{
+  display: block;
+}
+.modalover{
+  position: fixed;
+  top:0;
+  right: 0;
+  left :0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.modal_content{
+  position: absolute;
+  z-index: 9999;
+}
+.nav-item > a:hover{
+  color: #6c0000;
+}

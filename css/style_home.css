@@ -11,7 +11,7 @@ html {
   height: 100px;
   display: flex;
   justify-content: space-around;
-  margin: 0 150px;
+  width: 100%;
 }
 .header_logo .logo {
   width: 170px;
@@ -50,8 +50,10 @@ html {
   justify-content: space-between;
   align-items: center;
 }
-.header_right i {
+.header_right i,
+.header_right a {
   font-size: 18px;
+  color: white;
 }
 .header_right .icon {
   position: relative;
@@ -153,13 +155,13 @@ html {
 .header_menu_pages:hover .pages_children {
   border-top: 3px solid#6c0000;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
-  height: 250px;
+  height: 245px;
   z-index: 99999;
 }
 .header_menu_brand:hover .brand_childer {
   border-top: 3px solid#6c0000;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
-  height: 210px;
+  height: 207px;
   z-index: 99999;
 }
 .header_menu a:hover {
@@ -251,7 +253,7 @@ html {
   display: flex;
   justify-content: space-around;
   width: 900px;
-  height: 350px;
+  height: 400px;
   box-shadow: 0 0 10px 0;
   z-index: 1;
 }
@@ -420,13 +422,7 @@ html {
   justify-content: space-between;
   width: 100%;
 }
-.bi-search {
-  transform: rotateY(0deg);
-}
-.bi-search:hover {
-  transform: rotateY(360deg);
-  transition: 0.3s;
-}
+
 .item_main .bi-gift,
 .bi-truck,
 .bi-credit-card,
@@ -499,11 +495,11 @@ html {
   justify-content: center;
 }
 .btn-group {
-  width: 30%;
+  width: 50%;
   display: flex;
   justify-content: space-between;
 }
-.btn-primary:hover{
+.btn-primary:hover {
   background-color: #6c0000;
   border-color: #fff;
 }
@@ -514,24 +510,20 @@ html {
   border-radius: 0%;
   border-color: white;
 }
-.slider_button,.slider_button:hover {
+.slider_button,
+.slider_button:hover {
   color: #000;
   background-color: white;
   border-color: white;
   cursor: auto;
 }
-.btn{
-  width: 150px;
-  height: 50px;
-  border-radius: none;
-}
+
 .btn-primary:active,
 .btn-primary:visited {
   background-color: #6c0000 !important;
 }
 /* content_product */
 .content_product {
-  
   margin: 30px 0;
   display: flex;
   flex-wrap: wrap;
@@ -564,6 +556,7 @@ html {
 .content_product_colum_number:hover .product_buy {
   display: flex;
   justify-content: space-between;
+  
 }
 .product_buy {
   width: 85%;
@@ -615,16 +608,17 @@ html {
   background-color: #6c0000;
 }
 .content_product_colum {
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-right: 20px;
 }
 .name_img:hover h5 {
   color: #6c0000;
 }
 /* banner */
 .banner {
-  width: 100%;
+  width: 85%;
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
@@ -636,7 +630,7 @@ html {
   margin-right: 30px;
 }
 .banner img {
-  width: 630px;
+  width: 610px;
   height: 438px;
 }
 .button_img {
@@ -849,7 +843,7 @@ p {
   background-image: url(../images/input_head_phone.png);
   height: 200px;
   border-radius: 10px;
- margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 .email_home_content {
   margin-left: 7%;
@@ -876,7 +870,6 @@ p {
 }
 .email_home_content_left_info {
   margin-left: 20px;
-  width: 410px;
   height: 100px;
   line-height: 30px;
 }
