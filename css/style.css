@@ -85,6 +85,7 @@
     display: flex;
     margin: 20px;
     font-size: 14px;
+    font-weight: 500;
 }
 
 #blog__bestsell__product .product__sell img{
