@@ -15,6 +15,7 @@ main{
     padding: 20px;
     line-height: 30px;
     background-color: #efefef;
+    margin-bottom: 50px;
 }
 .list-categories h3{
     background-color: #6c0000;
@@ -59,4 +60,86 @@ a:hover{
 .more-cate 
 .list-cate-group{
     display: none;
+}
+#column-content ul li{
+    display: inline-block;
+}
+#column-content a{
+    text-decoration: none;
+}
+#column-content .category-refine h3{
+    margin-bottom: 16px;
+}
+#column-content .category-refine ul li a{
+    
+    height: 40px;
+    background-color: #efefef;
+    padding: 10px 20px;
+    font-size: 14px;
+    margin: 0 5px 5px 0;
+    color: black;
+}
+#column-content .category-refine ul li a:hover{
+    background-color: #6c0000;
+    color: white;
+}
+#column-content .category-info{
+    background-color: #6c0000;
+    padding: 10px 15px;
+    font-size: 14px;
+    margin: 40px 0 20px 0;
+}
+#column-content .category-info .btn-group #button-grid i::before{
+    font-family: 'fontawesome';
+    content: "\e913";
+}
+#column-content .category-info .btn-group button{
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    color: #6c0000;
+    border: none;
+}
+#column-content .category-info .category-compane{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#column-content .category-info .category-compane a{
+    color: white;
+}
+#column-content .category-info .category-sorting{
+    display: flex;
+    justify-content: end;
+}
+#column-content .category-info .category-sorting select{
+    outline: none !important;
+    color: black;
+    margin: 0 5px 0 5px;
+    height: 30px;
+    padding: 3px 35px 3px 10px;
+    border: none;
+    font-size: 14px;
+}
+#column-content .category-info .category-sorting .select-limit,.select-sort{
+    position: relative;
+}
+#column-content .category-info .category-sorting .select-limit::after,.select-sort::after{
+    font-family: 'fontawesome';
+    content: '\f107';
+    font-size: 18px;
+    position: absolute;
+    pointer-events: none;
+    color: black;
+    top: 1px;
+    right: 6px;
+    
+
+}
+#column-content .category-info .category-sorting .sort-cat,.limit-cat{
+    display: flex;
+    margin-left: 10px;
+    align-items: center;
+    font-size: 16px;
+    color: white;
 }
