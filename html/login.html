@@ -546,7 +546,7 @@
           </div>
           <div class="col-1"></div>
           <div class="col-6">
-            <form class="content_form_login">
+            <form class="content_form_login" style="display: none;">
               <h2>Login</h2>
               <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
@@ -584,6 +584,66 @@
               <div class="control_button_login">
                 <button type="submit" class="btn btn-primary" onclick="login()">
                   Login
+                </button>
+              </div>
+            </form>
+            <!-- form-register -->
+            <form class="content_form_register" style="height: 550px;">
+              <h2>Register</h2>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Name address</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Name address"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  aria-describedby="emailHelp"
+                  placeholder="Enter email"
+                  required
+                />
+                <small id="emailHelp" class="form-text text-muted"
+                  >We'll never share your email with anyone else.</small
+                >
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  placeholder="Password"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Confirm Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="confirmPassword"
+                  placeholder="Confirm Password"
+                  required
+                />
+              </div>
+              <div class="next_page" style="float: right">
+                <div><a href="./login.html" class="nav-link">Login</a></div>
+              </div>
+              <div class="control_button_login" style="padding-top: 20px">
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  onclick="signup()"
+                >
+                  Sign Up
                 </button>
               </div>
             </form>
