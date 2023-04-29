@@ -1,14 +1,19 @@
 {
-    "account":[
-        {
-            "id":1,
-            "email":"hoang@gmail.com",
-            "password":"12345678"
-        },
-        {
-            "id":2,
-            "email":"thuong@gmail.com",
-            "password":"12345678"
-        }
-    ]
+  "account": [
+    {
+      "id": 1,
+      "email": "hoang@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": 2,
+      "email": "thuong@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "email": "hoang1106@gmail.com",
+      "password": "11062003",
+      "id": 3
+    }
+  ]
 }
