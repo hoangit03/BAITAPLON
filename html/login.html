@@ -558,7 +558,7 @@
                   aria-describedby="emailHelp"
                   placeholder="Enter email"
                   
-                  required
+                  
                 />
                 <div class="error-messages"></div>
                 
@@ -570,7 +570,7 @@
                   class="form-control"
                   id="password"
                   placeholder="Password"
-                  required
+                  
                 />
                 <div class="error-messages"></div>
               </div>
@@ -594,7 +594,7 @@
                   class="form-control"
                   id="name"
                   placeholder="Name address"
-                  required
+                  
                 />
               </div>
               <div class="form-group">
@@ -605,7 +605,7 @@
                   id="email"
                   aria-describedby="emailHelp"
                   placeholder="Enter email"
-                  required
+                  
                 
                  />
                 <div class="error-messages"></div>
@@ -618,7 +618,7 @@
                   class="form-control"
                   id="password"
                   placeholder="Password"
-                  required
+                  
                 />
                 <div class="error-messages"></div>
 
@@ -630,10 +630,11 @@
                   class="form-control"
                   id="confirmPassword"
                   placeholder="Confirm Password"
-                  required
+                 
                 />
                 <div class="error-messages"></div>
               </div>
+              
               
               <button class="next_form" style="float: right">Login</button>
               
@@ -708,6 +709,22 @@
       </div>
     </div>
     
-    <script src="../js/js.js"></script>
+    <script>
+      forms = document.querySelectorAll('#content_login form')
+      for (let index = 0; index < forms.length; index++) {
+        let btnNext_form = forms[index].querySelector('.next_form')
+        btnNext_form.onclick = function(){
+          parentElement = btnNext_form.parentElement
+          parentElement.style.display = 'none'
+          if(index == 0){
+            forms[index+1].style.display = 'block'
+          }
+          else
+            forms[0].style.display = 'block'
+        }
+        
+      }
+    </script>
+    <!-- <script src="../js/js.js"></script> -->
   </body>
 </html>
