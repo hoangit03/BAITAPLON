@@ -7,6 +7,9 @@
 html {
   font-family: "Poppins", sans-serif;
 }
+.show{
+  display: block;
+}
 #content_login{
   margin-bottom: 100px ;
 }
@@ -30,6 +33,7 @@ html {
   padding: 30px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   height: 500px;
+
 }
 #content_form_login h2{
   text-align: center;
@@ -80,14 +84,15 @@ padding: 10px 0;
 .nav-item > a:hover{
   color: #6c0000;
 }
-.register_form,.forgotten,.login_form{
+.next_form,.forgotten{
   border: none;
   background-color: white;
 }
-.register_form:hover,.forgotten:hover,.login_form:hover{
+.next_form:hover,.forgotten:hover{
   color: #6c0000;
 }
 
 .error-messages{
   color: rgb(186, 27, 27);
 }
+
