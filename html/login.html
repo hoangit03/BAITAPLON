@@ -546,7 +546,8 @@
           </div>
           <div class="col-1"></div>
           <div class="col-6">
-            <form class="content_form_login" style="display: none;">
+            <!-- form-login -->
+            <form id="content_form_login">
               <h2>Login</h2>
               <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
@@ -559,9 +560,8 @@
                   
                   required
                 />
-                <small id="emailHelp" class="form-text text-muted"
-                  >We'll never share your email with anyone else.</small
-                >
+                <div class="error-messages"></div>
+                
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
@@ -572,14 +572,11 @@
                   placeholder="Password"
                   required
                 />
+                <div class="error-messages"></div>
               </div>
               <div class="next_page">
-                <div>
-                  <a href="#" class="nav-link" style="padding: 0"
-                    >Forgotten Password</a
-                  >
-                </div>
-                <div><a href="./register.html" class="nav-link">Register</a></div>
+                <button class="forgotten">Forgotten Password</button>
+                <button class="register_form">Register</button>
               </div>
               <div class="control_button_login">
                 <button type="submit" class="btn btn-primary" onclick="login()">
@@ -588,7 +585,7 @@
               </div>
             </form>
             <!-- form-register -->
-            <form class="content_form_register" style="height: 550px;">
+            <form id="content_form_register" style="height: 550px;">
               <h2>Register</h2>
               <div class="form-group">
                 <label for="exampleInputPassword1">Name address</label>
@@ -609,10 +606,10 @@
                   aria-describedby="emailHelp"
                   placeholder="Enter email"
                   required
-                />
-                <small id="emailHelp" class="form-text text-muted"
-                  >We'll never share your email with anyone else.</small
-                >
+                
+                 />
+                <div class="error-messages"></div>
+
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
@@ -623,6 +620,8 @@
                   placeholder="Password"
                   required
                 />
+                <div class="error-messages"></div>
+
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Confirm Password</label>
@@ -633,9 +632,10 @@
                   placeholder="Confirm Password"
                   required
                 />
+                <div class="error-messages"></div>
               </div>
               <div class="next_page" style="float: right">
-                <div><a href="./login.html" class="nav-link">Login</a></div>
+                <button class="login_form">Login</button>
               </div>
               <div class="control_button_login" style="padding-top: 20px">
                 <button
@@ -707,6 +707,6 @@
         <p>Create by Huy Hoang and Van Thuong</p>
       </div>
     </div>
-    <script src="../css/js.js"></script>
+    <script src="../js/js.js"></script>
   </body>
 </html>

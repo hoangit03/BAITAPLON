@@ -1,3 +1,5 @@
+// Chức năng singup
+// --------------------------------------------------------------------
 function signup(e) {
  
   var name = document.getElementById("name").value;
@@ -28,6 +30,9 @@ function signup(e) {
 //         var modal = document.querySelector(".modal");
 //         modal.classList.remove("show");
 // })
+
+// Chức năng login
+// ------------------------------------------------------------------------
 function login() {
   var email = document.getElementById("email").value;
   var password = document.getElementById("password").value;

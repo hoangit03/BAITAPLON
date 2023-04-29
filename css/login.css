@@ -26,15 +26,15 @@ html {
 
   border-top:1px solid #6c0000 ;
 }
-.content_form_login,.content_form_register{
+#content_form_login,#content_form_register{
   padding: 30px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   height: 500px;
 }
-.content_form_login h2{
+#content_form_login h2{
   text-align: center;
 }
-.content_form_login .next_page{
+#content_form_login .next_page{
   margin-left: 0;
   padding-top: 20px;
   display: flex;
@@ -42,10 +42,10 @@ html {
   box-sizing: border-box;
 }
 
-.content_form_login .next_page a{
+#content_form_login .next_page a{
   font-size: 18px;
 }
-.content_form_login .next_page a:hover{
+#content_form_login .next_page a:hover{
   font-size: 20px;
   color: #6c0000;
 }
@@ -79,4 +79,15 @@ padding: 10px 0;
 }
 .nav-item > a:hover{
   color: #6c0000;
+}
+.register_form,.forgotten,.login_form{
+  border: none;
+  background-color: white;
+}
+.register_form:hover,.forgotten:hover,.login_form:hover{
+  color: #6c0000;
+}
+
+.error-messages{
+  color: rgb(186, 27, 27);
 }
