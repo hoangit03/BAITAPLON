@@ -162,13 +162,12 @@ function LoginPage(){
 // ---------------------------------------------------------------------------
   nextPage(forms);
 }
-LoginPage();
+
 // ---------
 
 
-// Home fixed
 
-ScrollMenu();
+
 
 function ScrollMenu(){
   window.addEventListener('scroll',function(){
@@ -183,19 +182,39 @@ function ScrollMenu(){
 function ShowProducts(){
   getProduct(renderProducts);
 }
-
+// get thông tin sản phẩm
 function renderProducts(products){
-  let listProduct = document.querySelector('#content .content_product')
-  var htmlproduct = products.map(product=>{
+  
+  let productItems = document.querySelectorAll('.product_item')
+  productItems.forEach((productItem,index)=>{
+    if(index == 0){
+      productItem.classList.add('show')
+      renderProductItem(products,productItem,"new")
+    }
+    else if(index == 1){
+      renderProductItem(products,productItem,"Popular")
+    }
+    else
+    renderProductItem(products,productItem,"Bestseller")
+  })
+}
+
+// render product các thông tin sản phẩm
+
+function renderProductItem(products,productItem,info){
+  var pros = products.filter(product=>{
+    return product.info == info
+  })
+  let htmlproducts = pros.map(pro=>{
     return `
-    <div class="content_product_colum_number show">
-      <div><img src="${product.url}" alt="" /></div>
+    <div class="content_product_colum_number">
+      <div><img src="${pro.url}" alt="" /></div>
       <div class="product_info">
         <div class="name_img">
-          <a href=""><h5>${product.name}</h5></a>
+          <a href=""><h5>${pro.name}</h5></a>
         </div>
         <div class="product_money">
-          <i class="bi bi-currency-dollar"></i><b>${product.price}</b>
+          <i class="bi bi-currency-dollar"></i><b>${pro.price}</b>
         </div>
         <div class="rating">
           <i class="bi bi-star"></i><i class="bi bi-star"></i
@@ -236,8 +255,28 @@ function renderProducts(products){
     </div>
     `;
   })
-  listProduct.innerHTML = htmlproduct.join('')
+  productItem.innerHTML = htmlproducts.join('')
 }
+
+
+function handleTypeProduct(){
+  let btn_groups = document.querySelectorAll('.btn-group button')
+  let product_items = document.querySelectorAll('.product_item')
+  btn_groups.forEach((btn_group,index)=>{
+    btn_group.addEventListener('click',function(){
+      let btn_active = document.querySelector('.btn-group .active')
+      let item_show = document.querySelector('.content_product .show')
+      btn_active.classList.remove('active')
+      item_show.classList.remove('show')
+      this.classList.add('active')
+      product_items[index].classList.add('show')
+      
+    })
+  })
+
+}
+
+// lấy product từ API
 
 function getProduct(callback){
   fetch(productAPI)
@@ -246,4 +285,17 @@ function getProduct(callback){
     })
     .then(callback)
 }
+
+// Xử lý hiển thị loại product
+
+handleTypeProduct();
+
+// hiển thị dữ liệu product
 ShowProducts();
+
+
+// xử lý login-register
+LoginPage();
+
+// xử lý header fixed
+ScrollMenu();
