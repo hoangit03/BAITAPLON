@@ -542,7 +542,12 @@ html {
   border-color: white;
   cursor: auto;
 }
+.btn-primary.active{
+  background-color: #6c0000;
+  border: none;
+}
 
+.btn-primary:focus,
 .btn-primary:active,
 .btn-primary:visited {
   background-color: #6c0000 !important;
@@ -557,11 +562,13 @@ html {
 .content_product_colum_number {
   width: 215px;
   height: 430px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin-right: 80px;
+  display: none;
   position: relative;
   box-sizing: border-box;
+}
+.show{
+  display: block;
 }
 .content_product_colum_number img {
   width: 234px;
