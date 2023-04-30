@@ -492,12 +492,20 @@ html {
   justify-content: space-between;
   margin-top: 20px;
 }
+.move button{
+  border: none;
+}
 .move_left {
   height: 40px;
   line-height: 40px;
   text-align: center;
   width: 40px;
   background-color: #6c0000;
+  transition: 1s;
+}
+.move_left:hover{
+  background-color: #000;
+  transition: 1s;
 }
 .move_left i {
   color: #fff;
