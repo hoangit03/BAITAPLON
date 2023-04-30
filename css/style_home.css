@@ -13,6 +13,31 @@ html {
   justify-content: space-around;
   width: 100%;
 }
+
+.slider-scroll{
+  margin-top: 100px;
+}
+
+@keyframes fadeIndown{
+  0%{
+    opacity: 0.1;
+  }
+  50%{
+    opacity: 0.5;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+.header-fixed{
+  position: fixed;
+  top: 0;
+  border: 2px solid #efefef;
+  background-color: #ffffff;
+  z-index: 9;
+  animation: fadeIndown 1s ease-out forwards;
+}
+
 .header_logo .logo {
   width: 170px;
   height: 70px;

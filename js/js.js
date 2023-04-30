@@ -163,4 +163,18 @@ function LoginPage(){
   nextPage(forms);
 }
 LoginPage();
-// --------------------------------------------------------------------
+// ---------
+
+
+// Home fixed
+
+ScrollMenu();
+
+function ScrollMenu(){
+  window.addEventListener('scroll',function(){
+    var header = document.getElementById('header');
+    var slider = document.getElementById('slider')
+    header.classList.toggle('header-fixed',window.scrollY > 800)
+    slider.classList.toggle('slider-scroll',window.scrollY > 800)
+  })
+}
