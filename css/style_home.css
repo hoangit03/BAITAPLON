@@ -562,7 +562,7 @@ html {
 }
 /* content_product */
 .content_product {
-  margin: 30px 0;
+  margin: 50px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -652,6 +652,10 @@ html {
   display: flex;
   justify-content: space-between;
   margin-right: 20px;
+}
+.name_img h5{
+  font-size: 17px;
+  font-weight: 500;
 }
 .name_img:hover h5 {
   color: #6c0000;

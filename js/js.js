@@ -1,7 +1,7 @@
 
 
 var accountAPI = 'http://localhost:3000/account';
-
+var productAPI = 'http://localhost:3000/products'
 // Function getAccount
 function getAccount(callback){
   fetch(accountAPI)
@@ -178,3 +178,72 @@ function ScrollMenu(){
     slider.classList.toggle('slider-scroll',window.scrollY > 600)
   })
 }
+
+// Get Products
+function ShowProducts(){
+  getProduct(renderProducts);
+}
+
+function renderProducts(products){
+  let listProduct = document.querySelector('#content .content_product')
+  var htmlproduct = products.map(product=>{
+    return `
+    <div class="content_product_colum_number show">
+      <div><img src="${product.url}" alt="" /></div>
+      <div class="product_info">
+        <div class="name_img">
+          <a href=""><h5>${product.name}</h5></a>
+        </div>
+        <div class="product_money">
+          <i class="bi bi-currency-dollar"></i><b>${product.price}</b>
+        </div>
+        <div class="rating">
+          <i class="bi bi-star"></i><i class="bi bi-star"></i
+          ><i class="bi bi-star"></i><i class="bi bi-star"></i
+          ><i class="bi bi-star"></i>
+        </div>
+        <div class="product_buy">
+          <div class="buy_item">
+            <div>
+              <a href=""><i class="bi bi-bag-fill"> </i></a>
+            </div>
+            <div class="buy_item_link"><p>Add to card</p></div>
+            <div class="buy_squence"></div>
+          </div>
+          <div class="buy_item">
+            <div>
+              <a href=""><i class="bi bi-heart-fill"></i></a>
+            </div>
+            <div class="buy_item_link"><p>Add to Wishlist</p></div>
+            <div class="buy_squence"></div>
+          </div>
+          <div class="buy_item">
+            <div>
+              <a href=""><i class="bi bi-eye-fill"></i></a>
+            </div>
+            <div class="buy_item_link"><p>Quickview</p></div>
+            <div class="buy_squence"></div>
+          </div>
+          <div class="buy_item">
+            <div>
+              <a href=""><i class="bi bi-shuffle"></i></a>
+            </div>
+            <div class="buy_item_link"><p>Compare</p></div>
+            <div class="buy_squence"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    `;
+  })
+  listProduct.innerHTML = htmlproduct.join('')
+}
+
+function getProduct(callback){
+  fetch(productAPI)
+    .then(function(response){
+      return response.json();
+    })
+    .then(callback)
+}
+ShowProducts();
