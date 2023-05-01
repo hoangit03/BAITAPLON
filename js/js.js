@@ -296,7 +296,114 @@ function handleTypeProduct(){
 // render Order Product
 function renderOrderProduct(){
   let value = localStorage.getItem('product')
+  let proJson = localStorage.getItem('productType')
   const product_content = document.querySelector('.product-content')
+  value = JSON.parse(value)
+  let products = JSON.parse(proJson)
+  infoProductImg(value)
+  let htmlProductInfo = `
+  <div class="row mb-3">
+    <div class="col-md-6 product-left">
+      <div class="product-img">
+        <img src="${value.url_big}" style="width: 100%;" alt="">
+        <div class="list-item-img">
+          <div class="owl-item">
+            <img src="${products[0].url_big}" alt="">
+          </div>
+          <div class="owl-item">
+            <img src="${products[1].url_big}" alt="">
+          </div>
+          <div class="owl-item">
+            <img src="${products[2].url_big}" alt="">
+          </div>
+          <div class="owl-item">
+            <img src="${products[3].url_big}" alt="">
+          </div>
+          <div class="">
+            <button class="nav-left">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="nav-right">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class="col-md-6 product-right">
+        <div class="product-title">${value.name}</div>
+        <div class="rating">
+          <div class="product-rating">
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <a href="#" class="product-review">0 Reviews</a>
+          <a href="#" class="product-comment">
+            <i class="fa-solid fa-pencil"></i>
+            Write a review
+          </a>
+        </div>
+        <hr>
+        <ul class="list-dics">
+          <li>
+            <span class="dics">Brand:</span>
+            <a class="dics1" href="#">Apple</a>
+          </li>
+          <li>
+            <span class="dics">Product code:</span>
+            <span class="dics1">product ${value.id}</span>
+          </li>
+          <li>
+            <span class="dics">Availability:</span>
+            <span class="dics1">In Stock</span>
+          </li>
+        </ul>
+        <hr>
+        <ul class="product-price">
+          <li>
+            <h2>$${value.price}.00</h2>
+          </li>
+          <li>
+            Ex Tax: $${value.price}.00
+          </li>
+        </ul>
+        <hr>
+        <div class="quantity-addcart">
+          <div class="pro-quantity">
+            <label for="">Qty</label>
+            <div class="btn-quantity">
+              <button class="mines"><i class="fa-sharp fa-solid fa-minus"></i></button>
+              <input type="text" name="quantity" value="1" id="input-quantity">
+              <button class="plus"><i class="fa-sharp fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+          <div class="pro-addcart">
+            <button type="submit" id="button-cart" class="btn-add-cart">
+              <i class="fa-solid fa-bag-shopping"></i>
+              <span>Add To Cart</span>
+            </button>
+          </div>
+        </div>
+        <div class="post-cart">
+          <button type="submit" class="add-list">
+            <i class="fa-solid fa-heart"></i>
+            <span>ADD TO WISH LIST</span>
+          </button>
+          <button type="submit" class="compare">
+            <i class="fa-sharp fa-solid fa-shuffle"></i>
+            <span>COMPARE THIS PRODUCT</span>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  `;
+  product_content.innerHTML = htmlProductInfo
+  localStorage.clear()
 }
 
 
@@ -322,6 +429,7 @@ function clickProduct(products){
       protypes.forEach((protype,index)=>{
         protype.onclick = function(){
           localStorage.setItem('product',JSON.stringify(prosNew[index]))
+          localStorage.setItem('productType',JSON.stringify(prosNew))
           console.log(localStorage.getItem('product'));
           window.location = './product.html'
         }
@@ -332,7 +440,9 @@ function clickProduct(products){
       protypes.forEach((protype,index)=>{
         protype.onclick = function(){
           localStorage.setItem('product',JSON.stringify(prosPopu[index]))
+          localStorage.setItem('productType',JSON.stringify(prosPopu))
           window.location = './product.html'
+
         }
       })
       
@@ -343,17 +453,30 @@ function clickProduct(products){
         protype.onclick = function(){
           localStorage.setItem('product',JSON.stringify(prosBest[index]))
           console.log(localStorage.getItem('product'));
+          localStorage.setItem('productType',JSON.stringify(prosBest))
           window.location = './product.html'
+
         }
       })
       
     }
   })
 }
+function infoProductImg(value){
+  let imgPro = document.querySelector('#img__blog')
+  let html = `
+    <h1>${value.name}</h1>
+    <div>
+        <a href="../html/index.html"><i class="fa-solid fa-house"></i></a>
+        <a>${value.name}</a>
+    </div>
+  `
+  imgPro.innerHTML = html
+}
 
 function orderProduct() {
   getProduct(clickProduct);
-  renderOrderProduct()
+  renderOrderProduct();
 }
 
 // Xử lý hiển thị loại product
