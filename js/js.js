@@ -172,9 +172,13 @@ function LoginPage(){
 function ScrollMenu(){
   window.addEventListener('scroll',function(){
     var header = document.getElementById('header');
-    var slider = document.getElementById('slider')
+    var slider = document.getElementById('slider');
+    var img_blog = document.getElementById('img__blog');
     header.classList.toggle('header-fixed',window.scrollY > 600)
-    slider.classList.toggle('slider-scroll',window.scrollY > 600)
+    if(slider)
+      slider.classList.toggle('slider-scroll',window.scrollY > 600)
+    if(img_blog)
+      img_blog.classList.toggle('slider-scroll',window.scrollY > 600)
   })
 }
 
@@ -189,22 +193,35 @@ function renderProducts(products){
   productItems.forEach((productItem,index)=>{
     if(index == 0){
       productItem.classList.add('show')
-      renderProductItem(products,productItem,"new")
+      let pros = typeProduct(products,"new")
+      renderProductItem(pros,productItem)
     }
     else if(index == 1){
-      renderProductItem(products,productItem,"Popular")
+      let pros = typeProduct(products,"Popular")
+      renderProductItem(pros,productItem)
     }
-    else
-    renderProductItem(products,productItem,"Bestseller")
+    else{
+      let pros = typeProduct(products,"Bestseller")
+      renderProductItem(pros,productItem)
+    }
   })
 }
 
-// render product các thông tin sản phẩm
 
-function renderProductItem(products,productItem,info){
+// Tách thông tin product
+
+function typeProduct(products,info){
   var pros = products.filter(product=>{
     return product.info == info
   })
+  return pros;
+}
+
+
+// render product các thông tin sản phẩm
+
+function renderProductItem(pros,productItem){
+  
   let htmlproducts = pros.map(pro=>{
     return `
     <div class="content_product_colum_number">
@@ -214,7 +231,7 @@ function renderProductItem(products,productItem,info){
           <a href=""><h5>${pro.name}</h5></a>
         </div>
         <div class="product_money">
-          <i class="bi bi-currency-dollar"></i><b>${pro.price}</b>
+          <i class="bi bi-currency-dollar"></i><b>${pro.price}.00</b>
         </div>
         <div class="rating">
           <i class="bi bi-star"></i><i class="bi bi-star"></i
@@ -276,6 +293,13 @@ function handleTypeProduct(){
 
 }
 
+// render Order Product
+function renderOrderProduct(){
+  let value = localStorage.getItem('product')
+  const product_content = document.querySelector('.product-content')
+}
+
+
 // lấy product từ API
 
 function getProduct(callback){
@@ -284,6 +308,52 @@ function getProduct(callback){
       return response.json();
     })
     .then(callback)
+}
+
+// Xử lý product khi click
+function clickProduct(products){
+  let prosNew = typeProduct(products,"new")
+  let prosPopu = typeProduct(products,"Popular")
+  let prosBest = typeProduct(products,"Bestseller")
+  let productItems = document.querySelectorAll('.product_item')
+  productItems.forEach((productItem,index)=>{
+    if(index == 0){
+      let protypes = productItem.querySelectorAll('.content_product_colum_number')
+      protypes.forEach((protype,index)=>{
+        protype.onclick = function(){
+          localStorage.setItem('product',JSON.stringify(prosNew[index]))
+          console.log(localStorage.getItem('product'));
+          window.location = './product.html'
+        }
+      })
+    }
+    else if(index == 1){
+      let protypes = productItem.querySelectorAll('.content_product_colum_number')
+      protypes.forEach((protype,index)=>{
+        protype.onclick = function(){
+          localStorage.setItem('product',JSON.stringify(prosPopu[index]))
+          window.location = './product.html'
+        }
+      })
+      
+    }
+    else{
+      let protypes = productItem.querySelectorAll('.content_product_colum_number')
+      protypes.forEach((protype,index)=>{
+        protype.onclick = function(){
+          localStorage.setItem('product',JSON.stringify(prosBest[index]))
+          console.log(localStorage.getItem('product'));
+          window.location = './product.html'
+        }
+      })
+      
+    }
+  })
+}
+
+function orderProduct() {
+  getProduct(clickProduct);
+  renderOrderProduct()
 }
 
 // Xử lý hiển thị loại product
@@ -299,3 +369,8 @@ LoginPage();
 
 // xử lý header fixed
 ScrollMenu();
+
+
+// Order product
+
+orderProduct();
