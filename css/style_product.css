@@ -199,10 +199,14 @@
     width: 150px;
     text-align: center;
     line-height: 40px;
-    background: white;
+    background-color: white;
     margin: 10px;
 }
-.description-reviews .navdes-rev .active,.desc:hover,.rvw:hover{
+.description-reviews .navdes-rev .desc:hover,.rvw:hover{
+    background-color: #202020;
+    color: white;
+}
+.description-reviews .navdes-rev .active{
     background-color: #202020;
     color: white;
 }
@@ -219,11 +223,12 @@
 .description-reviews .pro-cnt strong{
     font-weight: 600;
 }
-.description-reviews .pro-cnt .show{
-    display: block;
-}
+
 .description-reviews .pro-cnt .tab-desc,.tab-rvw{
     display: none;
+}
+.description-reviews .pro-cnt .show{
+    display: block;
 }
 .description-reviews .pro-cnt .tab-rvw .write-review{
     padding: 30px;

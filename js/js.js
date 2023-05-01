@@ -474,9 +474,28 @@ function infoProductImg(value){
   imgPro.innerHTML = html
 }
 
+function handleRewDesc(){
+  let btn_rew_desc = document.querySelectorAll('.navdes-rev div')
+  let pro_cnt = document.querySelectorAll('.pro-cnt > div')
+  btn_rew_desc.forEach((btn,index)=>{
+    btn.addEventListener('click',function(){
+      let btn_active = document.querySelector('.navdes-rev div.active')
+      let pro_show = document.querySelector('.pro-cnt > div.show')
+      btn_active.classList.remove('active')
+      pro_show.classList.remove('show')
+      this.classList.add('active')
+      pro_cnt[index].classList.add('show')
+
+
+    })
+  })
+}
+
+
 function orderProduct() {
   getProduct(clickProduct);
   renderOrderProduct();
+  handleRewDesc();
 }
 
 // Xử lý hiển thị loại product
