@@ -28,7 +28,7 @@
       </div>
       <div class="header_menu">
         <div class="header_menu_home">
-          <a href="./home.html" style="text-decoration: none">Home</a>
+          <a href="./index.html" style="text-decoration: none">Home</a>
         </div>
         <!-- shop -->
         <div class="header_menu_shop">
@@ -713,7 +713,7 @@
       forms = document.querySelectorAll('#content_login form')
       for (let index = 0; index < forms.length; index++) {
         let btnNext_form = forms[index].querySelector('.next_form')
-        btnNext_form.onclick = function(){
+        btnNext_form.onclick = function(e){
           parentElement = btnNext_form.parentElement
           parentElement.style.display = 'none'
           if(index == 0){
@@ -722,6 +722,8 @@
           else
             forms[0].style.display = 'block'
         }
+        e.preventDefault()
+
         
       }
     </script>

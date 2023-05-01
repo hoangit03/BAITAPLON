@@ -3,6 +3,9 @@
   padding: 0;
   margin: 0;
 }
+/* pc */
+/* tablet */
+
 html {
   font-family: "Poppins", sans-serif;
 }
@@ -10,21 +13,30 @@ html {
 #header {
   height: 100px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
+  padding: 0 100px;
 }
 .header_logo .logo {
-  width: 170px;
-  height: 70px;
+  max-width: 170px;
+  width: 100%;
+  object-fit: cover;
 }
 .header_logo {
   display: flex;
   align-items: center;
 }
+.header_right-mobile {
+  align-items: center;
+  display: none;
+  font-size: 32px;
+}
+.num,
 .header_menu {
   display: flex;
   justify-content: space-evenly;
-  width: 45%;
+  gap: 24px;
+  height: 100px;
   line-height: 100px;
   position: relative;
 }
@@ -46,7 +58,7 @@ html {
 }
 .header_right {
   display: flex;
-  width: 10%;
+  gap: 16px;
   justify-content: space-between;
   align-items: center;
 }
@@ -55,6 +67,7 @@ html {
   font-size: 18px;
   color: white;
 }
+.header_right-mobile,
 .header_right .icon {
   position: relative;
   display: flex;
@@ -65,10 +78,113 @@ html {
   color: #fff;
   border-radius: 100%;
   align-items: center;
+  flex: 1;
+}
+.header_right-mobile {
+  display: none;
 }
 .header_right .icon:hover {
   cursor: pointer;
   background-color: #6c0000;
+}
+.header-menu-mobile-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 255px;
+  background-color: #fff;
+  z-index: 9;
+  transform: translateX(-100%);
+  transition: 0.3s;
+}
+.header-menu-mobile.show .header-menu-mobile-container {
+  transform: translateX(0);
+}
+.header-menu-list_item {
+  display: flex;
+  width: 100%;
+}
+.header-menu-list_link {
+  font-weight: 700;
+  padding: 10px 15px;
+  border-bottom: 1px solid #d9d9d9;
+  min-height: 40px;
+  max-height: 40px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.header-menu-list_link.show {
+  transition: all 0.3s ease-in-out;
+  height: 280px;
+  min-height: 280px;
+  overflow-y: auto;
+}
+
+.header-menu-list_link a {
+  display: flex;
+  width: 100%;
+  text-decoration: none;
+  color: #000;
+}
+
+.header-menu-list_link .header-menu-list_icon {
+  width: 22px;
+  height: 20px;
+  background-color: #6c0000;
+  border-radius: 5px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+.header-menu-list_level2 {
+  margin-top: 16px;
+  list-style: none;
+  font-weight: 400;
+  padding: 0;
+}
+
+.header-menu-list_level2-link {
+  padding-bottom: 8px;
+}
+
+.header-menu-list .offer,
+.header-menu-list .hot {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 0;
+  transform: translate(0);
+  line-height: 21px;
+  margin-left: 8px;
+}
+.header-menu-list .squence {
+  display: none;
+}
+.header-menu-close {
+  font-size: 36px;
+  font-weight: 900;
+  text-align: right;
+  padding: 8px;
+}
+.header-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 8;
+  opacity: 0;
+  visibility: hidden;
+}
+.header-menu-mobile.show .header-menu-overlay {
+  opacity: 1;
+  visibility: visible;
 }
 .numberbuy {
   position: absolute;
@@ -302,7 +418,7 @@ html {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
-  margin-left: 10px;
+ 
   box-sizing: border-box;
   margin-top: 20px;
 }
@@ -375,10 +491,12 @@ html {
 #slider img {
   height: 650px;
   width: 100%;
+  max-width: 100%;
 }
 .slider_card {
   position: absolute;
   top: 25%;
+
   left: 150px;
 }
 .btn {
@@ -387,6 +505,12 @@ html {
 }
 .slider_slogan {
   color: white;
+}
+.slider_slogan_title {
+  padding: 10px 0 10px 0;
+  margin: 0;
+  display: flex;
+  justify-content: start;
 }
 .slider_slogan_document {
   max-width: 560px;
@@ -452,6 +576,11 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.item_main_word{
+      display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 /* topProduct */
 .content_topProduct {
@@ -556,7 +685,6 @@ html {
 .content_product_colum_number:hover .product_buy {
   display: flex;
   justify-content: space-between;
-  
 }
 .product_buy {
   width: 85%;
