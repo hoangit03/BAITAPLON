@@ -199,10 +199,14 @@
     width: 150px;
     text-align: center;
     line-height: 40px;
-    background: white;
+    background-color: white;
     margin: 10px;
 }
-.description-reviews .navdes-rev .active,.desc:hover,.rvw:hover{
+.description-reviews .navdes-rev .desc:hover,.rvw:hover{
+    background-color: #202020;
+    color: white;
+}
+.description-reviews .navdes-rev .active{
     background-color: #202020;
     color: white;
 }
@@ -219,11 +223,12 @@
 .description-reviews .pro-cnt strong{
     font-weight: 600;
 }
-.description-reviews .pro-cnt .show{
-    display: block;
-}
+
 .description-reviews .pro-cnt .tab-desc,.tab-rvw{
     display: none;
+}
+.description-reviews .pro-cnt .show{
+    display: block;
 }
 .description-reviews .pro-cnt .tab-rvw .write-review{
     padding: 30px;
@@ -258,7 +263,10 @@
     color: #e61010;
     margin-right: 5px;
 }
-
+.pro-listpro{
+    overflow: hidden;
+    margin-top: 50px;
+}
 .description-reviews 
 .pro-cnt 
 .tab-rvw 
@@ -339,7 +347,7 @@ textarea{
     transition: 1s;
 }
 .pro-listpro .content_product_colum{
-    width: 99%;
+    width: 100%;
 }
 .pro-related{
     margin-bottom: 80px;

@@ -8,7 +8,6 @@ function getAccount(callback) {
     })
     .then(callback);
 }
-
 function checkLogin(form, accuonts) {
   let btn_submit = form.querySelector('button[type="submit"]');
   let inputEmail = form.querySelector('input[type="email"]');
