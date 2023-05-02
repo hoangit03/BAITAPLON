@@ -563,7 +563,7 @@ function shopContent(products) {
 }
 
 function showShop(products) {
-  let show = document.querySelector(".shop_content_link");
+  let show = document.querySelectorAll(".shop_content_link");
   let showBone = showProduct(products, "Bone Condition");
   let showWireless = showProduct(products, "Wireless Earbuds");
   let showOver = showProduct(products, "Over-Ear Headphones");
@@ -573,7 +573,8 @@ function showShop(products) {
   let html3 = shopContent(showOver);
   let html4 = shopContent(showWired);
   let html = html1 + html2 + html3 + html4;
-  show.innerHTML = html;
+  show[0].innerHTML = html;
+  show[1].innerHTML = html;
 }
 
 function showHeader() {
@@ -614,43 +615,46 @@ ScrollMenu();
 
 orderProduct();
 
+
 // Thương
-const menuMobile = document.querySelector(".header-menu-mobile");
-const menuBtnClose = document.querySelector(".header-menu-close");
-const menuIcon = document.querySelector(".header_right-mobile");
-const btnPlus = document.querySelectorAll(".header-menu-list_icon");
-const menuItems = document.querySelectorAll(".header-menu-list_link");
+function showHeaderMobile(){
+  const menuMobile = document.querySelector(".header-menu-mobile");
+  const menuBtnClose = document.querySelector(".header-menu-close");
+  const menuIcon = document.querySelector(".header_right-mobile");
+  const btnPlus = document.querySelectorAll(".header-menu-list_icon");
+  const menuItems = document.querySelectorAll(".header-menu-list_link");
 
-menuIcon.onclick = () => menuMobile.classList.add("show");
-menuBtnClose.onclick = () => menuMobile.classList.remove("show");
+  menuIcon.onclick = () => menuMobile.classList.add("show");
+  menuBtnClose.onclick = () => menuMobile.classList.remove("show");
 
-btnPlus.forEach((btn, index) => {
-  btn.onclick = () => menuItems[index + 1].classList.toggle("show");
-});
-
-$(document).ready(function () {
-  $(".content_lastest_blogs").slick({
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    responsive: [
-      {
-        breakpoint: 576,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+  btnPlus.forEach((btn, index) => {
+    btn.onclick = () => menuItems[index + 1].classList.toggle("show");
   });
-});
-const u = document.querySelector(".aea");
-const g = document.querySelector(".footer_quali");
-u.onclick = () => g.classList.toggle("show");
+
+  $(document).ready(function () {
+    $(".content_lastest_blogs").slick({
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      responsive: [
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
+      ],
+    });
+  });
+  const u = document.querySelector(".aea");
+  const g = document.querySelector(".footer_quali");
+  u.onclick = () => g.classList.toggle("show");
+}
 
