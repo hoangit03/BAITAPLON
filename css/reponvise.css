@@ -330,11 +330,19 @@
    
     overflow: hidden;
     transition: 0.5s;
+       
   }
   .footer_quali.show {
     height: auto;
     display: block;
+
    
-    
   }
+   .footer_quali div{
+    padding: 0;
+   }
+   .contact{
+    width: 100%;
+     border-bottom:1px solid whitesmoke;
+   }
 }

@@ -1,43 +1,43 @@
 
 
+
 var accountAPI = 'http://localhost:3000/account';
 var productAPI = 'http://localhost:3000/products';
 var cartAPI = 'http://localhost:3000/cart ';
+
 // Function getAccount
 function getAccount(callback){
   fetch(accountAPI)
     .then(function(response){
       return response.json();
     })
-    .then(callback)
+    .then(callback);
 }
 
+function checkLogin(form, accuonts) {
+  let btn_submit = form.querySelector('button[type="submit"]');
+  let inputEmail = form.querySelector('input[type="email"]');
+  let inputPass = form.querySelector('input[type="password"]');
+  inputEmail.onfocus = function () {
+    let error = this.parentElement.querySelector(".error-messages");
+    error.innerHTML = "";
+  };
 
-function checkLogin(form,accuonts){
-  let btn_submit =  form.querySelector('button[type="submit"]')
-  let inputEmail = form.querySelector('input[type="email"]')
-  let inputPass = form.querySelector('input[type="password"]')
-  inputEmail.onfocus = function(){
-    let error = this.parentElement.querySelector('.error-messages')
-    error.innerHTML = ""
-  }
-  
-  btn_submit.addEventListener('click',function(){
+  btn_submit.addEventListener("click", function () {
     event.preventDefault();
-    email = inputEmail.value
-    pass = inputPass.value
-    accuonts.forEach(accuont=>{
-      if(accuont.email == email && accuont.password == pass){
-        window.location = './index.html'
+    email = inputEmail.value;
+    pass = inputPass.value;
+    accuonts.forEach((accuont) => {
+      if (accuont.email == email && accuont.password == pass) {
+        window.location = "./index.html";
+      } else {
+        let error = inputEmail.parentElement.querySelector(".error-messages");
+        error.innerHTML =
+          "Tài khoản hoặc mật khẩu không chính xác. Vui lòng đăng nhập lại!";
+        inputPass.value = "";
       }
-      else{
-        let error = inputEmail.parentElement.querySelector('.error-messages')
-        error.innerHTML = 'Tài khoản hoặc mật khẩu không chính xác. Vui lòng đăng nhập lại!'
-        inputPass.value = ""
-      }
-    })
-    
-  })
+    });
+  });
 }
 
 
@@ -116,16 +116,13 @@ function checkRegister(form,accuonts){
     if(dk == errors.length){
       var data = {
         email: inputEmail.value,
-        password: inputPass.value
-      }
-      createAccount(data,accountAPI);
+        password: inputPass.value,
+      };
+      createAccount(data, accountAPI);
     }
     
   })
-  
-
 }
-
 function createAccount(data,API){
   var option = {
     method: 'POST',
@@ -138,7 +135,6 @@ function createAccount(data,API){
     .then(function(data){
       location.reload();
     })
-
 }
 
 function checkEmail(value){
@@ -147,74 +143,63 @@ function checkEmail(value){
 }
 
 
-
 // ---------
 
-
-
-
-
-function ScrollMenu(){
-  window.addEventListener('scroll',function(){
-    var header = document.getElementById('header');
-    var slider = document.getElementById('slider');
-    var img_blog = document.getElementById('img__blog');
-    header.classList.toggle('header-fixed',window.scrollY > 600)
-    if(slider)
-      slider.classList.toggle('slider-scroll',window.scrollY > 600)
-    if(img_blog)
-      img_blog.classList.toggle('slider-scroll',window.scrollY > 600)
-  })
+function ScrollMenu() {
+  window.addEventListener("scroll", function () {
+    var header = document.getElementById("header");
+    var slider = document.getElementById("slider");
+    var img_blog = document.getElementById("img__blog");
+    header.classList.toggle("header-fixed", window.scrollY > 600);
+    if (slider) slider.classList.toggle("slider-scroll", window.scrollY > 600);
+    if (img_blog)
+      img_blog.classList.toggle("slider-scroll", window.scrollY > 600);
+  });
 }
 
 // Get Products
-function ShowProducts(){
+function ShowProducts() {
   getProduct(renderProducts);
 }
 // get thông tin sản phẩm
-function renderProducts(products){
-  
-  let productItems = document.querySelectorAll('.product_item')
-  productItems.forEach((productItem,index)=>{
-    if(index == 0){
-      productItem.classList.add('show')
-      let pros = typeProduct(products,"new")
-      renderProductItem(pros,productItem)
+function renderProducts(products) {
+  let productItems = document.querySelectorAll(".product_item");
+  productItems.forEach((productItem, index) => {
+    if (index == 0) {
+      productItem.classList.add("show");
+      let pros = typeProduct(products, "new");
+      renderProductItem(pros, productItem);
+    } else if (index == 1) {
+      let pros = typeProduct(products, "Popular");
+      renderProductItem(pros, productItem);
+    } else {
+      let pros = typeProduct(products, "Bestseller");
+      renderProductItem(pros, productItem);
     }
-    else if(index == 1){
-      let pros = typeProduct(products,"Popular")
-      renderProductItem(pros,productItem)
-    }
-    else{
-      let pros = typeProduct(products,"Bestseller")
-      renderProductItem(pros,productItem)
-    }
-  })
+  });
 }
-
 
 // Tách thông tin product
 
-function typeProduct(products,info){
-  var pros = products.filter(product=>{
-    return product.info == info
-  })
+function typeProduct(products, info) {
+  var pros = products.filter((product) => {
+    return product.info == info;
+  });
   return pros;
 }
 
-function showProduct(products,shop){
-  var pros = products.filter(product=>{
-    return product.shop == shop
-  })
+function showProduct(products, shop) {
+  var pros = products.filter((product) => {
+    return product.shop == shop;
+  });
   return pros;
 }
-
 
 // render product các thông tin sản phẩm
 
-function renderProductItem(pros,productItem){
-  if(productItem){
-    let htmlproducts = pros.map(pro=>{
+function renderProductItem(pros, productItem) {
+  if (productItem) {
+    let htmlproducts = pros.map((pro) => {
       return `
       <div class="content_product_colum_number">
         <div><img src="${pro.url}" alt="" /></div>
@@ -263,41 +248,37 @@ function renderProductItem(pros,productItem){
         </div>
       </div>
       `;
-    })
-    productItem.innerHTML = htmlproducts.join('')
+    });
+    productItem.innerHTML = htmlproducts.join("");
   }
-  
 }
 
-
-function handleTypeProduct(){
-  let btn_groups = document.querySelectorAll('.btn-group button')
-  let product_items = document.querySelectorAll('.product_item')
-  btn_groups.forEach((btn_group,index)=>{
-    btn_group.addEventListener('click',function(){
-      let btn_active = document.querySelector('.btn-group .active')
-      let item_show = document.querySelector('.content_product .show')
-      btn_active.classList.remove('active')
-      item_show.classList.remove('show')
-      this.classList.add('active')
-      product_items[index].classList.add('show')
-      
-    })
-  })
-
+function handleTypeProduct() {
+  let btn_groups = document.querySelectorAll(".btn-group button");
+  let product_items = document.querySelectorAll(".product_item");
+  btn_groups.forEach((btn_group, index) => {
+    btn_group.addEventListener("click", function () {
+      let btn_active = document.querySelector(".btn-group .active");
+      let item_show = document.querySelector(".content_product .show");
+      btn_active.classList.remove("active");
+      item_show.classList.remove("show");
+      this.classList.add("active");
+      product_items[index].classList.add("show");
+    });
+  });
 }
 
 // render Order Product
-function renderOrderProduct(){
-  const product_content = document.querySelector('.product-content')
-  if(product_content){
-    let value = localStorage.getItem('product')
-  let proJson = localStorage.getItem('productType')
-  value = JSON.parse(value)
-  let products = JSON.parse(proJson)
-  infoProductImg(value.name)
-  showRelatedProduct(products)
-  let htmlProductInfo = `
+function renderOrderProduct() {
+  const product_content = document.querySelector(".product-content");
+  if (product_content) {
+    let value = localStorage.getItem("product");
+    let proJson = localStorage.getItem("productType");
+    value = JSON.parse(value);
+    let products = JSON.parse(proJson);
+    infoProductImg(value.name);
+    showRelatedProduct(products);
+    let htmlProductInfo = `
   <div class="row mb-3">
     <div class="col-md-6 product-left">
       <div class="product-img">
@@ -398,163 +379,159 @@ function renderOrderProduct(){
     </div>
   </div>
   `;
-  product_content.innerHTML = htmlProductInfo
-  // localStorage.clear()
+    product_content.innerHTML = htmlProductInfo;
+    // localStorage.clear()
   }
-  
 }
-
 
 // lấy product từ API
 
-function getProduct(callback){
+function getProduct(callback) {
   fetch(productAPI)
-    .then(function(response){
+    .then(function (response) {
       return response.json();
     })
-    .then(callback)
+    .then(callback);
 }
 
 // Xử lý product khi click
-function clickProduct(products){
-  let prosNew = typeProduct(products,"new")
-  let prosPopu = typeProduct(products,"Popular")
-  let prosBest = typeProduct(products,"Bestseller")
-  let productItems = document.querySelectorAll('.product_item')
-  productItems.forEach((productItem,index)=>{
-    if(index == 0){
-      let protypes = productItem.querySelectorAll('.content_product_colum_number')
-      protypes.forEach((protype,index)=>{
-        protype.onclick = function(){
-          localStorage.setItem('product',JSON.stringify(prosNew[index]))
-          localStorage.setItem('productType',JSON.stringify(prosNew))
-          
-          window.location = './product.html'
-        }
-      })
-    }
-    else if(index == 1){
-      let protypes = productItem.querySelectorAll('.content_product_colum_number')
-      protypes.forEach((protype,index)=>{
-        protype.onclick = function(){
-          localStorage.setItem('product',JSON.stringify(prosPopu[index]))
-          localStorage.setItem('productType',JSON.stringify(prosPopu))
-          window.location = './product.html'
+function clickProduct(products) {
+  let prosNew = typeProduct(products, "new");
+  let prosPopu = typeProduct(products, "Popular");
+  let prosBest = typeProduct(products, "Bestseller");
+  let productItems = document.querySelectorAll(".product_item");
+  productItems.forEach((productItem, index) => {
+    if (index == 0) {
+      let protypes = productItem.querySelectorAll(
+        ".content_product_colum_number"
+      );
+      protypes.forEach((protype, index) => {
+        protype.onclick = function () {
+          localStorage.setItem("product", JSON.stringify(prosNew[index]));
+          localStorage.setItem("productType", JSON.stringify(prosNew));
 
-        }
-      })
-      
+          window.location = "./product.html";
+        };
+      });
+    } else if (index == 1) {
+      let protypes = productItem.querySelectorAll(
+        ".content_product_colum_number"
+      );
+      protypes.forEach((protype, index) => {
+        protype.onclick = function () {
+          localStorage.setItem("product", JSON.stringify(prosPopu[index]));
+          localStorage.setItem("productType", JSON.stringify(prosPopu));
+          window.location = "./product.html";
+        };
+      });
+    } else {
+      let protypes = productItem.querySelectorAll(
+        ".content_product_colum_number"
+      );
+      protypes.forEach((protype, index) => {
+        protype.onclick = function () {
+          localStorage.setItem("product", JSON.stringify(prosBest[index]));
+          localStorage.setItem("productType", JSON.stringify(prosBest));
+          window.location = "./product.html";
+        };
+      });
     }
-    else{
-      let protypes = productItem.querySelectorAll('.content_product_colum_number')
-      protypes.forEach((protype,index)=>{
-        protype.onclick = function(){
-          localStorage.setItem('product',JSON.stringify(prosBest[index]))
-          localStorage.setItem('productType',JSON.stringify(prosBest))
-          window.location = './product.html'
-        }
-      })
-      
-    }
-  })
+  });
 }
-function infoProductImg(value){
-  let imgPro = document.querySelector('#img__blog')
-  if(imgPro){
+function infoProductImg(value) {
+  let imgPro = document.querySelector("#img__blog");
+  if (imgPro) {
     let html = `
     <h1>${value}</h1>
     <div>
         <a href="../html/index.html"><i class="fa-solid fa-house"></i></a>
         <a>${value}</a>
     </div>
-    `
-    imgPro.innerHTML = html
+    `;
+    imgPro.innerHTML = html;
   }
 }
 
 function showRelatedProduct(products) {
-  let relatedContent = document.querySelector('.content_product_colum')
-  renderProductItem(products,relatedContent);
+  let relatedContent = document.querySelector(".content_product_colum");
+  renderProductItem(products, relatedContent);
 }
 
-function handleUpBack(){
-  let btnMoveLeft = document.querySelector('#move_left')
-  let btnMoveRight = document.querySelector('#move_right')
-  if(btnMoveLeft && btnMoveRight){
-    let relatedProduct = document.querySelector('.content_product_colum')
-    btnMoveLeft.onclick = function(){
-      relatedProduct.style.transform = `translateX(${-313}px)`
-    }
-    btnMoveRight.onclick = function(){
-      relatedProduct.style.transform = `translateX(${313}px)`
-    }
+function handleUpBack() {
+  let btnMoveLeft = document.querySelector("#move_left");
+  let btnMoveRight = document.querySelector("#move_right");
+  if (btnMoveLeft && btnMoveRight) {
+    let relatedProduct = document.querySelector(".content_product_colum");
+    btnMoveLeft.onclick = function () {
+      relatedProduct.style.transform = `translateX(${-313}px)`;
+    };
+    btnMoveRight.onclick = function () {
+      relatedProduct.style.transform = `translateX(${313}px)`;
+    };
   }
-  
 }
 
-function handleRewDesc(){
-  let btn_rew_desc = document.querySelectorAll('.navdes-rev div')
-  let pro_cnt = document.querySelectorAll('.pro-cnt > div')
-  btn_rew_desc.forEach((btn,index)=>{
-    btn.addEventListener('click',function(){
-      let btn_active = document.querySelector('.navdes-rev div.active')
-      let pro_show = document.querySelector('.pro-cnt > div.show')
-      btn_active.classList.remove('active')
-      pro_show.classList.remove('show')
-      this.classList.add('active')
-      pro_cnt[index].classList.add('show')
-    })
-  })
+function handleRewDesc() {
+  let btn_rew_desc = document.querySelectorAll(".navdes-rev div");
+  let pro_cnt = document.querySelectorAll(".pro-cnt > div");
+  btn_rew_desc.forEach((btn, index) => {
+    btn.addEventListener("click", function () {
+      let btn_active = document.querySelector(".navdes-rev div.active");
+      let pro_show = document.querySelector(".pro-cnt > div.show");
+      btn_active.classList.remove("active");
+      pro_show.classList.remove("show");
+      this.classList.add("active");
+      pro_cnt[index].classList.add("show");
+    });
+  });
 }
 
-function handleMinusPlus(){
-  let minus = document.querySelector('.btn-quantity .mines')
-  let plus = document.querySelector('.btn-quantity .plus')
-  if(minus && plus){
-    let inputQuantity = document.querySelector('.btn-quantity input')
-    let quantity = Number(inputQuantity.value)
-    
-    minus.addEventListener('click',function(){
-      if(quantity > 1){
+function handleMinusPlus() {
+  let minus = document.querySelector(".btn-quantity .mines");
+  let plus = document.querySelector(".btn-quantity .plus");
+  if (minus && plus) {
+    let inputQuantity = document.querySelector(".btn-quantity input");
+    let quantity = Number(inputQuantity.value);
+
+    minus.addEventListener("click", function () {
+      if (quantity > 1) {
         quantity--;
-        inputQuantity.value = quantity
+        inputQuantity.value = quantity;
       }
-      
-    })
-    
-    plus.addEventListener('click',function(){
+    });
+
+    plus.addEventListener("click", function () {
       quantity++;
-      inputQuantity.value = quantity
-    })
+      inputQuantity.value = quantity;
+    });
   }
-  
 }
-function productOrder(){
-  let productList = document.querySelectorAll('.content_product_colum > div')
-  let productType = localStorage.getItem('productType')
-  let products = JSON.parse(productType)
-  productList.forEach((product,index)=>{
-    product.addEventListener('click',function(){
-      localStorage.setItem('product',JSON.stringify(products[index]))
-      window.location = './product.html'
-    })
-  })
+function productOrder() {
+  let productList = document.querySelectorAll(".content_product_colum > div");
+  let productType = localStorage.getItem("productType");
+  let products = JSON.parse(productType);
+  productList.forEach((product, index) => {
+    product.addEventListener("click", function () {
+      localStorage.setItem("product", JSON.stringify(products[index]));
+      window.location = "./product.html";
+    });
+  });
 }
 
-function addCart(){
-  let btn_addC = document.getElementById('button-cart')
-  if(btn_addC){
-    let product = JSON.parse(localStorage.getItem('product'))
-    btn_addC.addEventListener('click',function(){
-    let quantity = Number(document.getElementById('input-quantity').value)
-    let data = {
-      name:product.name,
-      url:product.url,
-      price:product.price,
-      quantity:quantity
-    }
-    createAccount(data,cartAPI);
-    })
+function addCart() {
+  let btn_addC = document.getElementById("button-cart");
+  if (btn_addC) {
+    let product = JSON.parse(localStorage.getItem("product"));
+    btn_addC.addEventListener("click", function () {
+      let quantity = Number(document.getElementById("input-quantity").value);
+      let data = {
+        name: product.name,
+        url: product.url,
+        price: product.price,
+        quantity: quantity,
+      };
+      createAccount(data, cartAPI);
+    });
   }
 }
 
@@ -568,56 +545,51 @@ function orderProduct() {
   addCart();
 }
 
-function shopContent(products){
-  let itemContent = products.map(product=>{
+function shopContent(products) {
+  let itemContent = products.map((product) => {
     return `
     <li><a href="#">${product.name}</a></li>
-    `
-  })
+    `;
+  });
   let html = `
     <div>
     <h4><a href="">${products[0].shop}</a></h4>
     <ul>
-      ${itemContent.join('')}
+      ${itemContent.join("")}
     </ul>
     </div>
-  `
+  `;
   return html;
-  
 }
 
-
-function showShop(products){
-  let show = document.querySelector('.shop_content_link')
-  let showBone = showProduct(products,"Bone Condition")
-  let showWireless = showProduct(products,"Wireless Earbuds")
-  let showOver = showProduct(products,"Over-Ear Headphones")
-  let showWired = showProduct(products,"Wired Earbuds")
-  let html1 =  shopContent(showBone)
-  let html2 =  shopContent(showWireless)
-  let html3 =  shopContent(showOver)
-  let html4 =  shopContent(showWired)
+function showShop(products) {
+  let show = document.querySelector(".shop_content_link");
+  let showBone = showProduct(products, "Bone Condition");
+  let showWireless = showProduct(products, "Wireless Earbuds");
+  let showOver = showProduct(products, "Over-Ear Headphones");
+  let showWired = showProduct(products, "Wired Earbuds");
+  let html1 = shopContent(showBone);
+  let html2 = shopContent(showWireless);
+  let html3 = shopContent(showOver);
+  let html4 = shopContent(showWired);
   let html = html1 + html2 + html3 + html4;
-  show.innerHTML = html
+  show.innerHTML = html;
 }
 
-
-
-function showHeader(){
+function showHeader() {
   getProduct(showShop);
 }
 
-function LoginPage(){
-  var forms = document.querySelectorAll('#content_login form')
-  getAccount(function(accuonts){
-// Chức năng singup
-// --------------------------------------------------------------------
-    checkLogin(forms[0],accuonts)
-// Chức năng login
-// ------------------------------------------------------------------------
-    checkRegister(forms[1],accuonts)
-  })
-  
+function LoginPage() {
+  var forms = document.querySelectorAll("#content_login form");
+  getAccount(function (accuonts) {
+    // Chức năng singup
+    // --------------------------------------------------------------------
+    checkLogin(forms[0], accuonts);
+    // Chức năng login
+    // ------------------------------------------------------------------------
+    checkRegister(forms[1], accuonts);
+  });
 // Login -> singup
 // ---------------------------------------------------------------------------
   nextPage(forms);
@@ -638,7 +610,47 @@ LoginPage();
 // xử lý header fixed
 ScrollMenu();
 
-
 // Order product
 
 orderProduct();
+
+// Thương
+const menuMobile = document.querySelector(".header-menu-mobile");
+const menuBtnClose = document.querySelector(".header-menu-close");
+const menuIcon = document.querySelector(".header_right-mobile");
+const btnPlus = document.querySelectorAll(".header-menu-list_icon");
+const menuItems = document.querySelectorAll(".header-menu-list_link");
+
+menuIcon.onclick = () => menuMobile.classList.add("show");
+menuBtnClose.onclick = () => menuMobile.classList.remove("show");
+
+btnPlus.forEach((btn, index) => {
+  btn.onclick = () => menuItems[index + 1].classList.toggle("show");
+});
+
+$(document).ready(function () {
+  $(".content_lastest_blogs").slick({
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    responsive: [
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  });
+});
+const u = document.querySelector(".aea");
+const g = document.querySelector(".footer_quali");
+u.onclick = () => g.classList.toggle("show");
+
