@@ -385,6 +385,23 @@
     align-items: center;
     padding: 20px 0;
   }
+
+  .col-1 {
+    display: none;
+  }
+  #content_login {
+    padding-top: 20px;
+    margin: 0;
+  }
+  .col-3 {
+    display: none;
+  }
+  .col-6 {
+    
+    margin: 0 20px;
+    width: 50%;
+    margin-left: 25%;
+  }
 }
 @media (max-width: 560px) {
   #header {
@@ -784,5 +801,19 @@
     flex-direction: column;
     align-items: center;
     padding-bottom: 20px;
+  }
+  .col-1 {
+    display: none;
+  }
+  #content_login {
+    padding-top: 20px;
+    margin: 0;
+  }
+  .col-3 {
+    display: none;
+  }
+  .col-6 {
+    margin: 0 20px;
+    width: 90%;
   }
 }
