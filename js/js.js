@@ -1,7 +1,8 @@
 
 
 var accountAPI = 'http://localhost:3000/account';
-var productAPI = 'http://localhost:3000/products'
+var productAPI = 'http://localhost:3000/products';
+var cartAPI = 'http://localhost:3000/cart ';
 // Function getAccount
 function getAccount(callback){
   fetch(accountAPI)
@@ -117,7 +118,7 @@ function checkRegister(form,accuonts){
         email: inputEmail.value,
         password: inputPass.value
       }
-      createAccount(data);
+      createAccount(data,accountAPI);
     }
     
   })
@@ -125,7 +126,7 @@ function checkRegister(form,accuonts){
 
 }
 
-function createAccount(data){
+function createAccount(data,API){
   var option = {
     method: 'POST',
     headers: {
@@ -133,7 +134,7 @@ function createAccount(data){
     },
     body: JSON.stringify(data)
   };
-  fetch(accountAPI,option)
+  fetch(API,option)
     .then(function(data){
       location.reload();
     })
@@ -300,7 +301,7 @@ function renderOrderProduct(){
   const product_content = document.querySelector('.product-content')
   value = JSON.parse(value)
   let products = JSON.parse(proJson)
-  infoProductImg(value)
+  infoProductImg(value.name)
   showRelatedProduct(products)
   let htmlProductInfo = `
   <div class="row mb-3">
@@ -464,10 +465,10 @@ function clickProduct(products){
 function infoProductImg(value){
   let imgPro = document.querySelector('#img__blog')
   let html = `
-    <h1>${value.name}</h1>
+    <h1>${value}</h1>
     <div>
         <a href="../html/index.html"><i class="fa-solid fa-house"></i></a>
-        <a>${value.name}</a>
+        <a>${value}</a>
     </div>
   `
   imgPro.innerHTML = html
@@ -538,7 +539,18 @@ function productOrder(){
 }
 
 function addCart(){
-
+  let btn_addC = document.getElementById('button-cart')
+  let product = JSON.parse(localStorage.getItem('product'))
+  btn_addC.addEventListener('click',function(){
+    let quantity = Number(document.getElementById('input-quantity').value)
+    let data = {
+      name:product.name,
+      url:product.url,
+      price:product.price,
+      quantity:quantity
+    }
+    createAccount(data,cartAPI);
+  })
 }
 
 function orderProduct() {
