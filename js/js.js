@@ -147,22 +147,6 @@ function checkEmail(value){
 }
 
 
-function LoginPage(){
-  var forms = document.querySelectorAll('#content_login form')
-  getAccount(function(accuonts){
-// Chức năng singup
-// --------------------------------------------------------------------
-    checkLogin(forms[0],accuonts)
-// Chức năng login
-// ------------------------------------------------------------------------
-    checkRegister(forms[1],accuonts)
-
-  })
-  
-// Login -> singup
-// ---------------------------------------------------------------------------
-  nextPage(forms);
-}
 
 // ---------
 
@@ -218,62 +202,71 @@ function typeProduct(products,info){
   return pros;
 }
 
+function showProduct(products,shop){
+  var pros = products.filter(product=>{
+    return product.shop == shop
+  })
+  return pros;
+}
+
 
 // render product các thông tin sản phẩm
 
 function renderProductItem(pros,productItem){
-  
-  let htmlproducts = pros.map(pro=>{
-    return `
-    <div class="content_product_colum_number">
-      <div><img src="${pro.url}" alt="" /></div>
-      <div class="product_info">
-        <div class="name_img">
-          <div href=""><h5>${pro.name}</h5></div>
-        </div>
-        <div class="product_money">
-          <i class="bi bi-currency-dollar"></i><b>${pro.price}.00</b>
-        </div>
-        <div class="rating">
-          <i class="bi bi-star"></i><i class="bi bi-star"></i
-          ><i class="bi bi-star"></i><i class="bi bi-star"></i
-          ><i class="bi bi-star"></i>
-        </div>
-        <div class="product_buy">
-          <div class="buy_item">
-            <div>
-              <a href=""><i class="bi bi-bag-fill"> </i></a>
-            </div>
-            <div class="buy_item_link"><p>Add to card</p></div>
-            <div class="buy_squence"></div>
+  if(productItem){
+    let htmlproducts = pros.map(pro=>{
+      return `
+      <div class="content_product_colum_number">
+        <div><img src="${pro.url}" alt="" /></div>
+        <div class="product_info">
+          <div class="name_img">
+            <div href=""><h5>${pro.name}</h5></div>
           </div>
-          <div class="buy_item">
-            <div>
-              <a href=""><i class="bi bi-heart-fill"></i></a>
-            </div>
-            <div class="buy_item_link"><p>Add to Wishlist</p></div>
-            <div class="buy_squence"></div>
+          <div class="product_money">
+            <i class="bi bi-currency-dollar"></i><b>${pro.price}.00</b>
           </div>
-          <div class="buy_item">
-            <div>
-              <a href=""><i class="bi bi-eye-fill"></i></a>
-            </div>
-            <div class="buy_item_link"><p>Quickview</p></div>
-            <div class="buy_squence"></div>
+          <div class="rating">
+            <i class="bi bi-star"></i><i class="bi bi-star"></i
+            ><i class="bi bi-star"></i><i class="bi bi-star"></i
+            ><i class="bi bi-star"></i>
           </div>
-          <div class="buy_item">
-            <div>
-              <a href=""><i class="bi bi-shuffle"></i></a>
+          <div class="product_buy">
+            <div class="buy_item">
+              <div>
+                <a href=""><i class="bi bi-bag-fill"> </i></a>
+              </div>
+              <div class="buy_item_link"><p>Add to card</p></div>
+              <div class="buy_squence"></div>
             </div>
-            <div class="buy_item_link"><p>Compare</p></div>
-            <div class="buy_squence"></div>
+            <div class="buy_item">
+              <div>
+                <a href=""><i class="bi bi-heart-fill"></i></a>
+              </div>
+              <div class="buy_item_link"><p>Add to Wishlist</p></div>
+              <div class="buy_squence"></div>
+            </div>
+            <div class="buy_item">
+              <div>
+                <a href=""><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <div class="buy_item_link"><p>Quickview</p></div>
+              <div class="buy_squence"></div>
+            </div>
+            <div class="buy_item">
+              <div>
+                <a href=""><i class="bi bi-shuffle"></i></a>
+              </div>
+              <div class="buy_item_link"><p>Compare</p></div>
+              <div class="buy_squence"></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    `;
-  })
-  productItem.innerHTML = htmlproducts.join('')
+      `;
+    })
+    productItem.innerHTML = htmlproducts.join('')
+  }
+  
 }
 
 
@@ -296,9 +289,10 @@ function handleTypeProduct(){
 
 // render Order Product
 function renderOrderProduct(){
-  let value = localStorage.getItem('product')
-  let proJson = localStorage.getItem('productType')
   const product_content = document.querySelector('.product-content')
+  if(product_content){
+    let value = localStorage.getItem('product')
+  let proJson = localStorage.getItem('productType')
   value = JSON.parse(value)
   let products = JSON.parse(proJson)
   infoProductImg(value.name)
@@ -406,6 +400,8 @@ function renderOrderProduct(){
   `;
   product_content.innerHTML = htmlProductInfo
   // localStorage.clear()
+  }
+  
 }
 
 
@@ -464,14 +460,16 @@ function clickProduct(products){
 }
 function infoProductImg(value){
   let imgPro = document.querySelector('#img__blog')
-  let html = `
+  if(imgPro){
+    let html = `
     <h1>${value}</h1>
     <div>
         <a href="../html/index.html"><i class="fa-solid fa-house"></i></a>
         <a>${value}</a>
     </div>
-  `
-  imgPro.innerHTML = html
+    `
+    imgPro.innerHTML = html
+  }
 }
 
 function showRelatedProduct(products) {
@@ -482,13 +480,16 @@ function showRelatedProduct(products) {
 function handleUpBack(){
   let btnMoveLeft = document.querySelector('#move_left')
   let btnMoveRight = document.querySelector('#move_right')
-  let relatedProduct = document.querySelector('.content_product_colum')
-  btnMoveLeft.onclick = function(){
-    relatedProduct.style.transform = `translateX(${-313}px)`
+  if(btnMoveLeft && btnMoveRight){
+    let relatedProduct = document.querySelector('.content_product_colum')
+    btnMoveLeft.onclick = function(){
+      relatedProduct.style.transform = `translateX(${-313}px)`
+    }
+    btnMoveRight.onclick = function(){
+      relatedProduct.style.transform = `translateX(${313}px)`
+    }
   }
-  btnMoveRight.onclick = function(){
-    relatedProduct.style.transform = `translateX(${313}px)`
-  }
+  
 }
 
 function handleRewDesc(){
@@ -509,21 +510,23 @@ function handleRewDesc(){
 function handleMinusPlus(){
   let minus = document.querySelector('.btn-quantity .mines')
   let plus = document.querySelector('.btn-quantity .plus')
-  let inputQuantity = document.querySelector('.btn-quantity input')
-  let quantity = Number(inputQuantity.value)
-  
-  minus.addEventListener('click',function(){
-    if(quantity > 1){
-      quantity--;
-      inputQuantity.value = quantity
-    }
+  if(minus && plus){
+    let inputQuantity = document.querySelector('.btn-quantity input')
+    let quantity = Number(inputQuantity.value)
     
-  })
-  
-  plus.addEventListener('click',function(){
-    quantity++;
-    inputQuantity.value = quantity
-  })
+    minus.addEventListener('click',function(){
+      if(quantity > 1){
+        quantity--;
+        inputQuantity.value = quantity
+      }
+      
+    })
+    
+    plus.addEventListener('click',function(){
+      quantity++;
+      inputQuantity.value = quantity
+    })
+  }
   
 }
 function productOrder(){
@@ -540,8 +543,9 @@ function productOrder(){
 
 function addCart(){
   let btn_addC = document.getElementById('button-cart')
-  let product = JSON.parse(localStorage.getItem('product'))
-  btn_addC.addEventListener('click',function(){
+  if(btn_addC){
+    let product = JSON.parse(localStorage.getItem('product'))
+    btn_addC.addEventListener('click',function(){
     let quantity = Number(document.getElementById('input-quantity').value)
     let data = {
       name:product.name,
@@ -550,7 +554,8 @@ function addCart(){
       quantity:quantity
     }
     createAccount(data,cartAPI);
-  })
+    })
+  }
 }
 
 function orderProduct() {
@@ -563,6 +568,60 @@ function orderProduct() {
   addCart();
 }
 
+function shopContent(products){
+  let itemContent = products.map(product=>{
+    return `
+    <li><a href="#">${product.name}</a></li>
+    `
+  })
+  let html = `
+    <div>
+    <h4><a href="">${products[0].shop}</a></h4>
+    <ul>
+      ${itemContent.join('')}
+    </ul>
+    </div>
+  `
+  return html;
+  
+}
+
+function showShop(products){
+  let show = document.querySelector('.shop_content_link')
+  let showBone = showProduct(products,"Bone Condition")
+  let showWireless = showProduct(products,"Wireless Earbuds")
+  let showOver = showProduct(products,"Over-Ear Headphones")
+  let showWired = showProduct(products,"Wired Earbuds")
+  let html1 =  shopContent(showBone)
+  let html2 =  shopContent(showWireless)
+  let html3 =  shopContent(showOver)
+  let html4 =  shopContent(showWired)
+  let html = html1 + html2 + html3 + html4;
+  show.innerHTML = html
+}
+
+
+
+function showHeader(){
+  getProduct(showShop);
+}
+
+function LoginPage(){
+  var forms = document.querySelectorAll('#content_login form')
+  getAccount(function(accuonts){
+// Chức năng singup
+// --------------------------------------------------------------------
+    checkLogin(forms[0],accuonts)
+// Chức năng login
+// ------------------------------------------------------------------------
+    checkRegister(forms[1],accuonts)
+  })
+  
+// Login -> singup
+// ---------------------------------------------------------------------------
+  nextPage(forms);
+}
+
 // Xử lý hiển thị loại product
 
 handleTypeProduct();
@@ -570,6 +629,7 @@ handleTypeProduct();
 // hiển thị dữ liệu product
 ShowProducts();
 
+showHeader();
 
 // xử lý login-register
 LoginPage();

@@ -24,7 +24,8 @@
       "url": "../images/head_phone_14.jpg",
       "url_big": "../images/head_phone_14_big.jpg",
       "category": "Special Product",
-      "info": "new"
+      "info": "new",
+      "shop":"Bone Condition"
     },
     {
       "id_pro": 2,
@@ -33,7 +34,8 @@
       "url": "../images/head_phone_09.jpg",
       "url_big": "../images/head_phone_09_big.jpg",
       "category": "Special Product",
-      "info": "Bestseller"
+      "info": "Bestseller",
+      "shop":"Bone Condition"
     },
     {
       "id_pro": 3,
@@ -42,7 +44,8 @@
       "url": "../images/head_phone_17.jpg",
       "url_big": "../images/head_phone_17_big.jpg",
       "category": "Special Product",
-      "info": "Popular"
+      "info": "Popular",
+      "shop":"Bone Condition"
     },
     {
       "id_pro": 4,
@@ -51,7 +54,9 @@
       "url": "../images/head_phone_16.jpg",
       "url_big": "../images/head_phone_16_big.jpg",
       "category": "True Wireless Earbuds",
-      "info": "new"
+      "info": "new",
+      "shop":"Bone Condition"
+
     },
     {
       "id_pro": 5,
@@ -60,7 +65,9 @@
       "url": "../images/head_phone_01.jpg",
       "url_big": "../images/head_phone_01_big.jpg",
       "category": "True Wireless Earbuds",
-      "info": "new"
+      "info": "new",
+      "shop":"Bone Condition"
+      
     },
     {
       "id_pro": 6,
@@ -69,7 +76,8 @@
       "url": "../images/head_phone_16.jpg",
       "url_big": "../images/head_phone_16_big.jpg",
       "category": "True Wireless Earbuds",
-      "info": "Bestseller"
+      "info": "Bestseller",
+      "shop":"Bone Condition"
     },
     {
       "id_pro": 7,
@@ -78,7 +86,9 @@
       "url": "../images/head_phone_10.jpg",
       "url_big": "../images/head_phone_10_big.jpg",
       "category": "True Wireless Earbuds",
-      "info": "Popular"
+      "info": "Popular",
+      "shop":"Wireless Earbuds"
+
     },
     {
       "id_pro": 8,
@@ -87,7 +97,8 @@
       "url": "../images/head_phone_03.jpg",
       "url_big": "../images/head_phone_03_big.jpg",
       "category": "True Wireless Earbuds",
-      "info": "Popular"
+      "info": "Popular",
+      "shop":"Wireless Earbuds"
     },
     {
       "id_pro": 9,
@@ -96,7 +107,8 @@
       "url": "../images/head_phone_12.jpg",
       "url_big": "../images/head_phone_12_big.jpg",
       "category": "True Wireless Earbuds",
-      "info": "Bestseller"
+      "info": "Bestseller",
+      "shop":"Wireless Earbuds"
     },
     {
       "id_pro": 10,
@@ -105,7 +117,8 @@
       "url": "../images/head_phone_09.jpg",
       "url_big": "../images/head_phone_09_big.jpg",
       "category": "Wired Earbuds",
-      "info": "new"
+      "info": "new",
+      "shop":"Wireless Earbuds"
     },
     {
       "id_pro": 11,
@@ -114,7 +127,8 @@
       "url": "../images/head_phone_10.jpg",
       "url_big": "../images/head_phone_10_big.jpg",
       "category": "Wired Earbuds",
-      "info": "Popular"
+      "info": "Popular",
+      "shop":"Wireless Earbuds"
     },
     {
       "id_pro": 12,
@@ -123,7 +137,8 @@
       "url": "../images/head_phone_02.jpg",
       "url_big": "../images/head_phone_02_big.jpg",
       "category": "Wired Earbuds",
-      "info": "Popular"
+      "info": "Popular",
+      "shop":"Over-Ear Headphones"
     },
     {
       "id_pro": 13,
@@ -132,7 +147,8 @@
       "url": "../images/head_phone_04.jpg",
       "url_big": "../images/head_phone_04_big.jpg",
       "category": "Wired Earbuds",
-      "info": "Bestseller"
+      "info": "Bestseller",
+      "shop":"Over-Ear Headphones"
     },
     {
       "id_pro": 14,
@@ -141,7 +157,9 @@
       "url": "../images/head_phone_08.jpg",
       "url_big": "../images/head_phone_08_big.jpg",
       "category": "Wired Earbuds",
-      "info": "Bestseller"
+      "info": "Bestseller",
+      "shop":"Wired Earbuds"
+
     },
     {
       "id_pro": 15,
@@ -150,7 +168,8 @@
       "url": "../images/head_phone_15.jpg",
       "url_big": "../images/head_phone_15_big.jpg",
       "category": "Wired Earbuds",
-      "info": "Bestseller"
+      "info": "Bestseller",
+      "shop":"Wired Earbuds"
     },
     {
       "id_pro": 16,
@@ -159,7 +178,8 @@
       "url": "../images/head_phone_13.jpg",
       "url_big": "../images/head_phone_13_big.jpg",
       "category": "Wired Earbuds",
-      "info": "new"
+      "info": "new",
+      "shop":"Wired Earbuds"
     },
     {
       "id_pro": 17,
@@ -168,7 +188,8 @@
       "url": "../images/head_phone_05.jpg",
       "url_big": "../images/head_phone_05_big.jpg",
       "category": "Wired Earbuds",
-      "info": "Popular"
+      "info": "Popular",
+      "shop":"Wired Earbuds"
     }
   ],
   "cart": [
