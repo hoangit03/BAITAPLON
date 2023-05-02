@@ -402,6 +402,12 @@
     width: 50%;
     margin-left: 25%;
   }
+  .nav-left{
+    left:30px
+  }
+  .nav-right{
+    right:30px;
+  }
 }
 @media (max-width: 560px) {
   #header {
@@ -815,5 +821,24 @@
   .col-6 {
     margin: 0 20px;
     width: 90%;
+  }
+  /* producttt */
+  .product-right .quantity-addcart .pro-quantity {
+    margin: 0;
+  }
+  .quantity-addcart{
+    justify-content: space-between;
+  }
+  .post-cart{
+    height: auto !important;
+  }
+    .post-cart .add-list{
+      margin: 10px 0px !important;
+    }
+     .nav-left{
+    left:0px
+  }
+  .nav-right{
+    right:0px;
   }
 }
