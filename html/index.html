@@ -13,7 +13,17 @@
       rel="stylesheet"
       href="../css/bootstrap-icons/font/bootstrap-icons.css"
     />
-
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -26,7 +36,7 @@
     <link rel="stylesheet" href="../css/reponvise.css" />
   </head>
   <body>
-    <div id="header">
+    <div id="header" class>
       <div class="header_logo">
         <a href="./index.html"
           ><img src="../images/logo.png" alt="" class="logo"
@@ -1018,7 +1028,7 @@
         <div class="item_main">
           <div class="item_truck"><i class="bi bi-truck"></i></div>
           <div class="item_main_word">
-            <div class="item_ship"><b>FREE SHIPPING</b></div>
+            <div class="item_ship"><b>FREE SHIcontent_itPPING</b></div>
             <div>On order over <i class="bi bi-currency-dollar"></i>150</div>
           </div>
         </div>
@@ -1035,10 +1045,10 @@
         <!--  -->
         <div class="item_main">
           <div class="item_truck"><i class="bi bi-gift"></i></div>
-         <div class="item_main_word">
+          <div class="item_main_word">
             <div class="item_ship"><b>SPECIAL GIFT CARD</b></div>
             <div>Offer special bonuses with gift</div>
-         </div>
+          </div>
         </div>
         <!--  -->
         <div class="item_main">
@@ -1046,7 +1056,7 @@
           <div class="item_main_word">
             <div class="item_ship"><b>24/7 CUSTOMER SERVICE</b></div>
             <div>Call us 24/7 at 123-456-789</div>
-          </div class="item_main_word">
+          </div>
         </div>
       </div>
       <!-- content _ top Product -->
@@ -1057,19 +1067,21 @@
         </div>
         <!-- move -->
         <div class="move">
-          <a href="">
-            <div class="move_left"><i class="bi bi-chevron-left"></i></div
-          ></a>
-          <a href="">
-            <div class="move_left"><i class="bi bi-chevron-right"></i></div
-          ></a>
+          <button type="button">
+            <div class="move_left"><i class="bi bi-chevron-left"></i></div>
+          </button>
+          <button type="button">
+            <div class="move_left"><i class="bi bi-chevron-right"></i></div>
+          </button>
         </div>
       </div>
       <!-- content chuyen trang -->
       <div class="content_focus">
         <div class="btn-group">
           <div>
-            <button type="button" class="btn btn-primary">LASTEST</button>
+            <button type="button" class="btn btn-primary lastest active">
+              LASTEST
+            </button>
           </div>
           <div>
             <button type="button" class="btn btn-primary special">
@@ -1077,490 +1089,17 @@
             </button>
           </div>
           <div>
-            <button type="button" class="btn btn-primary">BESTSELLER</button>
+            <button type="button" class="btn btn-primary bestseller">
+              BESTSELLER
+            </button>
           </div>
         </div>
       </div>
       <!-- content san pham -->
       <div class="content_product">
-        <!-- hang1 -->
-        <div class="content_product_colum">
-          <!-- ngang1 -->
-          <div class="content_product_colum_number">
-            <div><img src="../images/head_phone_01.jpg" alt="" /></div>
-            <div class="product_info">
-              <div class="name_img">
-                <a href=""><h5>Bose Quietcomfort</h5></a>
-              </div>
-              <div class="product_money">
-                <i class="bi bi-currency-dollar"></i><b>123.20</b>
-              </div>
-              <div class="rating">
-                <i class="bi bi-star"></i><i class="bi bi-star"></i
-                ><i class="bi bi-star"></i><i class="bi bi-star"></i
-                ><i class="bi bi-star"></i>
-              </div>
-              <div class="product_buy">
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-bag-fill"> </i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Add to card</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-heart-fill"></i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Add to Wishlist</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-eye-fill"></i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Quickview</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-shuffle"></i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Compare</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- ngang2 -->
-          <div class="content_product_colum_number">
-            <div><img src="../images/head_phone_02.jpg" alt="" /></div>
-            <div class="product_info">
-              <div class="name_img">
-                <a href=""><h5>Sony WH-1000XM5</h5></a>
-              </div>
-              <div class="product_money">
-                <i class="bi bi-currency-dollar"></i><b>122.00</b>
-              </div>
-              <div class="rating">
-                <i class="bi bi-star"></i><i class="bi bi-star"></i
-                ><i class="bi bi-star"></i><i class="bi bi-star"></i
-                ><i class="bi bi-star"></i>
-              </div>
-              <div class="product_buy">
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-bag-fill"> </i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Add to card</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-heart-fill"></i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Add to Wishlist</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-eye-fill"></i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Quickview</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-shuffle"></i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Compare</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- ngang3-->
-          <div class="content_product_colum_number">
-            <div><img src="../images/head_phone_03.jpg" alt="" /></div>
-            <div class="product_info">
-              <div class="name_img">
-                <a href=""><h5>SpinBot HX300</h5></a>
-              </div>
-              <div class="product_money">
-                <i class="bi bi-currency-dollar"></i><b>1,202.00</b>
-              </div>
-              <div class="rating">
-                <i class="bi bi-star"></i><i class="bi bi-star"></i
-                ><i class="bi bi-star"></i><i class="bi bi-star"></i
-                ><i class="bi bi-star"></i>
-              </div>
-              <div class="product_buy">
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-bag-fill"> </i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Add to card</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-heart-fill"></i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Add to Wishlist</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-eye-fill"></i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Quickview</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-shuffle"></i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Compare</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- ngang4 -->
-          <div class="content_product_colum_number">
-            <div><img src="../images/head_phone_04.jpg" alt="" /></div>
-            <div class="product_info">
-              <div class="name_img">
-                <a href=""><h5>Matlek Earphone</h5></a>
-              </div>
-              <div class="product_money">
-                <i class="bi bi-currency-dollar"></i><b>1,202.00</b>
-              </div>
-              <div class="rating">
-                <i class="bi bi-star"></i><i class="bi bi-star"></i
-                ><i class="bi bi-star"></i><i class="bi bi-star"></i
-                ><i class="bi bi-star"></i>
-              </div>
-              <div class="product_buy">
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-bag-fill"> </i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Add to card</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-heart-fill"></i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Add to Wishlist</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-eye-fill"></i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Quickview</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-shuffle"></i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Compare</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- ngang 5 -->
-          <div class="content_product_colum_number">
-            <div><img src="../images/head_phone_05.jpg" alt="" /></div>
-            <div class="product_info">
-              <div class="name_img">
-                <a href=""><h5>Meachwell Black</h5></a>
-              </div>
-              <div class="product_money">
-                <i class="bi bi-currency-dollar"></i><b>110.00</b>
-              </div>
-              <div class="rating">
-                <i class="bi bi-star"></i><i class="bi bi-star"></i
-                ><i class="bi bi-star"></i><i class="bi bi-star"></i
-                ><i class="bi bi-star"></i>
-              </div>
-              <div class="product_buy">
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-bag-fill"> </i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Add to card</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-heart-fill"></i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Add to Wishlist</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-eye-fill"></i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Quickview</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-shuffle"></i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Compare</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- ngang2 -->
-        </div>
-        <!-- <-- hang2 -->
-        <div class="content_product_colum">
-          <!-- ngang1 -->
-          <div class="content_product_colum_number">
-            <div><img src="../images/head_phone_06.jpg" alt="" /></div>
-            <div class="product_info">
-              <div class="name_img">
-                <a href=""><h5>Ptron Tangent</h5></a>
-              </div>
-              <div class="product_money">
-                <i class="bi bi-currency-dollar"></i><b>241.99</b>
-              </div>
-              <div class="rating">
-                <i class="bi bi-star"></i><i class="bi bi-star"></i
-                ><i class="bi bi-star"></i><i class="bi bi-star"></i
-                ><i class="bi bi-star"></i>
-              </div>
-              <div class="product_buy">
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-bag-fill"> </i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Add to card</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-heart-fill"></i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Add to Wishlist</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-eye-fill"></i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Quickview</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-shuffle"></i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Compare</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- ngang2 -->
-          <div class="content_product_colum_number">
-            <div><img src="../images/head_phone_07.jpg" alt="" /></div>
-            <div class="product_info">
-              <div class="name_img">
-                <a href=""><h5>Malek Super</h5></a>
-              </div>
-              <div class="product_money">
-                <i class="bi bi-currency-dollar"></i><b>122.00</b>
-              </div>
-              <div class="rating">
-                <i class="bi bi-star"></i><i class="bi bi-star"></i
-                ><i class="bi bi-star"></i><i class="bi bi-star"></i
-                ><i class="bi bi-star"></i>
-              </div>
-              <div class="product_buy">
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-bag-fill"> </i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Add to card</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-heart-fill"></i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Add to Wishlist</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-eye-fill"></i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Quickview</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-shuffle"></i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Compare</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- ngang3-->
-          <div class="content_product_colum_number">
-            <div><img src="../images/head_phone_08.jpg" alt="" /></div>
-            <div class="product_info">
-              <div class="name_img">
-                <a href=""><h5>Portronics Muffs A</h5></a>
-              </div>
-              <div class="product_money">
-                <i class="bi bi-currency-dollar"></i><b>2,000.00</b>
-              </div>
-              <div class="rating">
-                <i class="bi bi-star"></i><i class="bi bi-star"></i
-                ><i class="bi bi-star"></i><i class="bi bi-star"></i
-                ><i class="bi bi-star"></i>
-              </div>
-              <div class="product_buy">
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-bag-fill"> </i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Add to card</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-heart-fill"></i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Add to Wishlist</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-eye-fill"></i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Quickview</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-shuffle"></i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Compare</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- ngang4 -->
-          <div class="content_product_colum_number">
-            <div><img src="../images/head_phone_09.jpg" alt="" /></div>
-            <div class="product_info">
-              <div class="name_img">
-                <a href=""><h5>Aroma NB119</h5></a>
-              </div>
-              <div class="product_money">
-                <i class="bi bi-currency-dollar"></i><b>482.00</b>
-              </div>
-              <div class="rating">
-                <i class="bi bi-star"></i><i class="bi bi-star"></i
-                ><i class="bi bi-star"></i><i class="bi bi-star"></i
-                ><i class="bi bi-star"></i>
-              </div>
-              <div class="product_buy">
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-bag-fill"> </i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Add to card</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-heart-fill"></i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Add to Wishlist</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-eye-fill"></i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Quickview</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-shuffle"></i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Compare</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- ngang 5 -->
-          <div class="content_product_colum_number">
-            <div><img src="../images/head_phone_10.jpg" alt="" /></div>
-            <div class="product_info">
-              <div class="name_img">
-                <a href=""><h5>Sony WI-C100</h5></a>
-              </div>
-              <div class="product_money">
-                <i class="bi bi-currency-dollar"></i><b>122.00</b>
-              </div>
-              <div class="rating">
-                <i class="bi bi-star"></i><i class="bi bi-star"></i
-                ><i class="bi bi-star"></i><i class="bi bi-star"></i
-                ><i class="bi bi-star"></i>
-              </div>
-              <div class="product_buy">
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-bag-fill"> </i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Add to card</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-heart-fill"></i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Add to Wishlist</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-eye-fill"></i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Quickview</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-                <div class="buy_item">
-                  <div>
-                    <a href=""><i class="bi bi-shuffle"></i></a>
-                  </div>
-                  <div class="buy_item_link"><p>Compare</p></div>
-                  <div class="buy_squence"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- ngang2 -->
-        </div>
+        <div class="product_item show"></div>
+        <div class="product_item"></div>
+        <div class="product_item"></div>
       </div>
       <!-- banner -->
       <div class="banner">
@@ -1625,10 +1164,9 @@
     </div>
     <!-- end content -->
     <div class="actor">
-      <div style="margin-top: 50px"><h2>Our Testimonials</h2></div>
+      <div style="margin-top: 50px"><h2>Testimonials</h2></div>
       <div><img src="../images/actor_home.png" alt="" /></div>
-
-      <div class="move_actor_home">
+      <!-- <div class="move_actor_home">
         <a href="">
           <div class="move_left"><i class="bi bi-chevron-left"></i></div
         ></a>
@@ -1636,7 +1174,7 @@
         <a href="">
           <div class="move_left"><i class="bi bi-chevron-right"></i></div
         ></a>
-      </div>
+      </div> -->
       <div>Customer</div>
       <div class="actor_sologan">
         <p>
@@ -1655,12 +1193,12 @@
         </div>
         <!-- move -->
         <div class="move">
-          <a href="">
-            <div class="move_left"><i class="bi bi-chevron-left"></i></div
-          ></a>
-          <a href="">
-            <div class="move_left"><i class="bi bi-chevron-right"></i></div
-          ></a>
+          <button type="button">
+            <div class="move_left"><i class="bi bi-chevron-left"></i></div>
+          </button>
+          <button type="button">
+            <div class="move_left"><i class="bi bi-chevron-right"></i></div>
+          </button>
         </div>
       </div>
       <div class="content_lastest_blogs">
@@ -1738,6 +1276,56 @@
             </div>
           </div>
         </div>
+        <!--  -->
+        <div class="blog_box">
+          <img src="../images/content__inner04.png" alt="" />
+          <div class="blog__content">
+            <div class="date_time">22 November, 2022</div>
+            <div class="text_comment">
+              <div class="comment_blog">
+                <a href="#">
+                  <span>Comments</span>
+                </a>
+              </div>
+              <div class="comment_detail">
+                <h4>There Are Many Variations</h4>
+                <p>
+                  It is a long established fact that a reader will be distracted
+                  by the readable content of a page when looking at its layout.
+                  The point of using Lorem ...
+                </p>
+                <div>
+                  <a href="#">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <div class="blog_box">
+          <img src="../images/content__inner02.png" alt="" />
+          <div class="blog__content">
+            <div class="date_time">22 November, 2022</div>
+            <div class="text_comment">
+              <div class="comment_blog">
+                <a href="#">
+                  <span>Comments</span>
+                </a>
+              </div>
+              <div class="comment_detail">
+                <h4>There Are Many Variations</h4>
+                <p>
+                  It is a long established fact that a reader will be distracted
+                  by the readable content of a page when looking at its layout.
+                  The point of using Lorem ...
+                </p>
+                <div>
+                  <a href="#">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="email_home">
@@ -1753,13 +1341,15 @@
             </div>
           </div>
         </div>
-        <div class="email_home_content_right">
-          <input
-            type="text"
-            placeholder="Enter your email..."
-            class="enter_email"
-          />
-          <button type="button" class="btn btn-success">Subscribe</button>
+        <div class="email_right" style="display: none;">
+          <div class="email_home_content_right">
+            <input
+              type="text"
+              placeholder="Enter your email..."
+              class="enter_email"
+            />
+            <button type="button" class="btn btn-success">Subscribe</button>
+          </div>
         </div>
       </div>
     </div>
@@ -1767,22 +1357,24 @@
     <div id="footer">
       <div id="footer__top">
         <div class="foot_top contact">
-          <h3>Contact</h3>
-          <div>
-            <i class="fa-solid fa-location-dot"></i>
-            <p>Industrail University of HoChiMinhCity</p>
+         <div style="display: flex;"> <h3>Contact</h3> <i class="bi bi-chevron-down aea"></i></div>
+          <div class="footer_quali" >
+            <div>
+              <i class="fa-solid fa-location-dot" style="padding-bottom: 10px;"></i>
+              <p>Industrail University of HoChiMinhCity</p>
+            </div>
+            <div>
+              <i class="fa-sharp fa-solid fa-phone" style="padding-bottom: 10px;" ></i>
+              <p>123456789</p>
+            </div>
+            <div>
+              <i class="fa-sharp fa-solid fa-envelope"></i>
+              <a href="hoangit2003xoan@gmail.com">hoangit2003xoan@gmail.com</a>
+            </div>
           </div>
-          <div>
-            <i class="fa-sharp fa-solid fa-phone"></i>
-            <p>123456789</p>
-          </div>
-          <div>
-            <i class="fa-sharp fa-solid fa-envelope"></i>
-            <a href="hoangit2003xoan@gmail.com">hoangit2003xoan@gmail.com</a>
-          </div>
-          <div></div>
+          
         </div>
-        <div class="foot_top information">
+        <div class="foot_top information" style="display: none;">
           <h3>Information</h3>
           <a href="#">Terms & Conditions</a>
           <a href="#">Delivery Information</a>
@@ -1790,7 +1382,7 @@
           <a href="#">Privacy Policy</a>
           <a href="#">Contact Us</a>
         </div>
-        <div class="foot_top exatras">
+        <div class="foot_top exatras" style="display: none;">
           <h3>Extras</h3>
           <a href="#">Brands</a>
           <a href="#">Gift Certificates</a>
@@ -1798,7 +1390,7 @@
           <a href="#">Specials</a>
           <a href="#">Site Map</a>
         </div>
-        <div class="foot_top my-Account">
+        <div class="foot_top my-Account" style="display: none;">
           <h3>My Account</h3>
           <a href="#">My Account</a>
           <a href="#">Order History</a>
@@ -1806,7 +1398,7 @@
           <a href="#">Newsletter</a>
           <a href="#">Returns</a>
         </div>
-        <div class="foot_top find-payment">
+        <div class="foot_top find-payment" style="display: none;">
           <h3>Find Us On</h3>
           <div>
             <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -1816,10 +1408,23 @@
           </div>
         </div>
       </div>
-      <div id="footer__bottom">
+      <div id="footer__bottom" style="display: none;">
         <p>Create by Huy Hoang and Van Thuong</p>
       </div>
     </div>
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+
     <script src="../js/js.js"></script>
   </body>
 </html>

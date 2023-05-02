@@ -119,6 +119,7 @@
 #container__blog__right #content__blog .blog_box img{
     background-size: 100%;
     width: 100%;
+    
 }
 
 #container__blog__right #content__blog .blog_box .blog__content .date_time{
@@ -259,13 +260,9 @@
     
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 200px;
+   
 }
-#footer__top .foot_top div{
-    display: flex;
-    align-items: center;
-}
+
 #footer__top .foot_top i{
     margin-right:10px ;
     

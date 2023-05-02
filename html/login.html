@@ -553,9 +553,8 @@
                 <label for="exampleInputEmail1">Email address</label>
                 <input
                   type="email"
-                  class="form-control"
-                  id="email"
-                  aria-describedby="emailHelp"
+                  class="form-control email"
+                  aria-describedby  ="emailHelp"
                   placeholder="Enter email"
                   
                   
@@ -563,23 +562,22 @@
                 <div class="error-messages"></div>
                 
               </div>
-              <div class="form-group">
+              <div class="form-group" style="margin-bottom: 10px;">
                 <label for="exampleInputPassword1">Password</label>
                 <input
                   type="password"
-                  class="form-control"
-                  id="password"
+                  class="form-control password"
                   placeholder="Password"
                   
                 />
                 <div class="error-messages"></div>
               </div>
               
-              <button class="forgotten">Forgotten Password</button>
-              <button class="next_form" style="float: right;">Register</button>
+              <button type="button" class="forgotten">Forgotten Password</button>
+              <button type="button" class="next_form" style="float: right;">Register</button>
               
               <div class="control_button_login">
-                <button type="submit" class="btn btn-primary" onclick="login()">
+                <button type="submit" class="btn btn-primary">
                   Login
                 </button>
               </div>
@@ -591,22 +589,20 @@
                 <label for="exampleInputPassword1">Name address</label>
                 <input
                   type="text"
-                  class="form-control"
-                  id="name"
+                  class="form-control name"
                   placeholder="Name address"
                   
                 />
+                <div class="error-messages"></div>
+
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
                 <input
                   type="email"
-                  class="form-control"
-                  id="email"
+                  class="form-control email"
                   aria-describedby="emailHelp"
                   placeholder="Enter email"
-                  
-                
                  />
                 <div class="error-messages"></div>
 
@@ -615,8 +611,7 @@
                 <label for="exampleInputPassword1">Password</label>
                 <input
                   type="password"
-                  class="form-control"
-                  id="password"
+                  class="form-control password"
                   placeholder="Password"
                   
                 />
@@ -636,13 +631,12 @@
               </div>
               
               
-              <button class="next_form" style="float: right">Login</button>
+              <button type="button" class="next_form" style="float: right;margin-top: 10px;">Login</button>
               
               <div class="control_button_login" style="padding-top: 20px">
                 <button
                   type="submit"
                   class="btn btn-primary"
-                  onclick="signup()"
                 >
                   Sign Up
                 </button>
@@ -710,6 +704,7 @@
     </div>
     
     <script>
+<<<<<<< HEAD
       forms = document.querySelectorAll('#content_login form')
       for (let index = 0; index < forms.length; index++) {
         let btnNext_form = forms[index].querySelector('.next_form')
@@ -726,7 +721,10 @@
 
         
       }
+=======
+      
+>>>>>>> f64bbc5c6bd0a8b17df367b09e6b65738fd6c39a
     </script>
-    <!-- <script src="../js/js.js"></script> -->
+    <script src="../js/js.js"></script>
   </body>
 </html>

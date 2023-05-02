@@ -1,0 +1,161 @@
+{
+  "account": [
+    {
+      "id": 1,
+      "email": "hoang@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": 2,
+      "email": "thuong@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "email": "hoang1106@gmail.com",
+      "password": "11062003",
+      "id": 3
+    }
+  ],
+  "products": [
+    {
+      "id_pro": 1,
+      "name":"Amazon Basics",
+      "price":86,
+      "url":"../images/head_phone_14.jpg",
+      "category":"Special Product",
+      "info":"new"
+    },
+    {
+      "id_pro": 2,
+      "name":"Aroma NB119 Badshah",
+      "price":482,
+      "url":"../images/head_phone_09.jpg",
+      "category":"Special Product",
+      "info":"Bestseller"
+    },
+    {
+      "id_pro": 3,
+      "name":"Hammer Base Headset",
+      "price":98,
+      "url":"../images/head_phone_17.jpg",
+      "category":"Special Product",
+      "info":"Popular"
+    },
+    {
+      "id_pro": 4,
+      "name":"Etymotic Research",
+      "price":122,
+      "url":"../images/head_phone_16.jpg",
+      "category":"True Wireless Earbuds",
+      "info":"new"
+    },
+    {
+      "id_pro": 5,
+      "name":"Earcup Sennheiser",
+      "price":98,
+      "url":"../images/head_phone_01.jpg",
+      "category":"True Wireless Earbuds",
+      "info":"new"
+    },
+    {
+      "id_pro": 6,
+      "name":"Sony WI-C100",
+      "price":122,
+      "url":"../images/head_phone_16.jpg",
+      "category":"True Wireless Earbuds",
+      "info":"Bestseller"
+    },
+    {
+      "id_pro": 7,
+      "name":"Matlek Super Earphone",
+      "price":122,
+      "url":"../images/head_phone_10.jpg",
+      "category":"True Wireless Earbuds",
+      "info":"Popular"
+    },
+    {
+      "id_pro": 8,
+      "name":"ESpinBot Ranger HX300",
+      "price":1202,
+      "url":"../images/head_phone_03.jpg",
+      "category":"True Wireless Earbuds",
+      "info":"Popular"
+    },
+    {
+      "id_pro": 9,
+      "name":"Ptron Tangent",
+      "price":241,
+      "url":"../images/head_phone_12.jpg",
+      "category":"True Wireless Earbuds",
+      "info":"Bestseller"
+    },
+    {
+      "id_pro": 10,
+      "name":"Aroma NB119 Badshah",
+      "price":122,
+      "url":"../images/head_phone_09.jpg",
+      "category":"Wired Earbuds",
+      "info":"new"
+    },
+    {
+      "id_pro": 11,
+      "name":"Matlek Super Earphone",
+      "price":152,
+      "url":"../images/head_phone_10.jpg",
+      "category":"Wired Earbuds",
+      "info":"Popular"
+    },
+    {
+      "id_pro": 12,
+      "name":"Corsair",
+      "price":122,
+      "url":"../images/head_phone_02.jpg",
+      "category":"Wired Earbuds",
+      "info":"Popular"
+    },
+    {
+      "id_pro": 13,
+      "name":"Matlek Earphone",
+      "price":332,
+      "url":"../images/head_phone_04.jpg",
+      "category":"Wired Earbuds",
+      "info":"Bestseller"
+    },
+    {
+      "id_pro": 14,
+      "name":"Portronics Muffs A",
+      "price":142,
+      "url":"../images/head_phone_08.jpg",
+      "category":"Wired Earbuds",
+      "info":"Bestseller"
+    },
+    {
+      "id_pro": 15,
+      "name":"Matlek Super Earphone",
+      "price":192,
+      "url":"../images/head_phone_15.jpg",
+      "category":"Wired Earbuds",
+      "info":"Bestseller"
+    },
+    {
+      "id_pro": 16,
+      "name":"Boult Audio ProBass",
+      "price":332,
+      "url":"../images/head_phone_13.jpg",
+      "category":"Wired Earbuds",
+      "info":"new"
+    },
+    {
+      "id_pro": 17,
+      "name":"Mechwell Headset Black",
+      "price":452,
+      "url":"../images/head_phone_05.jpg",
+      "category":"Wired Earbuds",
+      "info":"Popular"
+    }
+    
+    
+    
+  ]
+
+}

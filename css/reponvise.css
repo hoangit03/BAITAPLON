@@ -1,11 +1,6 @@
 @media (min-width: 740px) and (max-width: 1023px) {
 }
 @media (max-width: 576px) {
-  #footer,
-  .email_home
-{
-    display: none;
-  }
   #header {
     justify-content: space-between;
     padding: 0 20px;
@@ -108,9 +103,7 @@
   .brand_childer_a {
     border: none;
   }
-  #slider img {
-    max-height: 200px;
-  }
+
   .slider_card {
     position: absolute;
     top: 22%;
@@ -143,7 +136,8 @@
   .content_item {
     display: block;
     margin: 0;
-    width: 576px;
+    width: 100%;
+    padding-left: 15px;
   }
   .item_main {
     display: flex;
@@ -163,6 +157,9 @@
     height: 50px;
     font-size: 20px;
     line-height: 50px;
+  }
+  .banner_img{
+    width: 100%;
   }
   .item_main .bi-gift,
   .bi-truck,
@@ -196,46 +193,43 @@
   .content_focus button {
     width: 80px;
     font-size: 10px;
-    margin: 7px;
+    margin: 0 5px;
     font-weight: 700;
   }
-  .content_focus {
-    display: block;
-    margin-left: 10%;
-  }
+
   .content_product {
-    display: none;
+    display: block;
   }
   .banner {
     display: block;
+    width: 100%;
   }
-  .banner_left,.banner_right {
+  .banner_left,
+  .banner_right {
     position: relative;
     margin-bottom: 10px;
   }
   .banner img {
-    width: 65%;
-    height: 270px;
+    width: 100%;
   }
   .banner_title {
     position: absolute;
     top: 20px;
-    left: 60%;
+    left: auto;
   }
   .button_img {
     position: absolute;
-    left: 43%;
+    left: auto;
     bottom: 30px;
-   
   }
-    .button_img button{
-       width: 100px;
-       font-size: 13px;
-    }
+  .button_img button {
+    width: 100px;
+    font-size: 13px;
+  }
   .banner_title_black {
     font-size: 25px;
   }
-  .title_right_awesome ,
+  .title_right_awesome,
   .banner_title_friday {
     font-size: 18px;
     margin-left: 20px;
@@ -248,33 +242,99 @@
   }
   @keyframes boyx {
   }
-  .title_right_special{
+  .title_right_special {
     font-size: 25px;
   }
-  .banner_title_right{
+  .banner_title_right {
     position: absolute;
-    top:5px;
-    left:20%;
+    top: 5px;
+    left: auto;
   }
-  .limitedtime{
+  .limitedtime,
+  .limitedtime:hover {
     font-size: 8px;
     width: 80px;
     height: 0%;
     margin: 0 0 10px 0;
   }
-  .banner_right_discountt{
-    font-size: 10px; 
-    
+  .banner_right_discountt {
+    font-size: 10px;
+
     line-height: 15px;
   }
-  .btn-warning{
+  .btn-warning {
     width: 100px;
     height: 30px;
   }
-  .upto40{
+  .upto40,
+  .upto40:hover {
     font-size: 8px;
     width: 120px;
     height: 30px;
-        margin: 10px 0 0 50%;
+    margin: 10px 0 0 50%;
+  }
+
+  .actor img {
+    width: 50%;
+    margin-left: 60px;
+  }
+  .actor_sologan {
+    width: 100%;
+  }
+
+  .email_home_content,
+  .email_home_content_left,
+  .email_home_content_left_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .email_home_content_left_boder {
+    height: 50px;
+    width: 50px;
+    font-size: 20px;
+    line-height: 40px;
+  }
+  .email_home_content_left {
+    margin: 0;
+    padding-top: 20px;
+  }
+  .email_home_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .email_home_content_right {
+    margin: 0;
+  }
+  .email_right {
+    padding-top: 30px;
+  }
+  /*  */
+  .content_product_colum_number {
+    margin: 20px;
+  }
+  .content_product {
+    margin: 0;
+  }
+  #footer {
+    width: 100%;
+  }
+  .foot_top {
+    display: block;
+  }
+  .footer_quali {
+    height: 0;
+    display:none;
+   
+    overflow: hidden;
+    transition: 0.5s;
+  }
+  .footer_quali.show {
+    height: auto;
+    display: block;
+   
+    
   }
 }
