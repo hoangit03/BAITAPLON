@@ -263,7 +263,10 @@
     color: #e61010;
     margin-right: 5px;
 }
-
+.pro-listpro{
+    overflow: hidden;
+    margin-top: 50px;
+}
 .description-reviews 
 .pro-cnt 
 .tab-rvw 
@@ -344,7 +347,7 @@ textarea{
     transition: 1s;
 }
 .pro-listpro .content_product_colum{
-    width: 99%;
+    width: 100%;
 }
 .pro-related{
     margin-bottom: 80px;

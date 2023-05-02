@@ -228,7 +228,7 @@ function renderProductItem(pros,productItem){
       <div><img src="${pro.url}" alt="" /></div>
       <div class="product_info">
         <div class="name_img">
-          <a href=""><h5>${pro.name}</h5></a>
+          <div href=""><h5>${pro.name}</h5></div>
         </div>
         <div class="product_money">
           <i class="bi bi-currency-dollar"></i><b>${pro.price}.00</b>
@@ -301,6 +301,7 @@ function renderOrderProduct(){
   value = JSON.parse(value)
   let products = JSON.parse(proJson)
   infoProductImg(value)
+  showRelatedProduct(products)
   let htmlProductInfo = `
   <div class="row mb-3">
     <div class="col-md-6 product-left">
@@ -354,7 +355,7 @@ function renderOrderProduct(){
           </li>
           <li>
             <span class="dics">Product code:</span>
-            <span class="dics1">product ${value.id}</span>
+            <span class="dics1">product ${value.id_pro}</span>
           </li>
           <li>
             <span class="dics">Availability:</span>
@@ -403,7 +404,7 @@ function renderOrderProduct(){
   </div>
   `;
   product_content.innerHTML = htmlProductInfo
-  localStorage.clear()
+  // localStorage.clear()
 }
 
 
@@ -430,7 +431,7 @@ function clickProduct(products){
         protype.onclick = function(){
           localStorage.setItem('product',JSON.stringify(prosNew[index]))
           localStorage.setItem('productType',JSON.stringify(prosNew))
-          console.log(localStorage.getItem('product'));
+          
           window.location = './product.html'
         }
       })
@@ -452,10 +453,8 @@ function clickProduct(products){
       protypes.forEach((protype,index)=>{
         protype.onclick = function(){
           localStorage.setItem('product',JSON.stringify(prosBest[index]))
-          console.log(localStorage.getItem('product'));
           localStorage.setItem('productType',JSON.stringify(prosBest))
           window.location = './product.html'
-
         }
       })
       
@@ -474,6 +473,23 @@ function infoProductImg(value){
   imgPro.innerHTML = html
 }
 
+function showRelatedProduct(products) {
+  let relatedContent = document.querySelector('.content_product_colum')
+  renderProductItem(products,relatedContent);
+}
+
+function handleUpBack(){
+  let btnMoveLeft = document.querySelector('#move_left')
+  let btnMoveRight = document.querySelector('#move_right')
+  let relatedProduct = document.querySelector('.content_product_colum')
+  btnMoveLeft.onclick = function(){
+    relatedProduct.style.transform = `translateX(${-313}px)`
+  }
+  btnMoveRight.onclick = function(){
+    relatedProduct.style.transform = `translateX(${313}px)`
+  }
+}
+
 function handleRewDesc(){
   let btn_rew_desc = document.querySelectorAll('.navdes-rev div')
   let pro_cnt = document.querySelectorAll('.pro-cnt > div')
@@ -485,17 +501,54 @@ function handleRewDesc(){
       pro_show.classList.remove('show')
       this.classList.add('active')
       pro_cnt[index].classList.add('show')
-
-
     })
   })
 }
 
+function handleMinusPlus(){
+  let minus = document.querySelector('.btn-quantity .mines')
+  let plus = document.querySelector('.btn-quantity .plus')
+  let inputQuantity = document.querySelector('.btn-quantity input')
+  let quantity = Number(inputQuantity.value)
+  
+  minus.addEventListener('click',function(){
+    if(quantity > 1){
+      quantity--;
+      inputQuantity.value = quantity
+    }
+    
+  })
+  
+  plus.addEventListener('click',function(){
+    quantity++;
+    inputQuantity.value = quantity
+  })
+  
+}
+function productOrder(){
+  let productList = document.querySelectorAll('.content_product_colum > div')
+  let productType = localStorage.getItem('productType')
+  let products = JSON.parse(productType)
+  productList.forEach((product,index)=>{
+    product.addEventListener('click',function(){
+      localStorage.setItem('product',JSON.stringify(products[index]))
+      window.location = './product.html'
+    })
+  })
+}
+
+function addCart(){
+
+}
 
 function orderProduct() {
   getProduct(clickProduct);
   renderOrderProduct();
   handleRewDesc();
+  handleUpBack();
+  productOrder();
+  handleMinusPlus();
+  addCart();
 }
 
 // Xử lý hiển thị loại product
