@@ -142,8 +142,9 @@
     display: flex;
     flex-direction: row;
     height: 0%;
-   
-    padding: 0;
+    
+  
+  
   }
   .item_main_word {
     display: block;

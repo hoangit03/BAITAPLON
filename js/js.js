@@ -1,10 +1,14 @@
-var accountAPI = "http://localhost:3000/account";
-var productAPI = "http://localhost:3000/products";
-var cartAPI = "http://localhost:3000/cart ";
+
+
+
+var accountAPI = 'http://localhost:3000/account';
+var productAPI = 'http://localhost:3000/products';
+var cartAPI = 'http://localhost:3000/cart ';
+
 // Function getAccount
-function getAccount(callback) {
+function getAccount(callback){
   fetch(accountAPI)
-    .then(function (response) {
+    .then(function(response){
       return response.json();
     })
     .then(callback);
@@ -36,96 +40,108 @@ function checkLogin(form, accuonts) {
   });
 }
 
-function nextPage(forms) {
+
+function nextPage(forms){
   for (let index = 0; index < forms.length; index++) {
-    let btnNext_form = forms[index].querySelector(".next_form");
-    btnNext_form.onclick = function () {
-      parentElement = btnNext_form.parentElement;
-      parentElement.style.display = "none";
-      if (index == 0) {
-        forms[index + 1].style.display = "block";
-      } else forms[0].style.display = "block";
-    };
+
+    let btnNext_form = forms[index].querySelector('.next_form')
+    btnNext_form.onclick = function(){
+      parentElement = btnNext_form.parentElement
+      parentElement.style.display = 'none'
+      if(index == 0){
+        forms[index+1].style.display = 'block'
+      }
+      else
+        forms[0].style.display = 'block'
+    }
+    
   }
+
 }
 
-function checkRegister(form, accuonts) {
-  let btn_submit = form.querySelector('button[type="submit"]');
-  let inputEmail = form.querySelector('input[type="email"]');
-  let inputPass = form.querySelector('input[type="password"]');
-  let inputPassConfi = form.querySelector('input[id="confirmPassword"]');
-  let inputs = form.querySelectorAll("input");
-  let errors = form.querySelectorAll(".error-messages");
-  inputs.forEach((input) => {
-    input.onfocus = function () {
-      let error = this.parentElement.querySelector(".error-messages");
-      error.innerHTML = "";
-    };
-  });
-  inputPass.onblur = function () {
-    if (this.value.length < 8) {
-      let error = this.parentElement.querySelector(".error-messages");
-      error.innerHTML = "Password phải nhiều hơn 8 kí tự!";
+function checkRegister(form,accuonts){
+  let btn_submit =  form.querySelector('button[type="submit"]')
+  let inputEmail = form.querySelector('input[type="email"]')
+  let inputPass = form.querySelector('input[type="password"]')
+  let inputPassConfi = form.querySelector('input[id="confirmPassword"]')
+  let inputs = form.querySelectorAll('input')
+  let errors = form.querySelectorAll('.error-messages')
+  inputs.forEach(input=>{
+    input.onfocus = function(){
+      let error = this.parentElement.querySelector('.error-messages')
+      error.innerHTML = ""
     }
-  };
-  inputPassConfi.onblur = function () {
-    if (this.value != inputPass.value) {
-      let error = this.parentElement.querySelector(".error-messages");
-      error.innerHTML = "Password không khới!";
+  })
+  inputPass.onblur = function(){
+    if(this.value.length < 8){
+      let error = this.parentElement.querySelector('.error-messages')
+      error.innerHTML = "Password phải nhiều hơn 8 kí tự!"
     }
-  };
-
-  btn_submit.addEventListener("click", function () {
+  }
+  inputPassConfi.onblur = function(){
+    if(this.value != inputPass.value){
+      let error = this.parentElement.querySelector('.error-messages')
+      error.innerHTML = "Password không khới!"
+    }
+  }
+  
+  
+  btn_submit.addEventListener('click',function(){
     event.preventDefault();
     let dk = 0;
-    accuonts.forEach((accuont) => {
-      if (accuont.email == inputEmail.value) {
-        let error = inputEmail.parentElement.querySelector(".error-messages");
-        error.innerHTML = "Email này đã đăng ký tài khoản!";
-      } else {
-        if (checkEmail(inputEmail.value) == false) {
-          let error = inputEmail.parentElement.querySelector(".error-messages");
-          error.innerHTML = "Email không hợp lệ!";
+    accuonts.forEach(accuont=> {
+      if(accuont.email == inputEmail.value){
+        let error = inputEmail.parentElement.querySelector('.error-messages')
+        error.innerHTML = "Email này đã đăng ký tài khoản!"
+      }
+      else{
+        if(checkEmail(inputEmail.value)==false){
+          let error = inputEmail.parentElement.querySelector('.error-messages')
+          error.innerHTML = "Email không hợp lệ!"
         }
+        
       }
-    });
-
-    inputs.forEach((input) => {
-      if (input.value == "") {
-        let error = input.parentElement.querySelector(".error-messages");
-        error.innerHTML = "Trường này không được bỏ trống";
+    })
+    
+    inputs.forEach(input=>{
+      if(input.value == ''){
+        let error = input.parentElement.querySelector('.error-messages')
+        error.innerHTML = "Trường này không được bỏ trống"
       }
-    });
-    errors.forEach((error) => {
-      if (!error.textContent) dk++;
-    });
-    if (dk == errors.length) {
+    })
+    errors.forEach(error=>{
+    if(!error.textContent)
+      dk++;
+    })
+    if(dk == errors.length){
       var data = {
         email: inputEmail.value,
         password: inputPass.value,
       };
       createAccount(data, accountAPI);
     }
-  });
+    
+  })
 }
-
-function createAccount(data, API) {
+function createAccount(data,API){
   var option = {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      "Content-Type": "application/json"
     },
-    body: JSON.stringify(data),
+    body: JSON.stringify(data)
   };
-  fetch(API, option).then(function (data) {
-    location.reload();
-  });
+  fetch(API,option)
+    .then(function(data){
+      location.reload();
+    })
 }
 
-function checkEmail(value) {
-  let regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-  return regex.test(value);
+function checkEmail(value){
+  let regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+  return regex.test(value)
 }
+
 
 // ---------
 
@@ -547,7 +563,7 @@ function shopContent(products) {
 }
 
 function showShop(products) {
-  let show = document.querySelector(".shop_content_link");
+  let show = document.querySelectorAll(".shop_content_link");
   let showBone = showProduct(products, "Bone Condition");
   let showWireless = showProduct(products, "Wireless Earbuds");
   let showOver = showProduct(products, "Over-Ear Headphones");
@@ -557,7 +573,8 @@ function showShop(products) {
   let html3 = shopContent(showOver);
   let html4 = shopContent(showWired);
   let html = html1 + html2 + html3 + html4;
-  show.innerHTML = html;
+  show[0].innerHTML = html;
+  show[1].innerHTML = html;
 }
 
 function showHeader() {
@@ -574,9 +591,8 @@ function LoginPage() {
     // ------------------------------------------------------------------------
     checkRegister(forms[1], accuonts);
   });
-
-  // Login -> singup
-  // ---------------------------------------------------------------------------
+// Login -> singup
+// ---------------------------------------------------------------------------
   nextPage(forms);
 }
 
@@ -599,47 +615,51 @@ ScrollMenu();
 
 orderProduct();
 
+
 // Thương
-const menuMobile = document.querySelector(".header-menu-mobile");
-const menuBtnClose = document.querySelector(".header-menu-close");
-const menuIcon = document.querySelector(".header_right-mobile");
-const btnPlus = document.querySelectorAll(".header-menu-list_icon");
-const menuItems = document.querySelectorAll(".header-menu-list_link");
+showHeaderMobile();
+function showHeaderMobile() {
+  const menuMobile = document.querySelector(".header-menu-mobile");
+  const menuBtnClose = document.querySelector(".header-menu-close");
+  const menuIcon = document.querySelector(".header_right-mobile");
+  const btnPlus = document.querySelectorAll(".header-menu-list_icon");
+  const menuItems = document.querySelectorAll(".header-menu-list_link");
 
-menuIcon.onclick = () => menuMobile.classList.add("show");
-menuBtnClose.onclick = () => menuMobile.classList.remove("show");
+  menuIcon.onclick = () => menuMobile.classList.add("show");
+  menuBtnClose.onclick = () => menuMobile.classList.remove("show");
 
-btnPlus.forEach((btn, index) => {
-  btn.onclick = () => menuItems[index + 1].classList.toggle("show");
-});
-
-$(document).ready(function () {
-  $(".content_lastest_blogs").slick({
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    responsive: [
-      {
-        breakpoint: 1023,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        },
-      },
-      {
-        breakpoint: 560,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+  btnPlus.forEach((btn, index) => {
+    btn.onclick = () => menuItems[index + 1].classList.toggle("show");
   });
-});
-const u = document.querySelectorAll(".aea");
-const g = document.querySelectorAll(".footer_quali");
-const z = document.querySelectorAll(".border_bottom")
-u.forEach((btn, index)=>{
-  btn.onclick = () => g[index].classList.toggle("show")
+
+  $(document).ready(function () {
+    $(".content_lastest_blogs").slick({
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      responsive: [
+        {
+          breakpoint: 1023,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+          },
+        },
+        {
+          breakpoint: 560,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
+      ],
+    });
+  });
+  const u = document.querySelectorAll(".aea");
+  const g = document.querySelectorAll(".footer_quali");
+  const z = document.querySelectorAll(".border_bottom")
+  u.forEach((btn, index) => {
+    btn.onclick = () => g[index].classList.toggle("show")
 
 
-})
+  })
+}
