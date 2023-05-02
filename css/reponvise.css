@@ -138,13 +138,10 @@
     padding-left: 15px;
   }
   .item_main {
-    float:right;
+    float: right;
     display: flex;
     flex-direction: row;
     height: 0%;
-    
-  
-  
   }
   .item_main_word {
     display: block;
@@ -167,7 +164,7 @@
   .bi-headphones {
     transform: rotateY(360deg);
   }
-   .topProduct h1 {
+  .topProduct h1 {
     font-size: 25px;
   }
   .bottom_lastbog,
@@ -245,7 +242,7 @@
   .title_right_special {
     font-size: 30px;
   }
- 
+
   /* aaa */
   .banner_title_right {
     position: absolute;
@@ -274,7 +271,7 @@
     height: 30px;
     margin: 10px 0 0 50%;
   }
-    .actor img {
+  .actor img {
     width: 50%;
     margin-left: 60px;
   }
@@ -282,7 +279,7 @@
     width: 90%;
     padding-bottom: 20px;
   }
-   .email_home_content,
+  .email_home_content,
   .email_home_content_left,
   .email_home_content_left_info {
     display: flex;
@@ -356,6 +353,37 @@
   }
   .footer_quali {
     font-size: 12px;
+  }
+  .foot_top h3 {
+    font-size: 17px !important;
+  }
+  .footer_quali {
+    font-size: 12px;
+  }
+  /* blog */
+  #container__blog__left {
+    display: none;
+  }
+  .blog_box {
+    width: 48% !important;
+  }
+  #img__blog {
+    padding: 15px 0;
+    margin: 0;
+  }
+  #img__blog h1 {
+    font-size: 24px;
+  }
+  #img__blog div {
+    font-size: 17px;
+  }
+  #pagination_main__text {
+    width: auto;
+  }
+  #pagination_main {
+    flex-direction: row;
+    align-items: center;
+    padding: 20px 0;
   }
 }
 @media (max-width: 560px) {
@@ -501,7 +529,7 @@
     display: flex;
     flex-direction: row;
     height: 0%;
-   
+
     padding: 0;
   }
   .item_main_word {
@@ -525,7 +553,7 @@
   .bi-headphones {
     transform: rotateY(360deg);
   }
- 
+
   .topProduct h1 {
     font-size: 20px;
   }
@@ -723,5 +751,38 @@
   }
   .footer_quali {
     font-size: 12px;
+  }
+  /* blog */
+  #container__blog__left {
+    display: none;
+  }
+  #content__blog {
+    display: block !important;
+  }
+  #container__blog {
+    width: 100%;
+
+    margin: 0;
+  }
+  .blog_box {
+    width: 100% !important;
+  }
+  #img__blog {
+    padding: 15px 0;
+    margin: 0;
+  }
+  #img__blog h1 {
+    font-size: 20px;
+  }
+  #img__blog div {
+    font-size: 15px;
+  }
+  #pagination_main__text {
+    width: auto;
+  }
+  #pagination_main {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
   }
 }
