@@ -619,14 +619,14 @@ $(document).ready(function () {
     slidesToScroll: 3,
     responsive: [
       {
-        breakpoint: 576,
+        breakpoint: 1023,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
+          slidesToShow: 2,
+          slidesToScroll: 2,
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 560,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -635,6 +635,11 @@ $(document).ready(function () {
     ],
   });
 });
-const u = document.querySelector(".aea");
-const g = document.querySelector(".footer_quali");
-u.onclick = () => g.classList.toggle("show");
+const u = document.querySelectorAll(".aea");
+const g = document.querySelectorAll(".footer_quali");
+const z = document.querySelectorAll(".border_bottom")
+u.forEach((btn, index)=>{
+  btn.onclick = () => g[index].classList.toggle("show")
+
+
+})

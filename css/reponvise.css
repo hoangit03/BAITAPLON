@@ -1,6 +1,363 @@
-@media (min-width: 740px) and (max-width: 1023px) {
+@media (min-width: 561px) and (max-width: 1023px) {
+  #header {
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  .header_menu {
+    display: none;
+  }
+
+  .header_right {
+    gap: 8px;
+
+    margin-top: 10px;
+  }
+  .header_right .header_right-mobile {
+    display: flex;
+  }
+  .header_right-mobile,
+  .header_right .icon {
+    border-radius: 10px;
+    background-color: #6c0000;
+  }
+
+  .header_right-mobile,
+  .header_right .icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .header_right i,
+  .header_right a {
+    font-size: 20px;
+  }
+
+  .product_childents_childent h4,
+  b {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 10px 0;
+  }
+  .product_childents {
+    padding: 0;
+  }
+  .ben {
+    margin: 0 0 0 10px;
+  }
+  .ben a {
+    font-size: 13px;
+  }
+  .product_childents_childent {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .childent_big {
+    margin: 5px 0;
+  }
+  .shop_content_link {
+    display: block;
+  }
+
+  .shop_content_link h4 {
+    font-weight: 700;
+  }
+  .shop_content_link ul {
+    padding-left: 20px;
+    font-weight: 500;
+  }
+  .ben a {
+    font-size: 11px;
+  }
+  .shop_content_link a {
+    font-size: 12px;
+  }
+  .shop_img {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+  .shop_img img {
+    width: 220px;
+    height: 80px;
+    margin: 5px 0;
+  }
+
+  .mid_content a,
+  .right_content a {
+    font-size: 12px;
+  }
+  .categories_content_left h4,
+  .categories_content_mid h4,
+  .categories_content_right h4 {
+    margin: 0;
+    margin-top: 10px;
+  }
+  .categories_content_mid img {
+    margin-top: 10px;
+  }
+  .brand_childer {
+    height: 1px;
+  }
+  .brand_childer_a {
+    border: none;
+  }
+  .slider_card {
+    position: absolute;
+    top: 25%;
+    left: 10%;
+  }
+  .slider_button {
+    width: 150px;
+    font-size: 9px;
+    height: 0%;
+  }
+  .slider_slogan button {
+    width: 100px;
+    font-size: 9px;
+    height: 0%;
+  }
+
+  .slider_slogan_title {
+    font-size: 16px;
+    padding: 8px 0;
+  }
+  .slider_slogan_document {
+    font-size: 10px;
+    max-width: 350px;
+    line-height: 16px;
+  }
+  #content {
+    margin: 0;
+    width: 100%;
+  }
+  .content_item {
+    display: block;
+    margin: 0;
+    width: 100%;
+    padding-left: 15px;
+  }
+  .item_main {
+    float:right;
+    display: flex;
+    flex-direction: row;
+    height: 0%;
+   
+    padding: 0;
+  }
+  .item_main_word {
+    display: block;
+    margin: 0px 0px 15px 15px;
+    width: 100%;
+    font-size: 13px;
+  }
+  .item_truck {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+  }
+  .banner_img {
+    width: 100%;
+  }
+  .item_main .bi-gift,
+  .bi-truck,
+  .bi-credit-card,
+  .bi-headphones {
+    transform: rotateY(360deg);
+  }
+   .topProduct h1 {
+    font-size: 25px;
+  }
+  .bottom_lastbog,
+  .gach {
+    height: 3px;
+    width: 120px;
+  }
+  .move {
+    width: 75px;
+  }
+  .move_left {
+    height: 30px;
+    width: 30px;
+    line-height: 25px;
+  }
+  .move_left i {
+    font-size: 13px;
+  }
+  .content_topProduct {
+    height: 0%;
+    margin-bottom: 30px;
+  }
+  .content_focus button {
+    width: 80px;
+    font-size: 10px;
+    margin: 0 5px;
+    font-weight: 700;
+  }
+
+  .content_product {
+    display: block;
+  }
+  .banner {
+    display: block;
+    width: 100%;
+  }
+  .banner_left,
+  .banner_right {
+    position: relative;
+    margin-bottom: 10px;
+  }
+  .banner img {
+    width: 100%;
+  }
+  .banner_title {
+    position: absolute;
+    top: 20px;
+    left: auto;
+  }
+  .button_img {
+    position: absolute;
+    left: auto;
+    bottom: 50px;
+  }
+  .button_img button {
+    width: 150px;
+    font-size: 15px;
+  }
+  .banner_title_black {
+    font-size: 40px;
+  }
+  .title_right_awesome,
+  .banner_title_friday {
+    font-size: 20px;
+    margin-left: 30px;
+  }
+  .banner_title img {
+    height: 120px;
+    width: 120px;
+    margin-left: 30px;
+    animation: boyx 3s infinite;
+  }
+  @keyframes boyx {
+  }
+  .title_right_special {
+    font-size: 30px;
+  }
+ 
+  /* aaa */
+  .banner_title_right {
+    position: absolute;
+    top: 10px;
+    left: auto;
+  }
+  .limitedtime,
+  .limitedtime:hover {
+    font-size: 10px;
+    width: 100px;
+    height: 0%;
+    margin: 0 0 10px 0;
+  }
+  .banner_right_discountt {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .btn-warning {
+    width: 120px;
+    height: 30px;
+  }
+  .upto40,
+  .upto40:hover {
+    font-size: 10px;
+    width: 150px;
+    height: 30px;
+    margin: 10px 0 0 50%;
+  }
+    .actor img {
+    width: 50%;
+    margin-left: 60px;
+  }
+  .actor_sologan {
+    width: 90%;
+    padding-bottom: 20px;
+  }
+   .email_home_content,
+  .email_home_content_left,
+  .email_home_content_left_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .email_home_content_left_boder {
+    height: 50px;
+    width: 50px;
+    font-size: 20px;
+    line-height: 40px;
+  }
+  .email_home_content_left {
+    margin: 0;
+    padding-top: 20px;
+  }
+  .email_home_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .email_home_content_right {
+    margin: 0;
+  }
+  .email_right {
+    padding-top: 30px;
+  }
+  #footer {
+    width: 100%;
+  }
+  .foot_top {
+    display: block;
+  }
+  .footer_quali {
+    height: 0;
+    display: none;
+    overflow: hidden;
+    transition: 3s;
+  }
+  .footer_quali.show {
+    height: auto;
+    display: block;
+  }
+  .footer_quali div {
+    padding: 0;
+  }
+  .contact {
+    width: 100%;
+  }
+  .aea,
+  .border_bottom {
+    display: block;
+  }
+  #footer__top {
+    display: block;
+    padding: 30px 0;
+  }
+  .enter_email {
+    width: 270px !important;
+  }
+  .email_home_content_right {
+    width: 400px;
+  }
+  .email_home_content_right .btn-success {
+    width: 100px;
+    font-size: 12px;
+  }
+  .foot_top h3 {
+    font-size: 17px !important;
+  }
+  .footer_quali {
+    font-size: 12px;
+  }
 }
-@media (max-width: 576px) {
+@media (max-width: 560px) {
   #header {
     justify-content: space-between;
     padding: 0 20px;
@@ -143,7 +500,7 @@
     display: flex;
     flex-direction: row;
     height: 0%;
-    width: 350px;
+   
     padding: 0;
   }
   .item_main_word {
@@ -158,7 +515,7 @@
     font-size: 20px;
     line-height: 50px;
   }
-  .banner_img{
+  .banner_img {
     width: 100%;
   }
   .item_main .bi-gift,
@@ -167,6 +524,7 @@
   .bi-headphones {
     transform: rotateY(360deg);
   }
+ 
   .topProduct h1 {
     font-size: 20px;
   }
@@ -245,6 +603,7 @@
   .title_right_special {
     font-size: 25px;
   }
+  /* aaa */
   .banner_title_right {
     position: absolute;
     top: 5px;
@@ -326,23 +685,42 @@
   }
   .footer_quali {
     height: 0;
-    display:none;
-   
+    display: none;
     overflow: hidden;
-    transition: 0.5s;
-       
+    transition: 3s;
   }
   .footer_quali.show {
     height: auto;
     display: block;
-
-   
   }
-   .footer_quali div{
+  .footer_quali div {
     padding: 0;
-   }
-   .contact{
+  }
+  .contact {
     width: 100%;
-     border-bottom:1px solid whitesmoke;
-   }
+  }
+  .aea,
+  .border_bottom {
+    display: block;
+  }
+  #footer__top {
+    display: block;
+    padding: 30px 0;
+  }
+  .enter_email {
+    width: 200px !important;
+  }
+  .email_home_content_right {
+    width: 300px;
+  }
+  .email_home_content_right .btn-success {
+    width: 80px;
+    font-size: 12px;
+  }
+  .foot_top h3 {
+    font-size: 17px !important;
+  }
+  .footer_quali {
+    font-size: 12px;
+  }
 }
