@@ -268,6 +268,10 @@ html {
   margin-left: 3px;
 }
 
+.header-menu-mobile{
+  display: block;
+}
+
 .header_menu_pages .pages_children,
 .header_menu_brand .brand_childer {
   position: absolute;
