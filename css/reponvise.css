@@ -3,6 +3,9 @@
     justify-content: space-between;
     padding: 0 20px;
   }
+  .header-menu-mobile{
+    display: block;
+  }
   .header_menu {
     display: none;
   }
@@ -20,7 +23,6 @@
     border-radius: 10px;
     background-color: #6c0000;
   }
-
   .header_right-mobile,
   .header_right .icon {
     width: 40px;
@@ -417,7 +419,9 @@
   .header_menu {
     display: none;
   }
-
+  .header-menu-mobile{
+    display: block;
+  }
   .header_right {
     gap: 8px;
 

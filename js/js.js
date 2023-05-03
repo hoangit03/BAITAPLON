@@ -260,7 +260,7 @@ function renderOrderProduct() {
     let proJson = localStorage.getItem("productType");
     value = JSON.parse(value);
     let products = JSON.parse(proJson);
-    infoProductImg(value.name);
+    infoImg(value.name);
     showRelatedProduct(products);
     let htmlProductInfo = `
   <div class="row mb-3">
@@ -422,7 +422,7 @@ function clickProduct(products) {
     }
   });
 }
-function infoProductImg(value) {
+function infoImg(value) {
   let imgPro = document.querySelector("#img__blog");
   if (imgPro) {
     let html = `
@@ -490,9 +490,9 @@ function handleMinusPlus() {
     });
   }
 }
-function productOrder() {
+function productOrder(ProductT) {
   let productList = document.querySelectorAll(".content_product_colum > div");
-  let productType = localStorage.getItem("productType");
+  let productType = localStorage.getItem(ProductT);
   let products = JSON.parse(productType);
   productList.forEach((product, index) => {
     product.addEventListener("click", function () {
@@ -519,15 +519,6 @@ function addCart() {
   }
 }
 
-function orderProduct() {
-  getProduct(clickProduct);
-  renderOrderProduct();
-  handleRewDesc();
-  handleUpBack();
-  productOrder();
-  handleMinusPlus();
-  addCart();
-}
 
 function shopContent(products) {
   let itemContent = products.map((product) => {
@@ -537,7 +528,7 @@ function shopContent(products) {
   });
   let html = `
     <div>
-    <h4><a href="">${products[0].shop}</a></h4>
+    <h4><a href="#">${products[0].shop}</a></h4>
     <ul>
       ${itemContent.join("")}
     </ul>
@@ -546,7 +537,7 @@ function shopContent(products) {
   return html;
 }
 
-function showShop(products) {
+function showHShop(products) {
   let show = document.querySelectorAll(".shop_content_link");
   let showBone = showProduct(products, "Bone Condition");
   let showWireless = showProduct(products, "Wireless Earbuds");
@@ -562,7 +553,7 @@ function showShop(products) {
 }
 
 function showHeader() {
-  getProduct(showShop);
+  getProduct(showHShop);
 }
 
 function LoginPage() {
@@ -580,15 +571,86 @@ function LoginPage() {
   nextPage(forms);
 }
 
+function shopPage(products){
+  let titleShows = document.querySelectorAll('.header_menu_shop .shop_content_link > div h4')
+  let showBone = showProduct(products, "Bone Condition");
+  let showWireless = showProduct(products, "Wireless Earbuds");
+  let showOver = showProduct(products, "Over-Ear Headphones");
+  let showWired = showProduct(products, "Wired Earbuds");
+  let arr = [showBone,showWireless,showOver,showWired]
+  titleShows.forEach((title,index)=>{
+    title.addEventListener('click',function(){
+      localStorage.setItem('productTypeShop',JSON.stringify(arr[index]))
+      window.location = "./shop.html";
+    })
+  })
+}
+
+function showLinkShop(){
+  let productShop = JSON.parse(localStorage.getItem('productTypeShop'))
+  let titleShop = document.getElementById('img__blog')
+  infoImg(productShop[0].shop)
+}
+
+function renderListShop(item,products){
+  let html = products.map(product=>{
+    return `
+    <li><a href="#">${product.name}</a></li>
+    `
+  })
+  item.innerHTML = `
+    <ul>
+      ${html.join('')}
+    </ul>
+  `
+}
+
+function showRefineShop(){
+  let productsS = document.querySelector('.cate_list')
+  let productShop = JSON.parse(localStorage.getItem('productTypeShop'))
+  renderListShop(productsS,productShop)
+}
+
+function showListType(){
+  let list = document.querySelector('.content_product_colum')
+  let productShop = JSON.parse(localStorage.getItem('productTypeShop'))
+  renderProductItem(productShop,list)
+}
+
+// function showPageShop(Products){
+//   getProduct(shopPage);
+//   showLinkShop();
+//   showRefineShop();
+//   showListType();
+//   productOrder("productTypeShop")
+// }
+
+
+
+// xử lý showProduct
+
+function orderProduct() {
+  getProduct(clickProduct);
+  renderOrderProduct();
+  handleRewDesc();
+  handleUpBack();
+  productOrder('productType');
+  handleMinusPlus();
+  addCart();
+}
 // Xử lý hiển thị loại product
+
+
 
 handleTypeProduct();
 
 // hiển thị dữ liệu product
 ShowProducts();
 
+
 showHeader();
 
+// showPageShop();
 // xử lý login-register
 LoginPage();
 
