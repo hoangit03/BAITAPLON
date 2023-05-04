@@ -617,13 +617,13 @@ function showListType(){
   renderProductItem(productShop,list)
 }
 
-// function showPageShop(Products){
-//   getProduct(shopPage);
-//   showLinkShop();
-//   showRefineShop();
-//   showListType();
-//   productOrder("productTypeShop")
-// }
+function showPageShop(Products){
+  getProduct(shopPage);
+  showLinkShop();
+  showRefineShop();
+  showListType();
+  productOrder("productTypeShop")
+}
 
 
 
