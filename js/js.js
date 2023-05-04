@@ -1,30 +1,8 @@
-var productAPI = "http://localhost:3000/products";
 var cartAPI = "http://localhost:3000/cart ";
-
-
-
-
-
-
-
-
-
-
-
+var productAPI = "http://localhost:3000/products";
 
 // ---------
 
-function ScrollMenu() {
-  window.addEventListener("scroll", function () {
-    var header = document.getElementById("header");
-    var slider = document.getElementById("slider");
-    var img_blog = document.getElementById("img__blog");
-    header.classList.toggle("header-fixed", window.scrollY > 600);
-    if (slider) slider.classList.toggle("slider-scroll", window.scrollY > 600);
-    if (img_blog)
-      img_blog.classList.toggle("slider-scroll", window.scrollY > 600);
-  });
-}
 
 // Get Products
 function ShowProducts() {
@@ -57,7 +35,7 @@ function typeProduct(products, info) {
   return pros;
 }
 
-function showProduct(products, shop) {
+function shopProduct(products, shop) {
   var pros = products.filter((product) => {
     return product.shop == shop;
   });
@@ -122,6 +100,7 @@ function renderProductItem(pros, productItem) {
   }
 }
 
+
 function handleTypeProduct() {
   let btn_groups = document.querySelectorAll(".btn-group button");
   let product_items = document.querySelectorAll(".product_item");
@@ -136,6 +115,7 @@ function handleTypeProduct() {
     });
   });
 }
+
 
 // render Order Product
 function renderOrderProduct() {
@@ -253,15 +233,7 @@ function renderOrderProduct() {
   }
 }
 
-// lấy product từ API
 
-function getProduct(callback) {
-  fetch(productAPI)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(callback);
-}
 
 // Xử lý product khi click
 function clickProduct(products) {
@@ -422,24 +394,7 @@ function shopContent(products) {
   return html;
 }
 
-function showHShop(products) {
-  let show = document.querySelectorAll(".shop_content_link");
-  let showBone = showProduct(products, "Bone Condition");
-  let showWireless = showProduct(products, "Wireless Earbuds");
-  let showOver = showProduct(products, "Over-Ear Headphones");
-  let showWired = showProduct(products, "Wired Earbuds");
-  let html1 = shopContent(showBone);
-  let html2 = shopContent(showWireless);
-  let html3 = shopContent(showOver);
-  let html4 = shopContent(showWired);
-  let html = html1 + html2 + html3 + html4;
-  show[0].innerHTML = html;
-  show[1].innerHTML = html;
-}
 
-function showHeader() {
-  getProduct(showHShop);
-}
 
 
 
@@ -512,19 +467,60 @@ function orderProduct() {
 }
 // Xử lý hiển thị loại product
 
-
-
 handleTypeProduct();
 
 // hiển thị dữ liệu product
 ShowProducts();
 
 
+// Hàm lấy product từ API
+
+function getProduct(callback) {
+  fetch(productAPI)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(callback);
+}
+
+// Hiển thị header Shop
+
+function showHShop(products) {
+  let show = document.querySelectorAll(".shop_content_link");
+  let showBone = shopProduct(products, "Bone Condition");
+  let showWireless = shopProduct(products, "Wireless Earbuds");
+  let showOver = shopProduct(products, "Over-Ear Headphones");
+  let showWired = shopProduct(products, "Wired Earbuds");
+  let html1 = shopContent(showBone);
+  let html2 = shopContent(showWireless);
+  let html3 = shopContent(showOver);
+  let html4 = shopContent(showWired);
+  let html = html1 + html2 + html3 + html4;
+  show[0].innerHTML = html;
+  show[1].innerHTML = html;
+}
+
+function showHeader() {
+  getProduct(showHShop);
+}
+
+
 showHeader();
 
-
-
 // xử lý header fixed
+
+function ScrollMenu() {
+  window.addEventListener("scroll", function () {
+    var header = document.getElementById("header");
+    var slider = document.getElementById("slider");
+    var img_blog = document.getElementById("img__blog");
+    header.classList.toggle("header-fixed", window.scrollY > 600);
+    if (slider) slider.classList.toggle("slider-scroll", window.scrollY > 600);
+    if (img_blog)
+      img_blog.classList.toggle("slider-scroll", window.scrollY > 600);
+  });
+}
+
 ScrollMenu();
 
 // Order product

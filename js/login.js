@@ -108,12 +108,12 @@ function checkRegister(form, accuonts) {
           email: inputEmail.value,
           password: inputPass.value,
         };
-        createAccount(data, accountAPI);
+        createData(data, accountAPI);
       }
     });
 }
 
-function createAccount(data, API) {
+function createData(data, API) {
     var option = {
       method: "POST",
       headers: {
