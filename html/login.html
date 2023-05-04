@@ -1130,26 +1130,6 @@
       </div>
     </div>
 
-    <script>
-    
-            forms = document.querySelectorAll('#content_login form')
-            for (let index = 0; index < forms.length; index++) {
-              let btnNext_form = forms[index].querySelector('.next_form')
-              btnNext_form.onclick = function(e){
-                parentElement = btnNext_form.parentElement
-                parentElement.style.display = 'none'
-                if(index == 0){
-                  forms[index+1].style.display = 'block'
-                }
-                else
-                  forms[0].style.display = 'block'
-              }
-              e.preventDefault()
-
-
-            }
-      
-    </script>
-    <script src="../js/js.js"></script>
+    <script src="../js/login.js"></script>
   </body>
 </html>
