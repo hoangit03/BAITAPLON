@@ -6,11 +6,11 @@ var productAPI = "http://localhost:3000/products";
 // lấy product từ API
 
 function getProduct(callback) {
-    fetch(productAPI)
-      .then(function (response) {
-        return response.json();
-      })
-      .then(callback);
+  fetch(productAPI)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(callback);
 }
 
 // Get Products
@@ -174,7 +174,6 @@ function StartIndex(){
     handleTypeProduct();
     getProduct(clickProduct)
 }
-
 
 // Gọi hàm xử lý
 

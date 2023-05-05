@@ -3,17 +3,39 @@
     {
       "id": 1,
       "email": "hoang@gmail.com",
-      "password": "12345678"
+      "password": "12345678",
+      "cart": [
+        {
+          "name": "Matlek Super Earphone",
+          "url": "../images/head_phone_10.jpg",
+          "price": 122,
+          "quantity": 10
+        },
+        {
+          "name": "ESpinBot Ranger HX300",
+          "url": "../images/head_phone_03.jpg",
+          "price": 1202,
+          "quantity": 1
+        },
+        {
+          "name": "Corsair",
+          "url": "../images/head_phone_02.jpg",
+          "price": 122,
+          "quantity": 1
+        }
+      ]
     },
     {
       "id": 2,
       "email": "thuong@gmail.com",
-      "password": "12345678"
+      "password": "12345678",
+      "cart": []
     },
     {
       "email": "hoang1106@gmail.com",
       "password": "11062003",
-      "id": 3
+      "id": 3,
+      "cart": []
     }
   ],
   "products": [
@@ -25,7 +47,7 @@
       "url_big": "../images/head_phone_14_big.jpg",
       "category": "Special Product",
       "info": "new",
-      "shop":"Bone Condition"
+      "shop": "Bone Condition"
     },
     {
       "id_pro": 2,
@@ -35,7 +57,7 @@
       "url_big": "../images/head_phone_09_big.jpg",
       "category": "Special Product",
       "info": "Bestseller",
-      "shop":"Bone Condition"
+      "shop": "Bone Condition"
     },
     {
       "id_pro": 3,
@@ -45,7 +67,7 @@
       "url_big": "../images/head_phone_17_big.jpg",
       "category": "Special Product",
       "info": "Popular",
-      "shop":"Bone Condition"
+      "shop": "Bone Condition"
     },
     {
       "id_pro": 4,
@@ -55,8 +77,7 @@
       "url_big": "../images/head_phone_16_big.jpg",
       "category": "True Wireless Earbuds",
       "info": "new",
-      "shop":"Bone Condition"
-
+      "shop": "Bone Condition"
     },
     {
       "id_pro": 5,
@@ -66,8 +87,7 @@
       "url_big": "../images/head_phone_01_big.jpg",
       "category": "True Wireless Earbuds",
       "info": "new",
-      "shop":"Bone Condition"
-      
+      "shop": "Bone Condition"
     },
     {
       "id_pro": 6,
@@ -77,7 +97,7 @@
       "url_big": "../images/head_phone_16_big.jpg",
       "category": "True Wireless Earbuds",
       "info": "Bestseller",
-      "shop":"Bone Condition"
+      "shop": "Bone Condition"
     },
     {
       "id_pro": 7,
@@ -87,8 +107,7 @@
       "url_big": "../images/head_phone_10_big.jpg",
       "category": "True Wireless Earbuds",
       "info": "Popular",
-      "shop":"Wireless Earbuds"
-
+      "shop": "Wireless Earbuds"
     },
     {
       "id_pro": 8,
@@ -98,7 +117,7 @@
       "url_big": "../images/head_phone_03_big.jpg",
       "category": "True Wireless Earbuds",
       "info": "Popular",
-      "shop":"Wireless Earbuds"
+      "shop": "Wireless Earbuds"
     },
     {
       "id_pro": 9,
@@ -108,7 +127,7 @@
       "url_big": "../images/head_phone_12_big.jpg",
       "category": "True Wireless Earbuds",
       "info": "Bestseller",
-      "shop":"Wireless Earbuds"
+      "shop": "Wireless Earbuds"
     },
     {
       "id_pro": 10,
@@ -118,7 +137,7 @@
       "url_big": "../images/head_phone_09_big.jpg",
       "category": "Wired Earbuds",
       "info": "new",
-      "shop":"Wireless Earbuds"
+      "shop": "Wireless Earbuds"
     },
     {
       "id_pro": 11,
@@ -128,7 +147,7 @@
       "url_big": "../images/head_phone_10_big.jpg",
       "category": "Wired Earbuds",
       "info": "Popular",
-      "shop":"Wireless Earbuds"
+      "shop": "Wireless Earbuds"
     },
     {
       "id_pro": 12,
@@ -138,7 +157,7 @@
       "url_big": "../images/head_phone_02_big.jpg",
       "category": "Wired Earbuds",
       "info": "Popular",
-      "shop":"Over-Ear Headphones"
+      "shop": "Over-Ear Headphones"
     },
     {
       "id_pro": 13,
@@ -148,7 +167,7 @@
       "url_big": "../images/head_phone_04_big.jpg",
       "category": "Wired Earbuds",
       "info": "Bestseller",
-      "shop":"Over-Ear Headphones"
+      "shop": "Over-Ear Headphones"
     },
     {
       "id_pro": 14,
@@ -158,8 +177,7 @@
       "url_big": "../images/head_phone_08_big.jpg",
       "category": "Wired Earbuds",
       "info": "Bestseller",
-      "shop":"Wired Earbuds"
-
+      "shop": "Wired Earbuds"
     },
     {
       "id_pro": 15,
@@ -169,7 +187,7 @@
       "url_big": "../images/head_phone_15_big.jpg",
       "category": "Wired Earbuds",
       "info": "Bestseller",
-      "shop":"Wired Earbuds"
+      "shop": "Wired Earbuds"
     },
     {
       "id_pro": 16,
@@ -179,7 +197,7 @@
       "url_big": "../images/head_phone_13_big.jpg",
       "category": "Wired Earbuds",
       "info": "new",
-      "shop":"Wired Earbuds"
+      "shop": "Wired Earbuds"
     },
     {
       "id_pro": 17,
@@ -189,16 +207,7 @@
       "url_big": "../images/head_phone_05_big.jpg",
       "category": "Wired Earbuds",
       "info": "Popular",
-      "shop":"Wired Earbuds"
-    }
-  ],
-  "cart": [
-    {
-      "name": "ESpinBot Ranger HX300",
-      "url": "../images/head_phone_03.jpg",
-      "price": 1202,
-      "quantity": 6,
-      "id": 1
+      "shop": "Wired Earbuds"
     }
   ]
 }

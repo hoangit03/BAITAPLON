@@ -1,9 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
 
 /* Code Blogs */
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
 #img__blog{
     background: url('../images/banner_blogs.png') no-repeat ;
-   
+    
     width: 100%;
     padding: 30px 0;
     position: relative;

@@ -29,14 +29,14 @@ function checkLogin(form, accuonts) {
       pass = inputPass.value;
       accuonts.forEach((accuont) => {
         if (accuont.email == email && accuont.password == pass) {
+          localStorage.setItem('account',JSON.stringify(accuont))
           window.location = "./index.html";
-        } else {
-          let error = inputEmail.parentElement.querySelector(".error-messages");
-          error.innerHTML =
-            "Tài khoản hoặc mật khẩu không chính xác. Vui lòng đăng nhập lại!";
-          inputPass.value = "";
-        }
+        } 
       });
+      let error = inputEmail.parentElement.querySelector(".error-messages");
+      error.innerHTML =
+        "Tài khoản hoặc mật khẩu không chính xác. Vui lòng đăng nhập lại!";
+      inputPass.value = "";
     });
 }
 
@@ -107,6 +107,7 @@ function checkRegister(form, accuonts) {
         var data = {
           email: inputEmail.value,
           password: inputPass.value,
+          cart: []
         };
         createData(data, accountAPI);
       }
@@ -134,8 +135,8 @@ function checkEmail(value) {
 }
 
 function LoginPage() {
-    var forms = document.querySelectorAll("#content_login form");
-    // Login -> singup và ngược lại
+  var forms = document.querySelectorAll("#content_login form");
+  // Login -> singup và ngược lại
     // ---------------------------------------------------------------------------
     nextPage(forms);
     getAccount(function (accuonts) {

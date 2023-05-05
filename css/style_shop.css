@@ -5,6 +5,10 @@
     max-width: 1500px;
 }}
 
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
 .col-3{
     width: 20%;
 }
