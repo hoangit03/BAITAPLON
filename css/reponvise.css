@@ -399,9 +399,15 @@
     width:100%;
   }
   .col-6 {
-    margin: 0 20px;
-    width: 50%;
-    margin-left: 25%;
+    
+    width: 100%;
+    
+  }
+  .account {
+    padding: 10px !important;
+  }
+  .account h3{
+    font-size: 16px;
   }
   .nav-left {
     left: 30px;
@@ -409,6 +415,28 @@
   .nav-right {
     right: 30px;
   }
+  .container .row{
+    flex-direction: column-reverse;
+  }
+   .container .navbar-nav{
+    height: 0;
+    overflow: hidden;
+    transition: 1s;
+   }
+   .account{
+    display: flex;
+    justify-content: space-evenly;
+   }
+   .accountClass{
+    display: block;
+   }
+    .container .navbar-nav.show{
+      height:510px;
+    }
+    .col-3 {
+      padding: 30px;
+      width: 100%;
+    }
   
 }
 @media (max-width: 560px) {
@@ -817,6 +845,7 @@
     margin: 0;
   }
   .container .row{
+    width: 100%;
     flex-direction: column-reverse;
   }
    .container .navbar-nav{
@@ -837,6 +866,12 @@
   .col-3 {
     padding: 30px;
     width: 100%;
+  }
+  .account {
+    padding: 10px !important;
+  }
+  .account h3{
+    font-size: 15px;
   }
   .col-6 {
     margin: 0 20px;
