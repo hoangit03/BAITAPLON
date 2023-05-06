@@ -96,4 +96,7 @@ padding: 10px 0;
   color: rgb(186, 27, 27);
   font-size: 14px;
 }
+.accountClass{
+  display: none;
+}
 
