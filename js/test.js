@@ -190,14 +190,38 @@ function ShowHProduct(products){
   
 }
 
+
+// Hàm click sản phẩm ở header shop
+
+function nextShopPage(products){
+  let titleShows = document.querySelectorAll('.header_menu_shop .shop_content_link > div h4')
+  let showBone = shopProduct(products, "Bone Condition");
+  let showWireless = shopProduct(products, "Wireless Earbuds");
+  let showOver = shopProduct(products, "Over-Ear Headphones");
+  let showWired = shopProduct(products, "Wired Earbuds");
+  let arr = [showBone,showWireless,showOver,showWired]
+  titleShows.forEach((title,index)=>{
+    title.addEventListener('click',function(){
+      localStorage.setItem('productTypeShop',JSON.stringify(arr[index]))
+      window.location = "./shop.html";
+    })
+  })
+}
+
+
+
 // Hàm show Header
 
 function showHeader() {
   // Show header shop
   getProduct(showHShop);
-
   // Show header Product
   getProduct(ShowHProduct);
+}
+
+function clickHeader(){
+  // click header shop
+  getProduct(nextShopPage)
 }
 
 // Gọi hàm xử lý
@@ -211,4 +235,7 @@ showHeaderMobile();
 
 // Hàm show header
 showHeader();
+
+// Hàm những hoạt động của header
+clickHeader();
 

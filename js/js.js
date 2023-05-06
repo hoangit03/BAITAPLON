@@ -400,10 +400,10 @@ function shopContent(products) {
 
 function shopPage(products){
   let titleShows = document.querySelectorAll('.header_menu_shop .shop_content_link > div h4')
-  let showBone = showProduct(products, "Bone Condition");
-  let showWireless = showProduct(products, "Wireless Earbuds");
-  let showOver = showProduct(products, "Over-Ear Headphones");
-  let showWired = showProduct(products, "Wired Earbuds");
+  let showBone = shopProduct(products, "Bone Condition");
+  let showWireless = shopProduct(products, "Wireless Earbuds");
+  let showOver = shopProduct(products, "Over-Ear Headphones");
+  let showWired = shopProduct(products, "Wired Earbuds");
   let arr = [showBone,showWireless,showOver,showWired]
   titleShows.forEach((title,index)=>{
     title.addEventListener('click',function(){
