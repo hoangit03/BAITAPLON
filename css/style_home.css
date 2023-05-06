@@ -297,7 +297,7 @@ html {
 }
 .pages_children .pages_children_link {
   padding: 10px;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 .header_menu_pages:hover .pages_children {
   border-top: 3px solid#6c0000;
