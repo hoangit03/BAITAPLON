@@ -314,6 +314,7 @@
     width: 100%;
   }
   .foot_top {
+    padding: 5px;
     display: block;
   }
   .footer_quali {
@@ -349,9 +350,7 @@
     width: 100px;
     font-size: 12px;
   }
-  .foot_top h3 {
-    font-size: 17px !important;
-  }
+ 
   .footer_quali {
     font-size: 14px;
   }
@@ -366,6 +365,10 @@
     display: none;
   }
 
+  #container__blog {
+    width: 100% !important;
+    margin: 0;
+  }
   #img__blog {
     padding: 15px 0;
     margin: 0;
@@ -734,6 +737,7 @@
     width: 100%;
   }
   .foot_top {
+    padding: 3px;
     display: block;
   }
   .footer_quali {
@@ -784,8 +788,7 @@
     display: block !important;
   }
   #container__blog {
-    width: 100%;
-
+    width: 100% !important;
     margin: 0;
   }
   #img__blog {
