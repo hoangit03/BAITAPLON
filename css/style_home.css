@@ -316,6 +316,8 @@ html {
 }
 /* product */
 
+
+
 .product_childents_childent {
   margin-left: 40px;
   margin-bottom: 30px;
@@ -359,6 +361,18 @@ html {
   margin-bottom: 60px;
   box-sizing: border-box;
 }
+
+.product-title h3{
+  font-size: 16px;
+}
+.product-type{
+  margin-right: 23px;
+}
+
+.product-type > div{
+  margin-bottom: 20px;
+  font-size: 14px;
+}
 .header_menu_product .product_childents {
   width: 0;
   height: 0;
@@ -366,16 +380,16 @@ html {
   top: 75px;
   left: 0;
   box-sizing: border-box;
-
   overflow: hidden;
   transition: 0.5s;
 }
 .header_menu_product:hover .product_childents {
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
-  width: 820px;
-  height: 420px;
+  width: 900px;
+  height: 400px;
+  padding: 20px;
   cursor: pointer;
-  display: block;
+  display: flex;
   background-color: whitesmoke;
   border-top: 3px solid #6c0000;
   z-index: 99999;

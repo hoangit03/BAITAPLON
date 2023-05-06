@@ -25,7 +25,7 @@ function renderProducts(products) {
     productItems.forEach((productItem, index) => {
       if (index == 0) {
         productItem.classList.add("show");
-        let pros = typeProduct(products, "new");
+        let pros = typeProduct(products, "Latest");
         renderProductItem(pros, productItem);
       } else if (index == 1) {
         let pros = typeProduct(products, "Popular");
@@ -39,7 +39,7 @@ function renderProducts(products) {
 
 // Xử lý product khi click
 function clickProduct(products) {
-    let prosNew = typeProduct(products, "new");
+    let prosNew = typeProduct(products, "Latest");
     let prosPopu = typeProduct(products, "Popular");
     let prosBest = typeProduct(products, "Bestseller");
     let productItems = document.querySelectorAll(".product_item");
