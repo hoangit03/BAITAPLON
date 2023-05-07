@@ -64,20 +64,7 @@ function showHeaderMobile() {
 
 // Hàm render Shop
 
-function showHShop(products) {
-  let show = document.querySelectorAll(".shop_content_link");
-  let showBone = shopProduct(products, "Bone Condition");
-  let showWireless = shopProduct(products, "Wireless Earbuds");
-  let showOver = shopProduct(products, "Over-Ear Headphones");
-  let showWired = shopProduct(products, "Wired Earbuds");
-  let html1 = shopContent(showBone);
-  let html2 = shopContent(showWireless);
-  let html3 = shopContent(showOver);
-  let html4 = shopContent(showWired);
-  let html = html1 + html2 + html3 + html4;
-  show[0].innerHTML = html;
-  show[1].innerHTML = html;
-}
+
 
 
 // Hàm lấy type product Shop
@@ -160,6 +147,23 @@ function createProduct(products){
   return htmls.join('');
 }
 
+// Hàm show product header
+
+function showHShop(products) {
+  let show = document.querySelectorAll(".shop_content_link");
+  let showBone = shopProduct(products, "Bone Condition");
+  let showWireless = shopProduct(products, "Wireless Earbuds");
+  let showOver = shopProduct(products, "Over-Ear Headphones");
+  let showWired = shopProduct(products, "Wired Earbuds");
+  let html1 = shopContent(showBone);
+  let html2 = shopContent(showWireless);
+  let html3 = shopContent(showOver);
+  let html4 = shopContent(showWired);
+  let html = html1 + html2 + html3 + html4;
+  show[0].innerHTML = html;
+  show[1].innerHTML = html;
+}
+
 // Hàm show header Product
 
 function ShowHProduct(products){
@@ -187,6 +191,12 @@ function ShowHProduct(products){
   header_products.forEach(header=>{
     header.innerHTML = resual.join('')
   })
+  
+}
+
+// Hàm show Product Categories
+
+function ShowHCate(products){
   
 }
 
@@ -228,6 +238,8 @@ function nextShopPageProduct(products){
   })
 }
 
+// Hàm click product header
+
 function nextPageProduct(products){
   let prosLatest = typeProduct(products, "Latest");
   let prosPopu = typeProduct(products, "Popular");
@@ -249,6 +261,8 @@ function nextPageProduct(products){
   })
 }
 
+
+
 // Hàm show Header
 
 function showHeader() {
@@ -256,6 +270,8 @@ function showHeader() {
   getProduct(showHShop);
   // Show header Product
   getProduct(ShowHProduct);
+  // Show header Categories
+  getProduct(showHCate)
 }
 
 function clickHeader(){
