@@ -194,10 +194,56 @@ function ShowHProduct(products){
   
 }
 
+function createContencate(products){
+ let htmls = []
+ products.forEach(product=>{
+  let html = `
+  <div>
+    <a href="#">${product.name}</a>
+  </div>
+  `
+  htmls.push(html)
+ })
+ let html = `
+ <div class="mid_content">
+  ${htmls.join('')}
+  </div>
+  <div style="line-height:0">
+    <img src="../images/phone_19.png" alt="" />
+  </div>
+  `
+  return html;
+}
+
 // Hàm show Product Categories
 
 function ShowHCate(products){
-  
+  let showWireless = shopProduct(products, "Wireless Earbuds");
+  let showOver = shopProduct(products, "Over-Ear Headphones");
+  let prosBest = typeProduct(products, "Bestseller");
+  let productsCateL = document.querySelectorAll('.categories_content_left')
+  let Categorys = document.querySelectorAll('.categories_content_mid,.categories_content_right')
+  productsCateL.forEach(productsCate=>{
+    let html = createProduct(prosBest);
+    let htmltitle = productsCate.innerHTML
+    htmltitle += html
+    productsCate.innerHTML = htmltitle
+  })
+  Categorys.forEach((shopType,index)=>{
+    if(index % 2 == 0){
+      let html = createContencate(showWireless);
+      let htmltitle = shopType.innerHTML
+      htmltitle += html
+      shopType.innerHTML = htmltitle
+    }
+    else{
+      let html = createContencate(showOver);
+      let htmltitle = shopType.innerHTML
+      htmltitle += html
+      shopType.innerHTML = htmltitle
+    }
+  })
+
 }
 
 
@@ -271,7 +317,7 @@ function showHeader() {
   // Show header Product
   getProduct(ShowHProduct);
   // Show header Categories
-  getProduct(showHCate)
+  getProduct(ShowHCate)
 }
 
 function clickHeader(){
