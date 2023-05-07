@@ -209,8 +209,23 @@ function nextShopPageType(products){
 }
 
 // Hàm click vào tên product ở header
-function nextShopPageProduct(){
-
+function nextShopPageProduct(products){
+  let productsTypeShop = document.querySelectorAll('.header_menu_shop .shop_content_link > div')
+  let showBone = shopProduct(products, "Bone Condition");
+  let showWireless = shopProduct(products, "Wireless Earbuds");
+  let showOver = shopProduct(products, "Over-Ear Headphones");
+  let showWired = shopProduct(products, "Wired Earbuds");
+  let arr = [showBone,showWireless,showOver,showWired]
+  productsTypeShop.forEach((productsType,indexarr)=>{
+    let productsName = productsType.querySelectorAll('li')
+    productsName.forEach((product,index)=>{
+      product.addEventListener('click',function(){
+        localStorage.setItem('productShop',JSON.stringify(arr[indexarr][index]))
+        localStorage.setItem('productTypeShop',JSON.stringify(arr[indexarr]))
+        window.location = './shop.html'
+      })
+    })
+  })
 }
 
 function nextPageProduct(products){
