@@ -142,7 +142,7 @@ function createProduct(products){
           />
         </div>
         <div class="ben">
-          <div>
+          <div class="product-header">
             <a href="#">${products[index].name}</a>
           </div>
           <div>
@@ -193,7 +193,7 @@ function ShowHProduct(products){
 
 // Hàm click sản phẩm ở header shop
 
-function nextShopPage(products){
+function nextShopPageType(products){
   let titleShows = document.querySelectorAll('.header_menu_shop .shop_content_link > div h4')
   let showBone = shopProduct(products, "Bone Condition");
   let showWireless = shopProduct(products, "Wireless Earbuds");
@@ -208,7 +208,31 @@ function nextShopPage(products){
   })
 }
 
+// Hàm click vào tên product ở header
+function nextShopPageProduct(){
 
+}
+
+function nextPageProduct(products){
+  let prosLatest = typeProduct(products, "Latest");
+  let prosPopu = typeProduct(products, "Popular");
+  let prosBest = typeProduct(products, "Bestseller");
+  let pros = [prosPopu,prosBest,prosLatest]
+  let header_products = document.querySelectorAll('.product_childents')
+  header_products.forEach(productsh=>{
+    let products_title = productsh.querySelectorAll('.product-type');
+    products_title.forEach((product_title,indexpro)=>{
+      let productsm = product_title.querySelectorAll('.product-header')
+      productsm.forEach((product,index)=>{
+        product.addEventListener('click',function(){
+          localStorage.setItem("product", JSON.stringify(pros[indexpro][index]));
+          localStorage.setItem("productType", JSON.stringify(pros[indexpro]));
+          window.location = './product.html'
+        })
+      })
+    })
+  })
+}
 
 // Hàm show Header
 
@@ -221,7 +245,11 @@ function showHeader() {
 
 function clickHeader(){
   // click header shop
-  getProduct(nextShopPage)
+  getProduct(nextShopPageType);
+  getProduct(nextShopPageProduct)
+  // click header product
+
+  getProduct(nextPageProduct)
 }
 
 // Gọi hàm xử lý
