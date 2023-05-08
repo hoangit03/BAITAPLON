@@ -258,7 +258,7 @@ function nextShopPageType(products){
   let arr = [showBone,showWireless,showOver,showWired]
   titleShows.forEach((title,index)=>{
     title.addEventListener('click',function(){
-      localStorage.setItem('productTypeShop',JSON.stringify(arr[index]))
+      localStorage.setItem('productType',JSON.stringify(arr[index]))
       window.location = "./shop.html";
     })
   })
@@ -277,7 +277,7 @@ function nextShopPageProduct(products){
     productsName.forEach((product,index)=>{
       product.addEventListener('click',function(){
         localStorage.setItem('productShop',JSON.stringify(arr[indexarr][index]))
-        localStorage.setItem('productTypeShop',JSON.stringify(arr[indexarr]))
+        localStorage.setItem('productType',JSON.stringify(arr[indexarr]))
         window.location = './shop.html'
       })
     })
@@ -322,6 +322,15 @@ function nextPageinCate(products){
         window.location = './product.html'
       })
     })
+  })
+  Categorys.forEach((shopType,index)=>{
+    if(index % 2 == 0){
+      let ProsShop = shopType.querySelectorAll('.mid_content div')
+
+    }
+    else{
+      let ProsShop = shopType.querySelectorAll('.mid_content div')
+    }
   })
 }
 
