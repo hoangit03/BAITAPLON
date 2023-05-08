@@ -15,9 +15,8 @@ function infoImg(value) {
 }
 
 function showLinkShop(){
-    let productShop = JSON.parse(localStorage.getItem('productType'))
-    let titleShop = document.getElementById('img__blog')
-    infoImg(productShop[0].shop)
+  let productShop = JSON.parse(localStorage.getItem('productTypeShop'))
+  infoImg(productShop[0].shop)
 }
 
 function renderProductItem(pros, productItem) {
@@ -78,7 +77,8 @@ function renderProductItem(pros, productItem) {
 
 function showListType(){
     let list = document.querySelector('.content_product_colum')
-    let productShop = JSON.parse(localStorage.getItem('productType'))
+    let productShop = JSON.parse(localStorage.getItem('productTypeShop'))
+    let product = JSON.parse(localStorage.getItem('productShop'))
     renderProductItem(productShop,list)
 }
 
@@ -109,18 +109,17 @@ function renderListShop(item,products){
 }
 
 function showRefineShop(){
-    let productsS = document.querySelector('.cate_list')
-    let productShop = JSON.parse(localStorage.getItem('productType'))
-    renderListShop(productsS,productShop)
+  let productsS = document.querySelector('.cate_list')
+  let productShop = JSON.parse(localStorage.getItem('productTypeShop'))
+  renderListShop(productsS,productShop)
 }
 
 
 function showPageShop(Products){
-    
-    showLinkShop();
-    showRefineShop();
-    showListType();
-    productOrder("productType")
+  showLinkShop();
+  showRefineShop();
+  showListType();
+  productOrder("productTypeShop")
 }
 
 showPageShop();
