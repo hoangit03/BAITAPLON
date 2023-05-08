@@ -1118,7 +1118,7 @@ p {
   align-items: center;
   justify-content: space-between;
   margin-left: 50px;
-  line-height: 30px;
+
 }
 .info-cart p {
   text-align: left;
@@ -1127,8 +1127,7 @@ p {
   font-size: 35px;
 }
 .info-cart button {
-  width: 100px;
-  height: 40px;
+  padding: 15px 40px;
   border: 1px solid rgba(255, 255, 255, 0.6);
   margin: 0 0 0 10px;
   color: white;

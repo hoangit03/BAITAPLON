@@ -53,10 +53,9 @@ function showHeaderMobile() {
   });
   const u = document.querySelectorAll(".aea");
   const g = document.querySelectorAll(".footer_quali");
-  const z = document.querySelectorAll(".border_bottom");
   u.forEach((btn, index) => {
     btn.onclick = () => {
-      document.querySelector(".footer_quali.show").classList.remove("show");
+      // document.querySelector(".footer_quali.show").classList.remove("show");
       g[index].classList.toggle("show");
     };
   });
