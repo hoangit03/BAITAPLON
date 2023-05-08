@@ -6,22 +6,40 @@
       "password": "12345678",
       "cart": [
         {
+          "name": "Matlek Super Earphone",
+          "url": "../images/head_phone_10.jpg",
+          "price": 122,
+          "quantity": 4
+        },
+        {
+          "name": "ESpinBot Ranger HX300",
+          "url": "../images/head_phone_03.jpg",
+          "price": 1202,
+          "quantity": 2
+        },
+        {
+          "name": "Ptron Tangent",
+          "url": "../images/head_phone_12.jpg",
+          "price": 241,
+          "quantity": 6
+        },
+        {
+          "name": "Sony WI-C100",
+          "url": "../images/head_phone_16.jpg",
+          "price": 122,
+          "quantity": 1
+        },
+        {
           "name": "Aroma NB119 Badshah",
           "url": "../images/head_phone_09.jpg",
           "price": 482,
-          "quantity": 5
-        },
-        {
-          "name": "Matlek Earphone",
-          "url": "../images/head_phone_04.jpg",
-          "price": 332,
-          "quantity": 3
+          "quantity": 1
         },
         {
           "name": "Portronics Muffs A",
           "url": "../images/head_phone_08.jpg",
           "price": 142,
-          "quantity": 3
+          "quantity": 1
         }
       ]
     },

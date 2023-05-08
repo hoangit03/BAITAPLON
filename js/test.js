@@ -257,7 +257,7 @@ function nextShopPageType(products){
   let arr = [showBone,showWireless,showOver,showWired]
   titleShows.forEach((title,index)=>{
     title.addEventListener('click',function(){
-      localStorage.setItem('productType',JSON.stringify(arr[index]))
+      localStorage.setItem('productTypeShop',JSON.stringify(arr[index]))
       window.location = "./shop.html";
     })
   })
@@ -276,7 +276,7 @@ function nextShopPageProduct(products){
     productsName.forEach((product,index)=>{
       product.addEventListener('click',function(){
         localStorage.setItem('productShop',JSON.stringify(arr[indexarr][index]))
-        localStorage.setItem('productType',JSON.stringify(arr[indexarr]))
+        localStorage.setItem('productTypeShop',JSON.stringify([arr[indexarr][index]]))
         window.location = './shop.html'
       })
     })
