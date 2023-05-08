@@ -307,6 +307,24 @@ function nextPageProduct(products){
   })
 }
 
+function nextPageinCate(products){
+  let showWireless = shopProduct(products, "Wireless Earbuds");
+  let showOver = shopProduct(products, "Over-Ear Headphones");
+  let prosBest = typeProduct(products, "Bestseller");
+  let productsCateClass = document.querySelectorAll('.categories_content_left');
+  let Categorys = document.querySelectorAll('.categories_content_mid,.categories_content_right');
+  productsCateClass.forEach(productCateClass=>{
+    let productsCate =  productCateClass.querySelectorAll('.product-header')
+    productsCate.forEach((product,index)=>{
+      product.addEventListener('click',function(){
+        localStorage.setItem("product", JSON.stringify(prosBest[index]));
+        localStorage.setItem("productType", JSON.stringify(prosBest));
+        window.location = './product.html'
+      })
+    })
+  })
+}
+
 
 
 // Hàm show Header
@@ -323,10 +341,13 @@ function showHeader() {
 function clickHeader(){
   // click header shop
   getProduct(nextShopPageType);
-  getProduct(nextShopPageProduct)
+  getProduct(nextShopPageProduct);
   // click header product
+  getProduct(nextPageProduct);
 
-  getProduct(nextPageProduct)
+  // click header Cate
+  getProduct(nextPageinCate)
+
 }
 
 // Gọi hàm xử lý
