@@ -254,7 +254,7 @@ function createData(data, API) {
 
 function iconCart(){
   let icon_addC = document.querySelectorAll('.add-cart');
-  productType = JSON.parse(localStorage.getItem('productType'))
+  let productType = JSON.parse(localStorage.getItem('productType'))
   let isExist = false;
   icon_addC.forEach((icon,index)=>{
     let account = JSON.parse(localStorage.getItem('account'))

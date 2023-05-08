@@ -19,6 +19,42 @@ function showLinkShop(){
   infoImg(productShop[0].shop)
 }
 
+// thêm Product vào giỏ hàng
+
+function addCart() {
+  let btn_addC = document.getElementById("button-cart");
+  let isExist = false;
+  if (btn_addC) {
+    let product = JSON.parse(localStorage.getItem("product"));
+    btn_addC.addEventListener("click", function (event) {
+      let account = JSON.parse(localStorage.getItem('account'))
+      if(account == null){
+        window.location = './login.html'
+      }
+      else{
+        let arrdataCart = JSON.parse(localStorage.getItem('arrdataCart')) ?? []
+        let quantity = Number(document.getElementById("input-quantity").value);
+        arrdataCart.forEach(cart=>{
+          if(cart.name == product.name){
+            cart.quantity += quantity
+            isExist = true;
+          }
+        })
+        if(arrdataCart.length == 0 || !isExist){
+          let data = {
+          name: product.name,
+          url: product.url,
+          price: product.price,
+          quantity: quantity,
+          };
+          arrdataCart.push(data)
+        }
+        localStorage.setItem('arrdataCart',JSON.stringify(arrdataCart))
+      }
+    });
+  }
+}
+
 function renderProductItem(pros, productItem) {
     if (productItem) {
       let htmlproducts = pros.map((pro) => {
@@ -38,30 +74,30 @@ function renderProductItem(pros, productItem) {
               ><i class="bi bi-star"></i>
             </div>
             <div class="product_buy">
-              <div class="buy_item">
+              <div class="buy_item add-cart">
                 <div>
-                  <a href=""><i class="bi bi-bag-fill"> </i></a>
+                  <a href="#"><i class="bi bi-bag-fill"> </i></a>
                 </div>
                 <div class="buy_item_link"><p>Add to card</p></div>
                 <div class="buy_squence"></div>
               </div>
               <div class="buy_item">
                 <div>
-                  <a href=""><i class="bi bi-heart-fill"></i></a>
+                  <a href="#"><i class="bi bi-heart-fill"></i></a>
                 </div>
                 <div class="buy_item_link"><p>Add to Wishlist</p></div>
                 <div class="buy_squence"></div>
               </div>
               <div class="buy_item">
                 <div>
-                  <a href=""><i class="bi bi-eye-fill"></i></a>
+                  <a href="#"><i class="bi bi-eye-fill"></i></a>
                 </div>
                 <div class="buy_item_link"><p>Quickview</p></div>
                 <div class="buy_squence"></div>
               </div>
               <div class="buy_item">
                 <div>
-                  <a href=""><i class="bi bi-shuffle"></i></a>
+                  <a href="#"><i class="bi bi-shuffle"></i></a>
                 </div>
                 <div class="buy_item_link"><p>Compare</p></div>
                 <div class="buy_squence"></div>
@@ -75,6 +111,42 @@ function renderProductItem(pros, productItem) {
     }
 }
 
+function iconCart(){
+  let icon_addC = document.querySelectorAll('.add-cart');
+  let productType = JSON.parse(localStorage.getItem('productTypeShop'))
+  let isExist = false;
+  icon_addC.forEach((icon,index)=>{
+    let account = JSON.parse(localStorage.getItem('account'))
+    icon.addEventListener('click',function(){
+      console.log(this,index);
+      if(account == null){
+        window.location = './login.html'
+      }
+      else{
+        let arrdataCart = JSON.parse(localStorage.getItem('arrdataCart')) ?? []
+        arrdataCart.forEach(cart=>{
+          if(cart.name == productType[index].name){
+            cart.quantity += 1
+            isExist = true;
+          }
+        })
+        if(arrdataCart.length == 0 || !isExist){
+          let data = {
+          name: productType[index].name,
+          url: productType[index].url,
+          price: productType[index].price,
+          quantity: 1,
+          };
+          arrdataCart.push(data)
+        }
+        localStorage.setItem('arrdataCart',JSON.stringify(arrdataCart))
+      }
+      event.stopPropagation();
+    })
+
+  })
+}
+
 function showListType(){
     let list = document.querySelector('.content_product_colum')
     let productShop = JSON.parse(localStorage.getItem('productTypeShop'))
@@ -83,7 +155,7 @@ function showListType(){
 }
 
 function productOrder(ProductT) {
-    let productList = document.querySelectorAll(".content_product_colum > div");
+    let productList = document.querySelectorAll(".content_product_colum .name_img");
     let productType = localStorage.getItem(ProductT);
     let products = JSON.parse(productType);
     productList.forEach((product, index) => {
@@ -120,6 +192,7 @@ function showPageShop(Products){
   showRefineShop();
   showListType();
   productOrder("productTypeShop")
+  iconCart();
 }
 
 showPageShop();
