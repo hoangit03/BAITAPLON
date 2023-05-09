@@ -19,14 +19,14 @@ main{
     margin-bottom: 50px;
 }
 .list-categories h3{
-    background-color: #6c0000;
+    width: 100%;
+
     font-size: 20px;
     font-weight: 500;
     height: 50px;
     padding: 15px 20px;
     color: white;
-    display: flex;
-    align-items: center;
+    
     margin: 0;
 }
 .list-categories .select-cate li{
@@ -146,4 +146,15 @@ a:hover{
 }
 .banner_shop img {
     width: 100%;
+}
+.shop-down{
+    color: white;
+    display: none;
+}
+.shop-categories{
+   background-color: #6c0000;
+   display: flex;
+ 
+    align-items: center;
+    padding-right: 15px;
 }
