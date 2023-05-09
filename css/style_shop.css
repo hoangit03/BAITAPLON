@@ -1,9 +1,6 @@
 /* Shop */
 
-@media (min-width: 1551px){
-.container {
-    max-width: 1500px;
-}}
+
 
 *{
     font-family: 'Poppins', sans-serif;
@@ -146,4 +143,7 @@ a:hover{
     align-items: center;
     font-size: 16px;
     color: white;
+}
+.banner_shop img {
+    width: 100%;
 }

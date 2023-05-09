@@ -910,5 +910,8 @@
   .info-cart button {
     padding: 10px 15px;
   }
+  .img-banner{
+    display: none;
+  }
   
 }
