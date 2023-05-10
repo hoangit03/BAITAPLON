@@ -257,3 +257,15 @@ function showPageShop(Products){
 }
 
 showPageShop();
+function clickReponsive() {
+  const shopDown = document.querySelectorAll('.shop-down')
+  var shopReponsive = document.querySelectorAll(".reponsive-shop");
+  shopDown.forEach((btn, index) => {
+     btn.onclick = () => {
+       // document.querySelector(".footer_quali.show").classList.remove("show");
+       shopReponsive[index].classList.toggle("show");
+     };
+  }
+  )
+}
+clickReponsive();
