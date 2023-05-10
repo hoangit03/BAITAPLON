@@ -82,7 +82,7 @@ function renderProductItem(pros, productItem) {
     if (productItem) {
       let htmlproducts = pros.map((pro) => {
         return `
-        <div class="content_product_colum_number" style="margin: 30px 30px 0 30px;">
+        <div class="content_product_colum_number">
           <div><img src="${pro.url}" alt="" /></div>
           <div class="product_info">
             <div class="name_img">
