@@ -1,4 +1,21 @@
+var productAPI = "http://localhost:3000/products";
 
+
+
+function getProduct(callback) {
+  fetch(productAPI)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(callback);
+}
+
+function typeProduct(products, info) {
+  var pros = products.filter((product) => {
+    return product.info == info;
+  });
+  return pros;
+}
 
 function infoImg(value) {
     let imgPro = document.querySelector("#img__blog");
@@ -15,8 +32,14 @@ function infoImg(value) {
 }
 
 function showLinkShop(){
-  let productShop = JSON.parse(localStorage.getItem('productTypeShop'))
-  infoImg(productShop[0].shop)
+  let ProductShop = JSON.parse(localStorage.getItem('productShop'))
+  if(ProductShop){
+    infoImg(ProductShop.name)
+  }
+  else{
+    let productTShop = JSON.parse(localStorage.getItem('productTypeShop'))
+    infoImg(productTShop[0].shop)
+  }
 }
 
 // thêm Product vào giỏ hàng
@@ -150,18 +173,16 @@ function iconCart(){
 function showListType(){
     let list = document.querySelector('.content_product_colum')
     let productShop = JSON.parse(localStorage.getItem('productTypeShop'))
-    let product = JSON.parse(localStorage.getItem('productShop'))
     renderProductItem(productShop,list)
 }
 
-function productOrder(ProductT) {
+function productOrder(products) {
     let productList = document.querySelectorAll(".content_product_colum .name_img");
-    let productType = localStorage.getItem(ProductT);
-    let products = JSON.parse(productType);
+    let productType = typeProduct(products,"Bestseller")
     productList.forEach((product, index) => {
       product.addEventListener("click", function () {
         localStorage.setItem("product", JSON.stringify(products[index]));
-        localStorage.setItem("productType",JSON.stringify(products));
+        localStorage.setItem("productType",JSON.stringify(productType));
         window.location = "./product.html";
       });
     });
@@ -180,19 +201,59 @@ function renderListShop(item,products){
     `
 }
 
+function createBestseller(product){
+  return `<div class="product__sell">
+    <img src="${product.url}" alt="">
+    <div>
+        <a href="#">${product.name}</a>
+        <p style="text-align: left;">$${product.price}.00</p>
+        <div class="rating">
+            <i class="fa-sharp fa-solid fa-star"></i>
+            <i class="fa-sharp fa-solid fa-star"></i>
+            <i class="fa-sharp fa-solid fa-star"></i>
+            <i class="fa-sharp fa-solid fa-star"></i>
+            <i class="fa-sharp fa-regular fa-star"></i>
+        </div>
+    </div>
+  </div> `
+}
+
 function showRefineShop(){
   let productsS = document.querySelector('.cate_list')
   let productShop = JSON.parse(localStorage.getItem('productTypeShop'))
   renderListShop(productsS,productShop)
 }
 
+function Bestseller(products){
+  let ProsBestseller = typeProduct(products,"Bestseller")
+  let bestsellerProducts = document.querySelector('#blog__bestsell__product')
+  let html = ""
+  for (let index = 0; index < 3; index++) {
+    html += createBestseller(ProsBestseller[index])
+  }
+  bestsellerProducts.innerHTML = html
+}
+
+function clickProductBest(products){
+  let ProsBestseller = typeProduct(products,"Bestseller")
+  let bestsellerProducts = document.querySelectorAll('#blog__bestsell__product > div')
+  bestsellerProducts.forEach((product,index)=>{
+    product.addEventListener('click',function(){
+      localStorage.setItem('product',JSON.stringify(ProsBestseller[index]))
+      localStorage.setItem("productType",JSON.stringify(ProsBestseller));
+      window.location = "./product.html";
+    })
+  })
+}
 
 function showPageShop(Products){
   showLinkShop();
   showRefineShop();
   showListType();
-  productOrder("productTypeShop")
+  getProduct(productOrder)
   iconCart();
+  getProduct(Bestseller)
+  getProduct(clickProductBest)
 }
 
 showPageShop();

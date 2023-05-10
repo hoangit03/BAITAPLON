@@ -29,7 +29,12 @@ function checkLogin(form, accuonts) {
     accuonts.forEach((accuont) => {
       if (accuont.email == email && accuont.password == pass) {
         localStorage.setItem("account", JSON.stringify(accuont));
-        window.location = "./index.html";
+        if(localStorage.getItem('product')){
+          window.location = "./product.html";
+        }
+        else{
+          window.location = "./index.html";
+        }
       }
     });
     let error = inputEmail.parentElement.querySelector(".error-messages");

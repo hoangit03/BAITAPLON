@@ -326,10 +326,23 @@ function nextPageinCate(products){
   Categorys.forEach((shopType,index)=>{
     if(index % 2 == 0){
       let ProsShop = shopType.querySelectorAll('.mid_content div')
-
+      ProsShop.forEach((Pros,index)=>{
+        Pros.addEventListener('click',function(){
+          localStorage.setItem("productShop",JSON.stringify(showWireless[index]))
+          localStorage.setItem("productTypeShop",JSON.stringify([showWireless[index]]))
+          window.location = './shop.html'
+        })
+      })
     }
     else{
       let ProsShop = shopType.querySelectorAll('.mid_content div')
+      ProsShop.forEach((Pros,index)=>{
+        Pros.addEventListener('click',function(){
+          localStorage.setItem("productShop",JSON.stringify(showOver[index]))
+          localStorage.setItem("productTypeShop",JSON.stringify([showOver[index]]))
+          window.location = './shop.html'
+        })
+      })
     }
   })
 }
