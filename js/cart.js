@@ -36,12 +36,31 @@ function renderCart(){
     listCart.innerHTML = arrhtml.join('')
 }
 
+function removeArr(index){
+    let arrCart = JSON.parse(localStorage.getItem('arrdataCart'))
+    let arrNew = arrCart.filter(product=>{
+        return product != arrCart[index]
+    })
+    localStorage.setItem('arrdataCart',JSON.stringify(arrNew))
+}
 
+function removeCart(){
+    let arrCart = JSON.parse(localStorage.getItem('arrdataCart'))
+    let listCart = document.querySelectorAll('.list-cart > div')
+    listCart.forEach((product,index)=>{
+        let btnrm = product.querySelector('.cart-fix')
+        btnrm.onclick = function(){
+            product.style.display = "none"
+            removeArr(index)
+        }
+    })
+}
 
 
 
 function startCart(){
     renderCart();
+    removeCart();
 }
 
 
