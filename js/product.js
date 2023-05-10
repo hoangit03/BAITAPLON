@@ -259,6 +259,7 @@ function iconCart(){
   icon_addC.forEach((icon,index)=>{
     let account = JSON.parse(localStorage.getItem('account'))
     icon.addEventListener('click',function(){
+      event.stopPropagation();
       if(account == null){
         window.location = './login.html'
       }
@@ -280,8 +281,9 @@ function iconCart(){
           arrdataCart.push(data)
         }
         localStorage.setItem('arrdataCart',JSON.stringify(arrdataCart))
+        numberBuy();
       }
-      event.stopPropagation();
+      
     })
 
   })
@@ -318,6 +320,7 @@ function addCart() {
             arrdataCart.push(data)
           }
           localStorage.setItem('arrdataCart',JSON.stringify(arrdataCart))
+          numberBuy();
         }
       });
     }
@@ -342,6 +345,19 @@ function UpDataCart(){
     a.cart = JSON.parse(localStorage.getItem('arrdataCart'))
     createData(a,accountAPI)
   });
+}
+
+function renderNumberBuy(num){
+  let numberbuy = document.querySelector('.numberbuy')
+  numberbuy.innerHTML = num
+}
+
+function numberBuy(){
+  let a = JSON.parse(localStorage.getItem('arrdataCart'))
+  if(a == null)
+    renderNumberBuy(0)
+  else
+    renderNumberBuy(a.length)
 }
 
 UpDataCart()

@@ -1111,6 +1111,8 @@ p {
 
 .cart-product {
   display: flex;
+  margin-bottom: 50px;
+  height: 260px;
 }
 .info-cart {
   display: flex;
@@ -1124,7 +1126,7 @@ p {
   text-align: left;
 }
 .info-cart h3 {
-  font-size: 35px;
+  font-size: 25px;
 }
 .info-cart button {
   width: 100px;

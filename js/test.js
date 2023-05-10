@@ -346,7 +346,25 @@ function nextPageinCate(products){
   })
 }
 
+function renderNumberBuy(num){
+  let numberbuy = document.querySelector('.numberbuy')
+  numberbuy.innerHTML = num
+}
 
+function numberBuy(){
+  let a = JSON.parse(localStorage.getItem('arrdataCart'))
+  if(a == null)
+    renderNumberBuy(0)
+  else
+    renderNumberBuy(a.length)
+}
+
+function clickCart(){
+  let iconCart = document.querySelector('.icon-cart')
+  iconCart.onclick = function(){
+    window.location = './cart.html'
+  }
+}
 
 // Hàm show Header
 
@@ -356,7 +374,8 @@ function showHeader() {
   // Show header Product
   getProduct(ShowHProduct);
   // Show header Categories
-  getProduct(ShowHCate)
+  getProduct(ShowHCate);
+  numberBuy();
 }
 
 function clickHeader(){
@@ -368,6 +387,9 @@ function clickHeader(){
 
   // click header Cate
   getProduct(nextPageinCate)
+
+  // click cart
+  clickCart()
 
 }
 

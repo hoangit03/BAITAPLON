@@ -4,7 +4,44 @@
       "id": 1,
       "email": "hoang@gmail.com",
       "password": "12345678",
-      "cart": null
+      "cart": [
+        {
+          "name": "Ptron Tangent",
+          "url": "../images/head_phone_12.jpg",
+          "price": 241,
+          "quantity": 1
+        },
+        {
+          "name": "Earcup Sennheiser",
+          "url": "../images/head_phone_01.jpg",
+          "price": 98,
+          "quantity": 8
+        },
+        {
+          "name": "Etymotic Research",
+          "url": "../images/head_phone_16.jpg",
+          "price": 122,
+          "quantity": 10
+        },
+        {
+          "name": "Amazon Basics",
+          "url": "../images/head_phone_14.jpg",
+          "price": 86,
+          "quantity": 5
+        },
+        {
+          "name": "Boult Audio ProBass",
+          "url": "../images/head_phone_13.jpg",
+          "price": 332,
+          "quantity": 1
+        },
+        {
+          "name": "Aroma NB119 Badshah",
+          "url": "../images/head_phone_09.jpg",
+          "price": 122,
+          "quantity": 1
+        }
+      ]
     },
     {
       "id": 2,
@@ -112,7 +149,7 @@
     },
     {
       "id_pro": 10,
-      "name": "Aroma NB119 Badshah_Black",
+      "name": "Aroma NB119 Badshah",
       "price": 122,
       "url": "../images/head_phone_09.jpg",
       "url_big": "../images/head_phone_09_big.jpg",

@@ -29,6 +29,7 @@ function checkLogin(form, accuonts) {
     accuonts.forEach((accuont) => {
       if (accuont.email == email && accuont.password == pass) {
         localStorage.setItem("account", JSON.stringify(accuont));
+        localStorage.setItem('arrdataCart',JSON.stringify(accuont.cart))
         if(localStorage.getItem('product')){
           window.location = "./product.html";
         }
