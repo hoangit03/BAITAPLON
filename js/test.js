@@ -63,9 +63,6 @@ function showHeaderMobile() {
 
 // Hàm render Shop
 
-
-
-
 // Hàm lấy type product Shop
 
 function shopProduct(products, shop) {
@@ -115,8 +112,8 @@ function typeProduct(products, info) {
 
 // Hàm tạo html và render Dữ liệu
 
-function createProduct(products){
-  let htmls = []
+function createProduct(products) {
+  let htmls = [];
   for (let index = 0; index < 3; index++) {
     let html = `
       <div class="childent_big">
@@ -140,10 +137,9 @@ function createProduct(products){
         </div>
       </div>
     `;
-    htmls.push(html)
-    
+    htmls.push(html);
   }
-  return htmls.join('');
+  return htmls.join("");
 }
 
 // Hàm show product header
@@ -165,205 +161,224 @@ function showHShop(products) {
 
 // Hàm show header Product
 
-function ShowHProduct(products){
+function ShowHProduct(products) {
   let prosLatest = typeProduct(products, "Latest");
   let prosPopu = typeProduct(products, "Popular");
   let prosBest = typeProduct(products, "Bestseller");
-  let header_products = document.querySelectorAll('.product_childents')
-  let pros = [prosPopu,prosBest,prosLatest]
-  let resual = []
-  pros.forEach(pro=>{
+  let header_products = document.querySelectorAll(".product_childents");
+  let pros = [prosPopu, prosBest, prosLatest];
+  let resual = [];
+  pros.forEach((pro) => {
     let htmltitle = `
     <div class="product-title">
       <h3>${pro[0].info} Product</h3>
     </div>
-    `
-    let content = createProduct(pro)
+    `;
+    let content = createProduct(pro);
     htmltitle += content;
     let divhtml = `
       <div class="product-type">
         ${htmltitle}
       </div>
-    `
-    resual.push(divhtml)
-  })
-  header_products.forEach(header=>{
-    header.innerHTML = resual.join('')
-  })
-  
+    `;
+    resual.push(divhtml);
+  });
+  header_products.forEach((header) => {
+    header.innerHTML = resual.join("");
+  });
 }
 
-function createContencate(products){
- let htmls = []
- products.forEach(product=>{
-  let html = `
+function createContencate(products) {
+  let htmls = [];
+  products.forEach((product) => {
+    let html = `
   <div>
     <a href="#">${product.name}</a>
   </div>
-  `
-  htmls.push(html)
- })
- let html = `
+  `;
+    htmls.push(html);
+  });
+  let html = `
  <div class="mid_content">
-  ${htmls.join('')}
+  ${htmls.join("")}
   </div>
   <div style="line-height:0">
     <img src="../images/phone_19.png" alt="" />
   </div>
-  `
+  `;
   return html;
 }
 
 // Hàm show Product Categories
 
-function ShowHCate(products){
+function ShowHCate(products) {
   let showWireless = shopProduct(products, "Wireless Earbuds");
   let showOver = shopProduct(products, "Over-Ear Headphones");
   let prosBest = typeProduct(products, "Bestseller");
-  let productsCateL = document.querySelectorAll('.categories_content_left')
-  let Categorys = document.querySelectorAll('.categories_content_mid,.categories_content_right')
-  productsCateL.forEach(productsCate=>{
+  let productsCateL = document.querySelectorAll(".categories_content_left");
+  let Categorys = document.querySelectorAll(
+    ".categories_content_mid,.categories_content_right"
+  );
+  productsCateL.forEach((productsCate) => {
     let html = createProduct(prosBest);
-    let htmltitle = productsCate.innerHTML
-    htmltitle += html
-    productsCate.innerHTML = htmltitle
-  })
-  Categorys.forEach((shopType,index)=>{
-    if(index % 2 == 0){
+    let htmltitle = productsCate.innerHTML;
+    htmltitle += html;
+    productsCate.innerHTML = htmltitle;
+  });
+  Categorys.forEach((shopType, index) => {
+    if (index % 2 == 0) {
       let html = createContencate(showWireless);
-      let htmltitle = shopType.innerHTML
-      htmltitle += html
-      shopType.innerHTML = htmltitle
-    }
-    else{
+      let htmltitle = shopType.innerHTML;
+      htmltitle += html;
+      shopType.innerHTML = htmltitle;
+    } else {
       let html = createContencate(showOver);
-      let htmltitle = shopType.innerHTML
-      htmltitle += html
-      shopType.innerHTML = htmltitle
+      let htmltitle = shopType.innerHTML;
+      htmltitle += html;
+      shopType.innerHTML = htmltitle;
     }
-  })
-
+  });
 }
-
 
 // Hàm click sản phẩm ở header shop
 
-function nextShopPageType(products){
-  let titleShows = document.querySelectorAll('.header_menu_shop .shop_content_link > div h4')
+function nextShopPageType(products) {
+  let titleShows = document.querySelectorAll(
+    ".header_menu_shop .shop_content_link > div h4"
+  );
   let showBone = shopProduct(products, "Bone Condition");
   let showWireless = shopProduct(products, "Wireless Earbuds");
   let showOver = shopProduct(products, "Over-Ear Headphones");
   let showWired = shopProduct(products, "Wired Earbuds");
-  let arr = [showBone,showWireless,showOver,showWired]
-  titleShows.forEach((title,index)=>{
-    title.addEventListener('click',function(){
-      localStorage.setItem('productTypeShop',JSON.stringify(arr[index]))
+  let arr = [showBone, showWireless, showOver, showWired];
+  titleShows.forEach((title, index) => {
+    title.addEventListener("click", function () {
+      localStorage.setItem("productTypeShop", JSON.stringify(arr[index]));
       window.location = "./shop.html";
-    })
-  })
+    });
+  });
 }
 
 // Hàm click vào tên product ở header
-function nextShopPageProduct(products){
-  let productsTypeShop = document.querySelectorAll('.header_menu_shop .shop_content_link > div')
+function nextShopPageProduct(products) {
+  let productsTypeShop = document.querySelectorAll(
+    ".header_menu_shop .shop_content_link > div"
+  );
   let showBone = shopProduct(products, "Bone Condition");
   let showWireless = shopProduct(products, "Wireless Earbuds");
   let showOver = shopProduct(products, "Over-Ear Headphones");
   let showWired = shopProduct(products, "Wired Earbuds");
-  let arr = [showBone,showWireless,showOver,showWired]
-  productsTypeShop.forEach((productsType,indexarr)=>{
-    let productsName = productsType.querySelectorAll('li')
-    productsName.forEach((product,index)=>{
-      product.addEventListener('click',function(){
-        localStorage.setItem('productShop',JSON.stringify(arr[indexarr][index]))
-        localStorage.setItem('productTypeShop',JSON.stringify([arr[indexarr][index]]))
-        window.location = './shop.html'
-      })
-    })
-  })
+  let arr = [showBone, showWireless, showOver, showWired];
+  productsTypeShop.forEach((productsType, indexarr) => {
+    let productsName = productsType.querySelectorAll("li");
+    productsName.forEach((product, index) => {
+      product.addEventListener("click", function () {
+        localStorage.setItem(
+          "productShop",
+          JSON.stringify(arr[indexarr][index])
+        );
+        localStorage.setItem(
+          "productTypeShop",
+          JSON.stringify([arr[indexarr][index]])
+        );
+        window.location = "./shop.html";
+      });
+    });
+  });
 }
 
 // Hàm click product header
 
-function nextPageProduct(products){
+function nextPageProduct(products) {
   let prosLatest = typeProduct(products, "Latest");
   let prosPopu = typeProduct(products, "Popular");
   let prosBest = typeProduct(products, "Bestseller");
-  let pros = [prosPopu,prosBest,prosLatest]
-  let header_products = document.querySelectorAll('.product_childents')
-  header_products.forEach(productsh=>{
-    let products_title = productsh.querySelectorAll('.product-type');
-    products_title.forEach((product_title,indexpro)=>{
-      let productsm = product_title.querySelectorAll('.product-header')
-      productsm.forEach((product,index)=>{
-        product.addEventListener('click',function(){
-          localStorage.setItem("product", JSON.stringify(pros[indexpro][index]));
+  let pros = [prosPopu, prosBest, prosLatest];
+  let header_products = document.querySelectorAll(".product_childents");
+  header_products.forEach((productsh) => {
+    let products_title = productsh.querySelectorAll(".product-type");
+    products_title.forEach((product_title, indexpro) => {
+      let productsm = product_title.querySelectorAll(".product-header");
+      productsm.forEach((product, index) => {
+        product.addEventListener("click", function () {
+          localStorage.setItem(
+            "product",
+            JSON.stringify(pros[indexpro][index])
+          );
           localStorage.setItem("productType", JSON.stringify(pros[indexpro]));
-          window.location = './product.html'
-        })
-      })
-    })
-  })
+          window.location = "./product.html";
+        });
+      });
+    });
+  });
 }
 
-function nextPageinCate(products){
+function nextPageinCate(products) {
   let showWireless = shopProduct(products, "Wireless Earbuds");
   let showOver = shopProduct(products, "Over-Ear Headphones");
   let prosBest = typeProduct(products, "Bestseller");
-  let productsCateClass = document.querySelectorAll('.categories_content_left');
-  let Categorys = document.querySelectorAll('.categories_content_mid,.categories_content_right');
-  productsCateClass.forEach(productCateClass=>{
-    let productsCate =  productCateClass.querySelectorAll('.product-header')
-    productsCate.forEach((product,index)=>{
-      product.addEventListener('click',function(){
+  let productsCateClass = document.querySelectorAll(".categories_content_left");
+  let Categorys = document.querySelectorAll(
+    ".categories_content_mid,.categories_content_right"
+  );
+  productsCateClass.forEach((productCateClass) => {
+    let productsCate = productCateClass.querySelectorAll(".product-header");
+    productsCate.forEach((product, index) => {
+      product.addEventListener("click", function () {
         localStorage.setItem("product", JSON.stringify(prosBest[index]));
         localStorage.setItem("productType", JSON.stringify(prosBest));
-        window.location = './product.html'
-      })
-    })
-  })
-  Categorys.forEach((shopType,index)=>{
-    if(index % 2 == 0){
-      let ProsShop = shopType.querySelectorAll('.mid_content div')
-      ProsShop.forEach((Pros,index)=>{
-        Pros.addEventListener('click',function(){
-          localStorage.setItem("productShop",JSON.stringify(showWireless[index]))
-          localStorage.setItem("productTypeShop",JSON.stringify([showWireless[index]]))
-          window.location = './shop.html'
-        })
-      })
+        window.location = "./product.html";
+      });
+    });
+  });
+  Categorys.forEach((shopType, index) => {
+    if (index % 2 == 0) {
+      let ProsShop = shopType.querySelectorAll(".mid_content div");
+      ProsShop.forEach((Pros, index) => {
+        Pros.addEventListener("click", function () {
+          localStorage.setItem(
+            "productShop",
+            JSON.stringify(showWireless[index])
+          );
+          localStorage.setItem(
+            "productTypeShop",
+            JSON.stringify([showWireless[index]])
+          );
+          window.location = "./shop.html";
+        });
+      });
+    } else {
+      let ProsShop = shopType.querySelectorAll(".mid_content div");
+      ProsShop.forEach((Pros, index) => {
+        Pros.addEventListener("click", function () {
+          localStorage.setItem("productShop", JSON.stringify(showOver[index]));
+          localStorage.setItem(
+            "productTypeShop",
+            JSON.stringify([showOver[index]])
+          );
+          window.location = "./shop.html";
+        });
+      });
     }
-    else{
-      let ProsShop = shopType.querySelectorAll('.mid_content div')
-      ProsShop.forEach((Pros,index)=>{
-        Pros.addEventListener('click',function(){
-          localStorage.setItem("productShop",JSON.stringify(showOver[index]))
-          localStorage.setItem("productTypeShop",JSON.stringify([showOver[index]]))
-          window.location = './shop.html'
-        })
-      })
-    }
-  })
+  });
 }
 
-function renderNumberBuy(num){
-  let numberbuy = document.querySelector('.numberbuy')
-  numberbuy.innerHTML = num
+function renderNumberBuy(num) {
+  let numberbuy = document.querySelector(".numberbuy");
+  numberbuy.innerHTML = num;
 }
 
-function numberBuy(){
-  let a = JSON.parse(localStorage.getItem('arrdataCart'))
-  if(a == null)
-    renderNumberBuy(0)
-  else
-    renderNumberBuy(a.length)
+function numberBuy() {
+  let a = JSON.parse(localStorage.getItem("arrdataCart"));
+  if (a == null) renderNumberBuy(0);
+  else renderNumberBuy(a.length);
 }
 
-function clickCart(){
-  let iconCart = document.querySelector('.icon-cart')
-  iconCart.onclick = function(){
-    window.location = './cart.html'
-  }
+function clickCart() {
+  let iconCart = document.querySelector(".icon-cart");
+  iconCart.onclick = function () {
+    window.location = "./cart.html";
+  };
 }
 
 // Hàm show Header
@@ -378,7 +393,7 @@ function showHeader() {
   numberBuy();
 }
 
-function clickHeader(){
+function clickHeader() {
   // click header shop
   getProduct(nextShopPageType);
   getProduct(nextShopPageProduct);
@@ -386,11 +401,10 @@ function clickHeader(){
   getProduct(nextPageProduct);
 
   // click header Cate
-  getProduct(nextPageinCate)
+  getProduct(nextPageinCate);
 
   // click cart
-  clickCart()
-
+  clickCart();
 }
 
 // Gọi hàm xử lý
@@ -407,4 +421,3 @@ showHeader();
 
 // Hàm những hoạt động của header
 clickHeader();
-
